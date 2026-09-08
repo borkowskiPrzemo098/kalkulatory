@@ -92,7 +92,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="border-y border-border bg-accent-soft/60 py-14" aria-labelledby="categories-heading">
+      <section className="border-y border-border bg-accent-soft py-14" aria-labelledby="categories-heading">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 id="categories-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
             Kategorie
@@ -129,17 +129,26 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6" aria-labelledby="all-heading">
-        <h2 id="all-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
-          Wszystkie kalkulatory
-        </h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {calculators.map((c) => (
-            <CalculatorCard key={c.slug} config={c} />
-          ))}
+        <div className="flex flex-col items-start gap-5 rounded-2xl border border-border bg-surface px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+          <div>
+            <h2 id="all-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
+              Wszystkie kalkulatory
+            </h2>
+            <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
+              {calculators.length} darmowych kalkulatorów pogrupowanych w {categories.length} kategorii — finanse,
+              zdrowie, matematyka, motoryzacja i więcej.
+            </p>
+          </div>
+          <Link
+            href="/kalkulatory"
+            className="focus-ring inline-flex shrink-0 items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast hover:bg-accent-hover"
+          >
+            Przeglądaj wszystkie →
+          </Link>
         </div>
       </section>
 
-      <section className="bg-accent-soft/60 py-14" aria-labelledby="about-heading">
+      <section className="bg-accent-soft py-14" aria-labelledby="about-heading">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 id="about-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
             O serwisie
