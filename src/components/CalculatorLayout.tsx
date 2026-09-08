@@ -24,7 +24,7 @@ export default function CalculatorLayout({ config }: { config: CalculatorConfig 
       price: "0",
       priceCurrency: "PLN",
     },
-    url: `https://kalkulatory-online.example/kalkulatory/${config.slug}`,
+    url: `https://borkowskiprzemo098.github.io/kalkulatory/kalkulatory/${config.slug}`,
   };
 
   return (

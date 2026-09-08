@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const SITE_URL = "https://kalkulatory-online.example";
+export const dynamic = "force-static";
+
+const SITE_URL = "https://borkowskiprzemo098.github.io/kalkulatory";
 
 export default function robots(): MetadataRoute.Robots {
   return {

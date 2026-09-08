@@ -13,7 +13,7 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
       "@type": "ListItem",
       position: index + 1,
       name: item.label,
-      item: `https://kalkulatory-online.example${item.href}`,
+      item: `https://borkowskiprzemo098.github.io/kalkulatory${item.href}`,
     })),
   };
 

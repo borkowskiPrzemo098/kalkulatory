@@ -2,7 +2,9 @@ import type { MetadataRoute } from "next";
 import { calculators } from "@/calculators/registry";
 import { categories } from "@/lib/categories";
 
-const SITE_URL = "https://kalkulatory-online.example";
+export const dynamic = "force-static";
+
+const SITE_URL = "https://borkowskiprzemo098.github.io/kalkulatory";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [

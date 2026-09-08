@@ -24,10 +24,10 @@ const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "Kalkulatory Online",
-  url: "https://kalkulatory-online.example",
+  url: "https://borkowskiprzemo098.github.io/kalkulatory",
   potentialAction: {
     "@type": "SearchAction",
-    target: "https://kalkulatory-online.example/kalkulatory?q={search_term_string}",
+    target: "https://borkowskiprzemo098.github.io/kalkulatory/kalkulatory?q={search_term_string}",
     "query-input": "required name=search_term_string",
   },
 };

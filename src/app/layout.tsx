@@ -17,7 +17,7 @@ const fraunces = Fraunces({
   axes: ["opsz"],
 });
 
-const SITE_URL = "https://kalkulatory-online.example";
+const SITE_URL = "https://borkowskiprzemo098.github.io/kalkulatory";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
