@@ -1,9 +1,29 @@
 import Link from "next/link";
+import { ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { calculators, getPopularCalculators } from "@/calculators/registry";
 import { categories } from "@/lib/categories";
+import { categoryIcons } from "@/lib/category-icons";
 import CalculatorCard from "@/components/CalculatorCard";
-import SearchBox from "@/components/SearchBox";
 import AdPlaceholder from "@/components/AdPlaceholder";
+import HomeHero from "@/components/HomeHero";
+
+const features = [
+  {
+    icon: Zap,
+    title: "Wynik od razu",
+    text: "Obliczenia aktualizują się w trakcie wpisywania — bez klikania w dodatkowe przyciski.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Prywatność w pierwszej kolejności",
+    text: "Nic nie wysyłamy na serwer. Wszystkie obliczenia dzieją się lokalnie, w Twojej przeglądarce.",
+  },
+  {
+    icon: Sparkles,
+    title: "Bez zbędnych kroków",
+    text: "Żadnej rejestracji, żadnych kont — wchodzisz, liczysz, wychodzisz.",
+  },
+];
 
 const faqItems = [
   {
@@ -47,25 +67,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="border-b border-border bg-surface">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-          <div className="max-w-2xl">
-            <p className="inline-flex items-center rounded-full border border-border-strong px-3 py-1 text-xs font-medium uppercase tracking-wide text-muted">
-              {calculators.length} darmowych kalkulatorów
-            </p>
-            <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-              Kalkulatory online
-            </h1>
-            <p className="mt-4 text-lg leading-relaxed text-muted">
-              Darmowe kalkulatory do szybkich i prostych obliczeń. Bez rejestracji, bez zbędnych kroków —
-              wpisujesz liczby, dostajesz wynik.
-            </p>
-            <div className="mt-8 max-w-md">
-              <SearchBox autoFocus />
-            </div>
-          </div>
-        </div>
-      </section>
+      <HomeHero calculatorCount={calculators.length} />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <AdPlaceholder className="mt-8" />
@@ -90,7 +92,7 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="border-y border-border bg-surface py-14" aria-labelledby="categories-heading">
+      <section className="border-y border-border bg-accent-soft/60 py-14" aria-labelledby="categories-heading">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 id="categories-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
             Kategorie
@@ -98,16 +100,22 @@ export default function Home() {
           <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {categories.map((cat) => {
               const count = calculators.filter((c) => c.category === cat.slug).length;
+              const Icon = categoryIcons[cat.slug];
               return (
                 <Link
                   key={cat.slug}
                   href={`/kategorie/${cat.slug}`}
-                  className="focus-ring flex items-center justify-between rounded-xl border border-border bg-background px-5 py-4 hover:border-accent"
+                  className="focus-ring flex items-center justify-between rounded-xl border border-border bg-surface px-5 py-4 hover:border-accent"
                 >
-                  <div>
-                    <div className="font-medium text-foreground">{cat.name}</div>
-                    <div className="mt-0.5 text-xs text-muted">
-                      {count} {count === 1 ? "kalkulator" : "kalkulatorów"}
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-accent">
+                      {Icon && <Icon className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />}
+                    </span>
+                    <div>
+                      <div className="font-medium text-foreground">{cat.name}</div>
+                      <div className="mt-0.5 text-xs text-muted">
+                        {count} {count === 1 ? "kalkulator" : "kalkulatorów"}
+                      </div>
                     </div>
                   </div>
                   <span aria-hidden className="text-muted-2">
@@ -131,9 +139,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-4 sm:px-6" aria-labelledby="about-heading">
-        <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
-          <h2 id="about-heading" className="font-display text-xl font-semibold text-foreground">
+      <section className="bg-accent-soft/60 py-14" aria-labelledby="about-heading">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 id="about-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
             O serwisie
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
@@ -142,11 +150,22 @@ export default function Home() {
             zakładania konta, nie wysyła wpisywanych danych na żaden serwer i daje wynik natychmiast, w trakcie
             wpisywania.
           </p>
+          <div className="mt-8 grid gap-4 sm:grid-cols-3">
+            {features.map((f) => (
+              <div key={f.title} className="rounded-xl border border-border bg-surface p-5">
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-soft text-accent">
+                  <f.icon className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
+                </span>
+                <div className="mt-3 font-medium text-foreground">{f.title}</div>
+                <p className="mt-1 text-sm leading-relaxed text-muted">{f.text}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <AdPlaceholder className="mb-10" />
+        <AdPlaceholder className="my-10" />
       </div>
 
       <section className="mx-auto max-w-3xl px-4 py-4 sm:px-6" aria-labelledby="faq-home-heading">
