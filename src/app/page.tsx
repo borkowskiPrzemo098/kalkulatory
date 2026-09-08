@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { ShieldCheck, Sparkles, Zap } from "lucide-react";
+import { Calculator, PiggyBank, ShieldCheck, Sparkles, Zap } from "lucide-react";
 import { calculators, getPopularCalculators } from "@/calculators/registry";
 import { categories } from "@/lib/categories";
 import { categoryIcons } from "@/lib/category-icons";
 import CalculatorCard from "@/components/CalculatorCard";
-import AdPlaceholder from "@/components/AdPlaceholder";
+import ThemedBanner from "@/components/ThemedBanner";
 import HomeHero from "@/components/HomeHero";
 
 const features = [
@@ -70,7 +70,13 @@ export default function Home() {
       <HomeHero calculatorCount={calculators.length} />
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <AdPlaceholder className="mt-8" />
+        <ThemedBanner
+          className="mt-8"
+          icon={Calculator}
+          eyebrow="Nowość co tydzień"
+          title="Nie widzisz kalkulatora, którego szukasz?"
+          text="Regularnie dodajemy nowe narzędzia. Napisz, jakiego kalkulatora brakuje — dodamy go w pierwszej kolejności."
+        />
       </div>
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6" aria-labelledby="popular-heading">
@@ -174,7 +180,13 @@ export default function Home() {
       </section>
 
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <AdPlaceholder className="my-10" />
+        <ThemedBanner
+          className="my-10"
+          icon={PiggyBank}
+          eyebrow="Prywatność"
+          title="Twoje dane nigdy nie opuszczają przeglądarki"
+          text="Każde obliczenie dzieje się lokalnie na Twoim urządzeniu — nic nie jest wysyłane ani zapisywane na naszych serwerach."
+        />
       </div>
 
       <section className="mx-auto max-w-3xl px-4 py-4 sm:px-6" aria-labelledby="faq-home-heading">

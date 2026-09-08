@@ -30,9 +30,11 @@ function scoreMatch(query: string, config: (typeof calculators)[number]): number
 interface SearchBoxProps {
   compact?: boolean;
   autoFocus?: boolean;
+  id?: string;
 }
 
-export default function SearchBox({ compact = false, autoFocus = false }: SearchBoxProps) {
+export default function SearchBox({ compact = false, autoFocus = false, id = "calculator-search" }: SearchBoxProps) {
+  const resultsId = `${id}-results`;
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -67,7 +69,7 @@ export default function SearchBox({ compact = false, autoFocus = false }: Search
   return (
     <div className="relative w-full">
       <form onSubmit={handleSubmit} role="search">
-        <label htmlFor="calculator-search" className="sr-only">
+        <label htmlFor={id} className="sr-only">
           Szukaj kalkulatora
         </label>
         <div className="relative">
@@ -82,7 +84,7 @@ export default function SearchBox({ compact = false, autoFocus = false }: Search
           </svg>
           <input
             ref={inputRef}
-            id="calculator-search"
+            id={id}
             type="search"
             inputMode="search"
             autoFocus={autoFocus}
@@ -94,7 +96,7 @@ export default function SearchBox({ compact = false, autoFocus = false }: Search
             className="focus-ring w-full rounded-lg border border-border-strong bg-surface py-2.5 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-2"
             role="combobox"
             aria-expanded={open}
-            aria-controls="calculator-search-results"
+            aria-controls={resultsId}
             aria-autocomplete="list"
             autoComplete="off"
           />
@@ -103,7 +105,7 @@ export default function SearchBox({ compact = false, autoFocus = false }: Search
 
       {open && results.length > 0 && (
         <ul
-          id="calculator-search-results"
+          id={resultsId}
           className="absolute left-0 right-0 top-full z-50 mt-2 max-h-80 overflow-auto rounded-lg border border-border bg-surface shadow-lg"
           role="listbox"
         >

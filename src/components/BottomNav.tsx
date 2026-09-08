@@ -13,7 +13,7 @@ const items = [
     match: (p: string) => p.startsWith("/kalkulatory"),
   },
   {
-    href: "/kategorie/finanse",
+    href: "/kategorie",
     label: "Kategorie",
     icon: LayoutGrid,
     match: (p: string) => p.startsWith("/kategorie"),
@@ -23,7 +23,7 @@ const items = [
 function focusSearch() {
   window.scrollTo({ top: 0, behavior: "smooth" });
   window.setTimeout(() => {
-    document.getElementById("calculator-search")?.focus();
+    document.getElementById("calculator-search-mobile")?.focus();
   }, 300);
 }
 

@@ -57,7 +57,7 @@ export default function HomeHero({ calculatorCount }: { calculatorCount: number 
             wpisujesz liczby, dostajesz wynik.
           </p>
           <div className="mt-8 max-w-md">
-            <SearchBox autoFocus />
+            <SearchBox autoFocus id="calculator-search-hero" />
           </div>
         </div>
 

@@ -19,7 +19,7 @@ export default function Header() {
         </Link>
 
         <div className="ml-auto hidden max-w-sm flex-1 sm:block">
-          <SearchBox compact />
+          <SearchBox compact id="calculator-search-desktop" />
         </div>
 
         <nav className="flex items-center gap-1 text-sm" aria-label="Nawigacja główna">
@@ -32,7 +32,7 @@ export default function Header() {
         </nav>
       </div>
       <div className="border-t border-border px-4 py-2 sm:hidden">
-        <SearchBox compact />
+        <SearchBox compact id="calculator-search-mobile" />
       </div>
     </header>
   );
