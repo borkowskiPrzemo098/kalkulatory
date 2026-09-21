@@ -29,6 +29,10 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: "true"
+          # Ustaw w Settings → Secrets and variables → Actions, żeby włączyć
+          # Google Analytics / AdSense (patrz .env.example). Puste = no-op.
+          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+          NEXT_PUBLIC_ADSENSE_CLIENT: ${{ secrets.NEXT_PUBLIC_ADSENSE_CLIENT }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./out

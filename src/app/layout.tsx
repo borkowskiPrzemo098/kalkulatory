@@ -5,6 +5,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import BottomNav from "@/components/BottomNav";
 import ScrollToTop from "@/components/ScrollToTop";
+import CookieConsent from "@/components/CookieConsent";
+import GoogleScripts from "@/components/GoogleScripts";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -70,6 +72,8 @@ export default function RootLayout({
         <Footer />
         <BottomNav />
         <ScrollToTop />
+        <CookieConsent />
+        <GoogleScripts />
       </body>
     </html>
   );

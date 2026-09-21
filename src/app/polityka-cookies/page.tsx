@@ -14,14 +14,22 @@ export default function PolitykaCookiesPage() {
       <h1 className="mt-4 font-display text-3xl font-semibold tracking-tight text-foreground">Polityka cookies</h1>
       <div className="prose mt-6 max-w-none space-y-4 text-base leading-relaxed text-muted">
         <p>
-          Serwis w obecnej wersji nie wykorzystuje plików cookies do śledzenia użytkowników. Wybrane funkcje
-          (np. zapamiętywanie ostatnich wartości w kalkulatorach) korzystają z pamięci lokalnej przeglądarki
-          (localStorage), a nie z plików cookies.
+          Wybrane funkcje serwisu (np. zapamiętywanie ostatnich wartości w kalkulatorach) korzystają z pamięci
+          lokalnej przeglądarki (localStorage), a nie z plików cookies — te dane nigdy nie opuszczają Twojego
+          urządzenia.
         </p>
+        <h2 className="font-display text-xl font-semibold text-foreground">Baner zgody</h2>
         <p>
-          W przypadku wdrożenia w przyszłości narzędzi analitycznych lub reklamowych korzystających z plików
-          cookies, niniejsza polityka zostanie odpowiednio zaktualizowana, a użytkownicy zostaną o tym
-          poinformowani zgodnie z obowiązującymi przepisami.
+          Przy pierwszej wizycie wyświetlamy baner z pytaniem o zgodę na cookies statystyczne i reklamowe. Dopóki
+          nie klikniesz „Akceptuję”, żaden skrypt Google Analytics ani Google AdSense się nie ładuje — kalkulatory
+          działają identycznie niezależnie od Twojej decyzji. Wybór możesz w każdej chwili zmienić, czyszcząc dane
+          strony w ustawieniach przeglądarki (co usuwa zapisaną decyzję i baner pojawi się ponownie).
+        </p>
+        <h2 className="font-display text-xl font-semibold text-foreground">Jakie cookies mogą się pojawić</h2>
+        <p>
+          Po wyrażeniu zgody serwis może korzystać z plików cookies Google Analytics (statystyki odwiedzin) oraz
+          Google AdSense (wyświetlanie i personalizacja reklam). Oba narzędzia działają zgodnie z Google Consent
+          Mode — bez Twojej zgody nie zbierają danych umożliwiających identyfikację.
         </p>
         <p>
           Pytania dotyczące plików cookies można kierować na adres{" "}

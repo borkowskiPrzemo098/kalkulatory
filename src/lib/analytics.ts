@@ -1,5 +1,8 @@
-// Prosty util pod Google Analytics / GTM — no-op dopóki nie skonfigurowano NEXT_PUBLIC_GA_ID.
-// Nie wysyła żadnych danych, dopóki zmienna środowiskowa nie zostanie ustawiona.
+// Prosty util pod Google Analytics / GTM — no-op dopóki nie skonfigurowano NEXT_PUBLIC_GA_ID
+// LUB dopóki użytkownik nie zaakceptował cookies w bannerze zgody (src/components/CookieConsent.tsx).
+// Nie wysyła żadnych danych, dopóki oba warunki nie są spełnione.
+
+import { getStoredConsent } from "./consent";
 
 export type AnalyticsEvent =
   | "calculator_view"
@@ -21,8 +24,8 @@ const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
 export function trackEvent(event: AnalyticsEvent, payload: EventPayload = {}): void {
   if (typeof window === "undefined") return;
 
-  if (!GA_ID) {
-    // Brak skonfigurowanego GA/GTM — zdarzenie ignorowane (no-op).
+  if (!GA_ID || getStoredConsent() !== "granted") {
+    // Brak skonfigurowanego GA/GTM albo brak zgody użytkownika — zdarzenie ignorowane (no-op).
     // Odkomentować poniższą linię do debugowania lokalnego:
     // console.debug(`[analytics:noop] ${event}`, payload);
     return;

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -27,16 +28,14 @@ export default function PolitykaPrywatnosciPage() {
           (localStorage), wyłącznie na urządzeniu użytkownika. Dane te nie są wysyłane do serwisu ani do stron
           trzecich i można je usunąć, czyszcząc dane przeglądania.
         </p>
-        <h2 className="font-display text-xl font-semibold text-foreground">Analityka</h2>
+        <h2 className="font-display text-xl font-semibold text-foreground">Analityka i reklamy</h2>
         <p>
-          Serwis może w przyszłości korzystać z narzędzi analitycznych (np. Google Analytics) w celu zbierania
-          zanonimizowanych statystyk odwiedzin. Do czasu skonfigurowania takich narzędzi żadne zdarzenia nie są
-          wysyłane.
-        </p>
-        <h2 className="font-display text-xl font-semibold text-foreground">Reklamy</h2>
-        <p>
-          Serwis przewiduje miejsca na reklamy. W chwili obecnej nie są wyświetlane żadne rzeczywiste reklamy ani
-          skrypty reklamowe stron trzecich.
+          Serwis może korzystać z Google Analytics (statystyki odwiedzin) oraz Google AdSense (reklamy). Oba
+          narzędzia ładują się wyłącznie po wyrażeniu zgody w bannerze cookies — patrz{" "}
+          <Link href="/polityka-cookies" className="text-accent hover:underline">
+            polityka cookies
+          </Link>
+          . Odrzucenie zgody nie ogranicza żadnej funkcji kalkulatorów.
         </p>
         <h2 className="font-display text-xl font-semibold text-foreground">Administrator danych</h2>
         <p>
