@@ -38,9 +38,19 @@ export default function PolitykaPrywatnosciPage() {
           Serwis przewiduje miejsca na reklamy. W chwili obecnej nie są wyświetlane żadne rzeczywiste reklamy ani
           skrypty reklamowe stron trzecich.
         </p>
-        <p className="rounded-lg border border-dashed border-border-strong bg-surface px-4 py-3 text-sm">
-          [PLACEHOLDER: pełna treść polityki prywatności zgodna z RODO, dane administratora danych — do
-          uzupełnienia przez właściciela serwisu / prawnika.]
+        <h2 className="font-display text-xl font-semibold text-foreground">Administrator danych</h2>
+        <p>
+          Administratorem serwisu jest osoba prywatna, prowadząca Kalkulatory Online poza działalnością
+          gospodarczą. Kontakt w sprawach związanych z prywatnością:{" "}
+          <a href="mailto:belkeprzemyslaw@gmail.com" className="text-accent hover:underline">
+            belkeprzemyslaw@gmail.com
+          </a>
+          .
+        </p>
+        <p className="text-xs text-muted-2">
+          Ta polityka prywatności zostanie rozszerzona o pełny opis przetwarzania danych zgodny z RODO w momencie
+          wdrożenia narzędzi analitycznych lub reklamowych (np. Google Analytics, Google AdSense) — do tego czasu
+          serwis nie zbiera ani nie przetwarza żadnych danych osobowych.
         </p>
       </div>
     </div>

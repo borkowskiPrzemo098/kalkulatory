@@ -29,9 +29,18 @@ export default function RegulaminPage() {
           Korzystanie z serwisu jest bezpłatne. Zabronione jest wykorzystywanie serwisu w sposób zakłócający jego
           działanie lub naruszający przepisy prawa.
         </p>
-        <p className="rounded-lg border border-dashed border-border-strong bg-surface px-4 py-3 text-sm">
-          [PLACEHOLDER: pełna treść regulaminu, dane podmiotu prowadzącego serwis — do uzupełnienia przez
-          właściciela serwisu / prawnika.]
+        <h2 className="font-display text-xl font-semibold text-foreground">4. Podmiot prowadzący serwis</h2>
+        <p>
+          Serwis Kalkulatory Online jest prowadzony przez osobę prywatną, poza działalnością gospodarczą.
+          Kontakt w sprawach dotyczących serwisu:{" "}
+          <a href="mailto:belkeprzemyslaw@gmail.com" className="text-accent hover:underline">
+            belkeprzemyslaw@gmail.com
+          </a>
+          .
+        </p>
+        <p className="text-xs text-muted-2">
+          Niniejszy regulamin ma charakter podstawowy i może zostać rozszerzony w miarę rozwoju serwisu (np. po
+          wdrożeniu reklam lub innych usług).
         </p>
       </div>
     </div>

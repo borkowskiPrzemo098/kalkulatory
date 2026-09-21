@@ -23,9 +23,12 @@ export default function PolitykaCookiesPage() {
           cookies, niniejsza polityka zostanie odpowiednio zaktualizowana, a użytkownicy zostaną o tym
           poinformowani zgodnie z obowiązującymi przepisami.
         </p>
-        <p className="rounded-lg border border-dashed border-border-strong bg-surface px-4 py-3 text-sm">
-          [PLACEHOLDER: pełna treść polityki cookies — do uzupełnienia po wdrożeniu konkretnych narzędzi
-          analitycznych/reklamowych.]
+        <p>
+          Pytania dotyczące plików cookies można kierować na adres{" "}
+          <a href="mailto:belkeprzemyslaw@gmail.com" className="text-accent hover:underline">
+            belkeprzemyslaw@gmail.com
+          </a>
+          .
         </p>
       </div>
     </div>

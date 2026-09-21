@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Breadcrumbs from "@/components/Breadcrumbs";
 
 export const metadata: Metadata = {
@@ -21,9 +22,21 @@ export default function ONasPage() {
           Wszystkie kalkulatory działają w całości w przeglądarce użytkownika — nie wymagają zakładania konta ani
           podawania danych osobowych, a wpisywane wartości nie są wysyłane na żaden serwer.
         </p>
-        <p className="rounded-lg border border-dashed border-border-strong bg-surface px-4 py-3 text-sm">
-          [PLACEHOLDER: miejsce na docelowy opis firmy/zespołu odpowiedzialnego za serwis — do uzupełnienia przez
-          właściciela strony.]
+        <h2 className="font-display text-xl font-semibold text-foreground">Kto to robi</h2>
+        <p>
+          Kalkulatory Online to projekt jednoosobowy — prowadzę go jako student informatyki, dla którego pisanie
+          narzędzi, z których realnie ktoś korzysta, jest ciekawsze niż kolejny projekt zaliczeniowy leżący na
+          dysku. Zamiast tego wolę budować proste, darmowe rzeczy, które komuś oszczędzają czas: szybkie
+          przeliczenie VAT-u, sprawdzenie raty kredytu czy BMI bez grzebania w dziesięciu zakładkach.
+        </p>
+        <p>
+          Serwis rozwija się stopniowo — kalkulatory są dodawane i poprawiane na bieżąco, a każdy wzór jest
+          weryfikowany ręcznie policzonymi przykładami, zanim trafi na stronę. Jeśli zauważysz błąd albo brakuje
+          Ci jakiegoś kalkulatora, daj znać na{" "}
+          <Link href="/kontakt" className="text-accent hover:underline">
+            stronie kontaktowej
+          </Link>{" "}
+          — to pomaga rozwijać serwis w stronę, która faktycznie jest ludziom potrzebna.
         </p>
       </div>
     </div>
