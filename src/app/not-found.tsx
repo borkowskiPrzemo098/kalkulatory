@@ -14,7 +14,7 @@ export default function NotFound() {
           </p>
           <Link
             href="/kalkulatory"
-            className="focus-ring mt-8 inline-flex h-12 items-center gap-2 bg-green px-5 text-[0.98rem] font-semibold text-white transition-colors duration-150 hover:bg-green-deep"
+            className="focus-ring mt-8 inline-flex h-12 items-center gap-2 bg-green px-5 text-[1rem] font-semibold text-white transition-colors duration-150 hover:bg-green-deep"
           >
             Wszystkie kalkulatory
             <ArrowRight aria-hidden className="h-4 w-4" strokeWidth={2} />

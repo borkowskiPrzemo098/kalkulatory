@@ -17,18 +17,18 @@ export default function PolitykaPrywatnosciPage() {
       <h1 className="display mt-4 text-[clamp(2rem,6vw,3rem)] text-ink">
         Polityka prywatności
       </h1>
-      <div className="mt-6 max-w-[68ch] space-y-4 text-[1.02rem] leading-relaxed text-ink-2">
+      <div className="mt-6 max-w-[68ch] space-y-4 text-[1rem] leading-relaxed text-ink-2">
         <p>
           Kalkulatory dostępne w serwisie wykonują obliczenia w całości lokalnie, w przeglądarce użytkownika.
           Wartości wpisywane do formularzy kalkulatorów nie są przesyłane ani zapisywane na serwerach serwisu.
         </p>
-        <h2 className="condensed pt-4 text-[1.3rem] font-bold text-ink">Dane zapisywane lokalnie</h2>
+        <h2 className="condensed pt-4 text-[1.35rem] font-bold text-ink">Dane zapisywane lokalnie</h2>
         <p>
           Wybrane kalkulatory mogą zapamiętywać ostatnio wpisane wartości w pamięci lokalnej przeglądarki
           (localStorage), wyłącznie na urządzeniu użytkownika. Dane te nie są wysyłane do serwisu ani do stron
           trzecich i można je usunąć, czyszcząc dane przeglądania.
         </p>
-        <h2 className="condensed pt-4 text-[1.3rem] font-bold text-ink">Analityka i reklamy</h2>
+        <h2 className="condensed pt-4 text-[1.35rem] font-bold text-ink">Analityka i reklamy</h2>
         <p>
           Serwis może korzystać z Google Analytics (statystyki odwiedzin) oraz Google AdSense (reklamy). Oba
           narzędzia ładują się wyłącznie po wyrażeniu zgody w bannerze cookies — patrz{" "}
@@ -37,7 +37,7 @@ export default function PolitykaPrywatnosciPage() {
           </Link>
           . Odrzucenie zgody nie ogranicza żadnej funkcji kalkulatorów.
         </p>
-        <h2 className="condensed pt-4 text-[1.3rem] font-bold text-ink">Administrator danych</h2>
+        <h2 className="condensed pt-4 text-[1.35rem] font-bold text-ink">Administrator danych</h2>
         <p>
           Administratorem serwisu jest osoba prywatna, prowadząca Kalkulatory Online poza działalnością
           gospodarczą. Kontakt w sprawach związanych z prywatnością:{" "}

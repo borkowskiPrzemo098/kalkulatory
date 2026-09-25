@@ -28,7 +28,7 @@ export default function CookieConsent() {
       className="fixed inset-x-0 bottom-16 z-50 px-3 pb-3 md:bottom-4 md:px-6"
     >
       <div className="mx-auto flex max-w-2xl flex-col gap-4 border-[1.5px] border-frame bg-paper p-4 shadow-[0_16px_40px_-12px_rgba(8,59,51,0.35)] sm:flex-row sm:items-center sm:p-5">
-        <p className="flex-1 text-[0.88rem] leading-relaxed text-ink-2">
+        <p className="flex-1 text-[0.875rem] leading-relaxed text-ink-2">
           Używamy plików cookies do statystyk odwiedzin i wyświetlania reklam wspierających działanie serwisu.
           Możesz zaakceptować lub odrzucić — kalkulatory działają tak samo w obu przypadkach. Więcej w{" "}
           <Link href="/polityka-cookies" className="text-accent hover:underline">
@@ -40,14 +40,14 @@ export default function CookieConsent() {
           <button
             type="button"
             onClick={() => respond(false)}
-            className="focus-ring h-11 border border-hair-strong px-4 text-[0.9rem] font-semibold text-ink hover:border-ink-3 hover:bg-table"
+            className="focus-ring h-11 border border-hair-strong px-4 text-[0.875rem] font-semibold text-ink hover:border-ink-3 hover:bg-table"
           >
             Odrzuć
           </button>
           <button
             type="button"
             onClick={() => respond(true)}
-            className="focus-ring h-11 bg-green px-4 text-[0.9rem] font-semibold text-white hover:bg-green-deep"
+            className="focus-ring h-11 bg-green px-4 text-[0.875rem] font-semibold text-white hover:bg-green-deep"
           >
             Akceptuję
           </button>

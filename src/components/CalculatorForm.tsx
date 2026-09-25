@@ -132,13 +132,13 @@ export default function CalculatorForm({ slug }: { slug: string }) {
                 </h2>
                 <div className="mt-3 space-y-1.5">
                   {formulaLines(config.formula).map((line) => (
-                    <p key={line} className="text-[1.02rem] font-medium leading-snug text-ink">
+                    <p key={line} className="text-[1rem] font-medium leading-snug text-ink">
                       {line}
                     </p>
                   ))}
                 </div>
                 {config.examples[0] && (
-                  <p className="mt-4 text-[0.92rem] leading-snug text-ink-2">
+                  <p className="mt-4 text-[1rem] leading-snug text-ink-2">
                     <span className="caps mr-2 text-[0.7rem] text-ink-3">Przykład</span>
                     {config.examples[0].input} → <span className="font-semibold text-ink">{config.examples[0].output}</span>
                   </p>
@@ -149,10 +149,10 @@ export default function CalculatorForm({ slug }: { slug: string }) {
       </div>
 
       {/* Tabliczka rysunkowa */}
-      <div className="grid grid-cols-2 border-t-[1.5px] border-frame text-[0.8rem] sm:grid-cols-[auto_1fr_1fr_auto]">
+      <div className="grid grid-cols-2 border-t-[1.5px] border-frame text-[0.875rem] sm:grid-cols-[auto_1fr_1fr_auto]">
         <div className="border-r border-hair-strong px-4 py-2.5 sm:px-5">
           <p className="caps text-[0.7rem] text-ink-3">Nr rysunku</p>
-          <p className="caps mt-0.5 text-[0.85rem] text-ink">{getDrawingNumber(config.slug)}</p>
+          <p className="caps mt-0.5 text-[0.875rem] text-ink">{getDrawingNumber(config.slug)}</p>
         </div>
         <div className="px-4 py-2.5 sm:border-r sm:border-hair-strong sm:px-5">
           <p className="caps text-[0.7rem] text-ink-3">Kategoria</p>
@@ -174,7 +174,7 @@ export default function CalculatorForm({ slug }: { slug: string }) {
           className="focus-ring col-span-2 flex min-h-12 items-center justify-center gap-2 border-t border-hair-strong px-5 text-green transition-colors duration-150 hover:bg-green-tint hover:text-green-deep sm:col-span-1 sm:border-t-0"
         >
           <RotateCcw className="h-4 w-4" strokeWidth={2} aria-hidden />
-          <span className="caps text-[0.75rem]">Wyczyść</span>
+          <span className="caps text-[0.72rem]">Wyczyść</span>
         </button>
       </div>
     </Sheet>

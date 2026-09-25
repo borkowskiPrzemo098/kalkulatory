@@ -68,7 +68,7 @@ export default function HeroDemo() {
       </div>
       <Link
         href="/kalkulatory/procenty"
-        className="focus-ring group flex items-center justify-between border-t-[1.5px] border-frame px-4 py-3 text-[0.92rem] font-semibold text-green transition-colors duration-150 hover:bg-green-tint hover:text-green-deep"
+        className="focus-ring group flex items-center justify-between border-t-[1.5px] border-frame px-4 py-3 text-[1rem] font-semibold text-green transition-colors duration-150 hover:bg-green-tint hover:text-green-deep"
       >
         Pełny kalkulator procentów
         <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-x-1" strokeWidth={2} />

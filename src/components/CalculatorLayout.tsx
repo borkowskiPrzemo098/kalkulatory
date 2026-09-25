@@ -40,7 +40,7 @@ export default function CalculatorLayout({ config }: { config: CalculatorConfig 
 
       <header className="mt-4 max-w-3xl">
         <h1 className="display text-[clamp(1.9rem,6vw,3.1rem)] text-ink">{config.name}</h1>
-        <p className="mt-2.5 text-[1.02rem] leading-relaxed text-ink-2 sm:text-[1.1rem]">{config.shortDescription}</p>
+        <p className="mt-2.5 text-[1rem] leading-relaxed text-ink-2 sm:text-[1.1rem]">{config.shortDescription}</p>
       </header>
 
       {/* Reklama pod nagłówkiem tylko od tabletu — na telefonie nie może spychać wyniku w dół. */}
@@ -50,7 +50,7 @@ export default function CalculatorLayout({ config }: { config: CalculatorConfig 
         <CalculatorForm slug={config.slug} />
       </div>
 
-      <p className="mt-3 text-[0.8rem] leading-snug text-ink-3">
+      <p className="mt-3 text-[0.875rem] leading-snug text-ink-3">
         Wynik ma charakter orientacyjny i nie stanowi porady finansowej, medycznej ani prawnej.
       </p>
 

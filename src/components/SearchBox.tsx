@@ -95,7 +95,7 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
             onBlur={() => setTimeout(() => setOpen(false), 120)}
             className={`w-full border bg-paper text-ink outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-ink-3 focus:border-green focus:shadow-[inset_0_0_0_1px_var(--green)] ${
               compact
-                ? "h-10 border-hair-strong pl-9 pr-3 text-[0.95rem]"
+                ? "h-10 border-hair-strong pl-9 pr-3 text-[1rem]"
                 : "h-14 border-[1.5px] border-frame pl-12 pr-4 text-[1.1rem] font-medium"
             }`}
             role="combobox"
@@ -120,8 +120,8 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
                 className="focus-ring block px-4 py-3 hover:bg-green-tint"
                 onMouseDown={(e) => e.preventDefault()}
               >
-                <span className="block text-[0.98rem] font-semibold text-ink">{r.name}</span>
-                <span className="mt-0.5 block truncate text-[0.82rem] text-ink-3">{r.shortDescription}</span>
+                <span className="block text-[1rem] font-semibold text-ink">{r.name}</span>
+                <span className="mt-0.5 block truncate text-[0.875rem] text-ink-3">{r.shortDescription}</span>
               </Link>
             </li>
           ))}
@@ -129,7 +129,7 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
       )}
 
       {open && query.trim().length > 0 && results.length === 0 && (
-        <div className={`absolute left-0 right-0 z-50 ${dropClass} border-[1.5px] border-frame bg-paper px-4 py-3 text-[0.95rem] text-ink-2 shadow-[0_12px_28px_-8px_rgba(8,59,51,0.28)]`}>
+        <div className={`absolute left-0 right-0 z-50 ${dropClass} border-[1.5px] border-frame bg-paper px-4 py-3 text-[1rem] text-ink-2 shadow-[0_12px_28px_-8px_rgba(8,59,51,0.28)]`}>
           Brak wyników dla „{query}”. Spróbuj krótszego słowa, np. „vat” albo „procent”.
         </div>
       )}

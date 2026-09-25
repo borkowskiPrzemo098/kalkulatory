@@ -6,7 +6,7 @@ export function FaqList({ items }: { items: FaqItem[] }) {
     <div className="border-t-[1.5px] border-frame">
       {items.map((item) => (
         <details key={item.q} className="group border-b border-hair">
-          <summary className="focus-ring flex cursor-pointer items-start justify-between gap-4 py-4 text-[1.02rem] font-semibold text-ink hover:text-green">
+          <summary className="focus-ring flex cursor-pointer items-start justify-between gap-4 py-4 text-[1rem] font-semibold text-ink hover:text-green">
             <span>{item.q}</span>
             <Plus
               aria-hidden
@@ -14,7 +14,7 @@ export function FaqList({ items }: { items: FaqItem[] }) {
               strokeWidth={1.75}
             />
           </summary>
-          <p className="max-w-[68ch] pb-5 text-[0.98rem] leading-relaxed text-ink-2">{item.a}</p>
+          <p className="max-w-[68ch] pb-5 text-[1rem] leading-relaxed text-ink-2">{item.a}</p>
         </details>
       ))}
     </div>

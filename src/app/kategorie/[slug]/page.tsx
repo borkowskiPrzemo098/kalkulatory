@@ -61,7 +61,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
           <PartsList items={items} showCategory={false} />
         ) : (
           <p className="hatch border border-hair-strong px-4 py-8 text-center">
-            <span className="bg-table px-2 text-[0.95rem] text-ink-2">
+            <span className="bg-table px-2 text-[1rem] text-ink-2">
               W tej kategorii nie ma jeszcze kalkulatorów — wkrótce się to zmieni.
             </span>
           </p>

@@ -116,13 +116,13 @@ export default function Home() {
               <ol className="mt-3 border-t-[1.5px] border-white/70">
                 {principles.map((p, i) => (
                   <li key={p.title} className="grid grid-cols-[2rem_minmax(0,1fr)] gap-3 border-b border-white/25 py-5">
-                    <span className="caps pt-1 text-[0.8rem] text-white/70">{i + 1}.</span>
+                    <span className="caps pt-1 text-[0.875rem] text-white/70">{i + 1}.</span>
                     <div>
                       <h3 className="flex items-center gap-2.5 text-[1.12rem] font-bold">
                         <p.icon className="h-5 w-5 text-white/80" strokeWidth={1.75} aria-hidden />
                         {p.title}
                       </h3>
-                      <p className="mt-1.5 text-[0.98rem] leading-relaxed text-white/80">{p.text}</p>
+                      <p className="mt-1.5 text-[1rem] leading-relaxed text-white/80">{p.text}</p>
                     </div>
                   </li>
                 ))}

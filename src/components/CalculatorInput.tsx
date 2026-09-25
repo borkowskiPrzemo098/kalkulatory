@@ -70,7 +70,7 @@ export default function CalculatorInput({ field, value, onChange }: CalculatorIn
       {/* Pole jako wymiar: pod wartością linia wymiarowa ze strzałkami, przerysowana przy każdej zmianie. */}
       {field.type !== "date" && <DimensionLine animKey={value} className="mt-1.5" />}
       {field.helpText && (
-        <p id={helpId} className="mt-1.5 text-[0.8rem] leading-snug text-ink-3">
+        <p id={helpId} className="mt-1.5 text-[0.875rem] leading-snug text-ink-3">
           {field.helpText}
         </p>
       )}

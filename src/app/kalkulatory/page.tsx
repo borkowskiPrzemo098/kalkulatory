@@ -36,7 +36,7 @@ export default function KalkulatoryPage() {
           <a
             key={cat.slug}
             href={`#${cat.slug}`}
-            className="focus-ring inline-flex items-center gap-2 border border-hair-strong bg-paper px-3 py-2 text-[0.9rem] font-semibold text-ink transition-colors duration-150 hover:border-green hover:text-green"
+            className="focus-ring inline-flex items-center gap-2 border border-hair-strong bg-paper px-3 py-2 text-[0.875rem] font-semibold text-ink transition-colors duration-150 hover:border-green hover:text-green"
           >
             {cat.name}
             <span className="caps text-[0.7rem] text-ink-3">{items.length}</span>
@@ -52,7 +52,7 @@ export default function KalkulatoryPage() {
           return (
             <section key={cat.slug} id={cat.slug} aria-labelledby={`cat-${cat.slug}`} className="scroll-mt-24">
               <div className="flex items-end justify-between gap-4 pb-3">
-                <h2 id={`cat-${cat.slug}`} className="condensed flex items-center gap-3 text-[1.6rem] font-bold text-ink">
+                <h2 id={`cat-${cat.slug}`} className="condensed flex items-center gap-3 text-[clamp(1.5rem,4.5vw,2rem)] font-bold text-ink">
                   {Icon && <Icon className="h-6 w-6 text-green" strokeWidth={1.75} aria-hidden />}
                   {cat.name}
                 </h2>

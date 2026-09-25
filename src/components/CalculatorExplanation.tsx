@@ -20,7 +20,7 @@ export default function CalculatorExplanation({ config }: { config: CalculatorCo
         <ol className="mt-4 border-t border-frame">
           {config.howTo.map((step, i) => (
             <li key={i} className="grid grid-cols-[2.25rem_1fr] gap-3 border-b border-hair py-3 text-[1rem] leading-relaxed text-ink-2">
-              <span className="caps pt-0.5 text-[0.8rem] text-green">{i + 1}.</span>
+              <span className="caps pt-0.5 text-[0.875rem] text-green">{i + 1}.</span>
               <span>{step}</span>
             </li>
           ))}
@@ -31,7 +31,7 @@ export default function CalculatorExplanation({ config }: { config: CalculatorCo
         <section aria-labelledby="examples-heading">
           <SectionTitle id="examples-heading">{config.examples.length > 1 ? "Przykłady" : "Przykład"}</SectionTitle>
           <div className="mt-4 overflow-x-auto">
-            <table className="w-full border-collapse text-left text-[0.95rem]">
+            <table className="w-full border-collapse text-left text-[1rem]">
               <thead>
                 <tr className="border-y-[1.5px] border-frame">
                   <th scope="col" className="caps w-1/2 px-3 py-2 text-[0.7rem] font-semibold text-ink-3">

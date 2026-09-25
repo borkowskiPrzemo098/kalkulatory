@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "design-system-font-size",
+        "value": "0.6rem",
+        "createdAt": "2026-09-25T18:22:36.650Z",
+        "reason": "Claude (build decision): aria-hidden decorative sheet zone marks 1–4/A–C in Sheet.tsx; sanctioned in DESIGN.md Lettering Rule as the only sub-0.7rem size"
+      }
+    ]
+  }
+}

@@ -58,6 +58,23 @@ typography:
     fontWeight: 400
     lineHeight: 1.7
     fontFeature: "'tnum' 1"
+  lede:
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "1.25rem"
+    fontWeight: 400
+    lineHeight: 1.6
+  base:
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "1rem"
+    fontWeight: 400
+    lineHeight: 1.6
+    fontFeature: "'tnum' 1"
+  small:
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: 400
+    lineHeight: 1.4
+    fontFeature: "'tnum' 1"
   value:
     fontFamily: "Archivo, system-ui, sans-serif"
     fontSize: "1.125rem"
@@ -210,7 +227,10 @@ A single bottle-green ink family on green-tinted neutrals, with one red held bac
 - **Result** (750, 92% width, clamp(2.1rem, 8vw, 3.25rem), green): the primary value in the title block; the home demo uses clamp(2.4rem, 9vw, 3.4rem).
 - **Title** (700, 80% width, clamp(1.5rem, 4.5vw, 2rem), -0.015em): home section heads, paired with a caps link at the right.
 - **Subtitle** (700, 80% width, 1.35rem, -0.01em): calculator page sections (Jak korzystać, Przykłady, FAQ).
-- **Body** (400, 1.08rem, 1.7, max 68ch): calculator intro and long text. Supporting text runs 0.9 to 1.02rem at leading-snug/relaxed; hero lede 1.15 to 1.25rem at max 34ch.
+- **Body** (400, 1.08rem, 1.7, max 68ch): calculator intro and long text.
+- **Lede** (400, 1.25rem from sm, 1.15rem on phones, max 34ch): the home hero sentence.
+- **Base** (400–600, 1rem): list text, FAQ, option rows, table cells, links in the footer — the default size for everything that is not intro prose.
+- **Small** (400, 0.875rem, leading-snug): help text under fields, disclaimers, secondary lines in index rows, the cookie note. No other steps between 0.7rem and 1.08rem.
 - **Value** (600, 1.125rem): numbers typed into fields; secondary result cells use 600 at 1.05rem.
 - **Label** (600, 72% width, 0.7rem, 0.07em, uppercase): field labels, legends, title-block labels, zone names, drawing numbers (0.72rem), nav items (0.72rem), column titles.
 

@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="grid px-5 py-10 sm:px-2 md:grid-cols-[1.4fr_1fr_1fr]">
           <div className="pb-10 sm:px-6 md:pb-0">
             <Logo inverted />
-            <p className="mt-5 max-w-sm text-[0.95rem] leading-relaxed text-white/80">
+            <p className="mt-5 max-w-sm text-[1rem] leading-relaxed text-white/80">
               {calculators.length} darmowych kalkulatorów. Każde obliczenie dzieje się w Twojej przeglądarce — bez
               konta i bez wysyłania danych.
             </p>
@@ -33,7 +33,7 @@ export default function Footer() {
 
           <div className="border-t border-white/25 py-8 sm:px-6 md:border-l md:border-t-0 md:py-0">
             <ColumnTitle>Kategorie</ColumnTitle>
-            <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5 text-[0.95rem] md:grid-cols-1">
+            <ul className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2.5 text-[1rem] md:grid-cols-1">
               {categories.map((c) => (
                 <li key={c.slug}>
                   <Link href={`/kategorie/${c.slug}`} className="focus-ring text-white/85 hover:text-white hover:underline">
@@ -46,7 +46,7 @@ export default function Footer() {
 
           <div className="border-t border-white/25 py-8 sm:px-6 md:border-l md:border-t-0 md:py-0">
             <ColumnTitle>Informacje</ColumnTitle>
-            <ul className="mt-4 space-y-2.5 text-[0.95rem]">
+            <ul className="mt-4 space-y-2.5 text-[1rem]">
               {legalLinks.map((l) => (
                 <li key={l.href}>
                   <Link href={l.href} className="focus-ring text-white/85 hover:text-white hover:underline">
@@ -57,7 +57,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className="grid gap-2 border-t-[1.5px] border-white/80 px-5 py-3 text-[0.8rem] text-white/75 sm:grid-cols-[auto_1fr] sm:gap-6 sm:px-6">
+        <div className="grid gap-2 border-t-[1.5px] border-white/80 px-5 py-3 text-[0.875rem] text-white/75 sm:grid-cols-[auto_1fr] sm:gap-6 sm:px-6">
           <span className="caps text-white/90">© {new Date().getFullYear()} Kalkulatory Online</span>
           <span>Wyniki mają charakter orientacyjny i nie zastępują porady specjalisty (finansowej, prawnej ani medycznej).</span>
         </div>

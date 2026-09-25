@@ -37,12 +37,12 @@ export default function CategoryGrid({ withDescriptions = false }: { withDescrip
               <span className="min-w-0">
                 <span className="block text-[1.1rem] font-bold text-ink group-hover:text-green">{cat.name}</span>
                 <span className="caps mt-1 block text-[0.7rem] text-ink-3">{countLabel(items.length)}</span>
-                <span className="mt-1.5 block text-[0.88rem] leading-snug text-ink-2 md:hidden">{samples.join(" · ")}</span>
+                <span className="mt-1.5 block text-[0.875rem] leading-snug text-ink-2 md:hidden">{samples.join(" · ")}</span>
               </span>
               <span className="hidden min-w-0 md:block">
-                <span className="block text-[0.95rem] leading-snug text-ink-2">{samples.join(" · ")}</span>
+                <span className="block text-[1rem] leading-snug text-ink-2">{samples.join(" · ")}</span>
                 {withDescriptions && (
-                  <span className="mt-1 block text-[0.88rem] leading-snug text-ink-3">{cat.description}</span>
+                  <span className="mt-1 block text-[0.875rem] leading-snug text-ink-3">{cat.description}</span>
                 )}
               </span>
               <ArrowRight

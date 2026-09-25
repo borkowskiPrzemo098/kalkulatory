@@ -34,7 +34,7 @@ export default function CalculatorSelect({ field, value, onChange }: CalculatorS
             return (
               <label
                 key={opt.value}
-                className={`relative flex min-h-12 cursor-pointer items-center gap-3 px-3.5 py-2 text-[0.95rem] transition-colors duration-150 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:-outline-offset-2 has-[:focus-visible]:outline-green ${divider} ${
+                className={`relative flex min-h-12 cursor-pointer items-center gap-3 px-3.5 py-2 text-[1rem] transition-colors duration-150 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:-outline-offset-2 has-[:focus-visible]:outline-green ${divider} ${
                   segmented ? "justify-center text-center" : ""
                 } ${checked ? "z-10 bg-green-tint font-semibold text-ink shadow-[inset_0_0_0_1.5px_var(--frame)]" : "bg-paper text-ink-2 hover:bg-table hover:text-ink"}`}
               >
@@ -59,7 +59,7 @@ export default function CalculatorSelect({ field, value, onChange }: CalculatorS
             );
           })}
         </div>
-        {field.helpText && <p className="mt-1.5 text-[0.8rem] leading-snug text-ink-3">{field.helpText}</p>}
+        {field.helpText && <p className="mt-1.5 text-[0.875rem] leading-snug text-ink-3">{field.helpText}</p>}
       </fieldset>
     );
   }
@@ -82,7 +82,7 @@ export default function CalculatorSelect({ field, value, onChange }: CalculatorS
         </select>
         <ChevronDown aria-hidden className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-green" strokeWidth={2} />
       </div>
-      {field.helpText && <p className="mt-1.5 text-[0.8rem] leading-snug text-ink-3">{field.helpText}</p>}
+      {field.helpText && <p className="mt-1.5 text-[0.875rem] leading-snug text-ink-3">{field.helpText}</p>}
     </div>
   );
 }

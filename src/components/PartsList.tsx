@@ -31,10 +31,10 @@ export default function PartsList({
             >
               <span className="caps text-[0.72rem] text-ink-3 group-hover:text-green">{getDrawingNumber(c.slug)}</span>
               <span className="min-w-0">
-                <span className={`block font-semibold text-ink group-hover:text-green ${compact ? "text-[0.98rem]" : "text-[1.06rem]"}`}>
+                <span className={`block font-semibold text-ink group-hover:text-green ${compact ? "text-[1rem]" : "text-[1.06rem]"}`}>
                   {c.name}
                 </span>
-                {!compact && <span className="mt-1 block text-[0.9rem] leading-snug text-ink-2">{c.shortDescription}</span>}
+                {!compact && <span className="mt-1 block text-[0.875rem] leading-snug text-ink-2">{c.shortDescription}</span>}
               </span>
               {showCategory && (
                 <span className="caps hidden text-[0.7rem] text-ink-3 md:block">{category?.name}</span>

@@ -72,7 +72,7 @@ export default function CalculatorResult({ results, error }: { results: ResultLi
     return (
       <div role="alert" className="border border-red bg-red-tint px-4 py-4">
         <p className="caps text-[0.7rem] text-red">Sprawdź dane</p>
-        <p className="mt-1.5 text-[0.95rem] leading-snug text-ink">{error}</p>
+        <p className="mt-1.5 text-[1rem] leading-snug text-ink">{error}</p>
       </div>
     );
   }

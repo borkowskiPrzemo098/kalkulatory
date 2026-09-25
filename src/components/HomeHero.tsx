@@ -54,7 +54,7 @@ export default function HomeHero({ calculatorCount }: { calculatorCount: number 
                 <Link
                   key={l.href}
                   href={l.href}
-                  className="focus-ring border border-hair-strong bg-paper px-2.5 py-1.5 text-[0.88rem] font-semibold text-ink transition-colors duration-150 hover:border-frame hover:bg-green-tint"
+                  className="focus-ring border border-hair-strong bg-paper px-2.5 py-1.5 text-[0.875rem] font-semibold text-ink transition-colors duration-150 hover:border-frame hover:bg-green-tint"
                 >
                   {l.label}
                 </Link>

@@ -1,53 +1,336 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-25T20:30:00Z",
+  "generatedAt": "2026-09-25T18:23:04.689Z",
   "title": "Design System: Kalkulatory Online",
   "extensions": {
     "colorMeta": {
-      "green": { "role": "primary", "displayName": "Bottle Green Ink", "canonical": "#0f6b5c", "tonalRamp": ["#062a24", "#083b33", "#0a4a40", "#0f6b5c", "#3d8a7c", "#7fb3a8", "#c2ddd6", "#e2efeb"] },
-      "frame": { "role": "primary", "displayName": "Drafting Frame Green", "canonical": "#0b4a40", "tonalRamp": ["#041d19", "#072f29", "#0b4a40", "#1a6356", "#3f8174", "#78a79d", "#b7d1ca", "#e4efec"] },
-      "green-deep": { "role": "primary", "displayName": "Deep Bottle Green", "canonical": "#0a4a40", "tonalRamp": ["#041d19", "#072f29", "#0a4a40", "#1a6356", "#3f8174", "#78a79d", "#b7d1ca", "#e4efec"] },
-      "green-night": { "role": "primary", "displayName": "Night Green", "canonical": "#083b33", "tonalRamp": ["#031915", "#083b33", "#0f5147", "#1e6a5e", "#46877b", "#7fada3", "#bcd6cf", "#e6f0ed"] },
-      "green-tint": { "role": "neutral", "displayName": "Green Tint", "canonical": "#e2efeb", "tonalRamp": ["#1d3a33", "#3a5d55", "#5e8279", "#86a79f", "#adc9c1", "#cfe2dc", "#e2efeb", "#f4f9f7"] },
-      "result-wash": { "role": "neutral", "displayName": "Result Wash", "canonical": "color-mix(in srgb, var(--green-tint) 45%, white)", "tonalRamp": ["#2a3f3a", "#4c645e", "#728a84", "#9bb0aa", "#c3d4cf", "#e2ece9", "#f2f8f6", "#fafcfb"] },
-      "table": { "role": "neutral", "displayName": "Drafting Table", "canonical": "#edf2f0", "tonalRamp": ["#1f2826", "#3c4744", "#5d6966", "#828d8a", "#a9b3b0", "#cfd7d4", "#edf2f0", "#f7f9f8"] },
-      "paper": { "role": "neutral", "displayName": "Sheet White", "canonical": "#ffffff", "tonalRamp": ["#262626", "#474747", "#6b6b6b", "#919191", "#b8b8b8", "#dedede", "#f5f5f5", "#ffffff"] },
-      "ink": { "role": "neutral", "displayName": "Drawing Ink", "canonical": "#0f2420", "tonalRamp": ["#0f2420", "#233a35", "#3c4f4a", "#56696a", "#7a8c88", "#a3b2ae", "#cfdad6", "#edf2f0"] },
-      "ink-2": { "role": "neutral", "displayName": "Secondary Ink", "canonical": "#3c4f4a", "tonalRamp": ["#0f2420", "#233a35", "#3c4f4a", "#56696a", "#7a8c88", "#a3b2ae", "#cfdad6", "#edf2f0"] },
-      "ink-3": { "role": "neutral", "displayName": "Lettering Grey", "canonical": "#56696a", "tonalRamp": ["#0f2420", "#233a35", "#3c4f4a", "#56696a", "#7a8c88", "#a3b2ae", "#cfdad6", "#edf2f0"] },
-      "hair": { "role": "neutral", "displayName": "Hairline", "canonical": "#cfdad6", "tonalRamp": ["#0f2420", "#3c4f4a", "#56696a", "#7a8c88", "#9fb2ac", "#b9c8c3", "#cfdad6", "#edf2f0"] },
-      "hair-strong": { "role": "neutral", "displayName": "Strong Hairline", "canonical": "#9fb2ac", "tonalRamp": ["#0f2420", "#3c4f4a", "#56696a", "#7a8c88", "#9fb2ac", "#b9c8c3", "#cfdad6", "#edf2f0"] },
-      "red": { "role": "error", "displayName": "Fault Red", "canonical": "#b3261e", "tonalRamp": ["#410e0b", "#601410", "#8c1d18", "#b3261e", "#dc362e", "#e46962", "#f2b8b5", "#fbecea"] },
-      "red-tint": { "role": "error", "displayName": "Fault Tint", "canonical": "#fbecea", "tonalRamp": ["#410e0b", "#601410", "#8c1d18", "#b3261e", "#dc362e", "#e46962", "#f2b8b5", "#fbecea"] }
+      "green": {
+        "role": "primary",
+        "displayName": "Bottle Green Ink",
+        "canonical": "#0f6b5c",
+        "tonalRamp": [
+          "#062a24",
+          "#083b33",
+          "#0a4a40",
+          "#0f6b5c",
+          "#3d8a7c",
+          "#7fb3a8",
+          "#c2ddd6",
+          "#e2efeb"
+        ]
+      },
+      "frame": {
+        "role": "primary",
+        "displayName": "Drafting Frame Green",
+        "canonical": "#0b4a40",
+        "tonalRamp": [
+          "#041d19",
+          "#072f29",
+          "#0b4a40",
+          "#1a6356",
+          "#3f8174",
+          "#78a79d",
+          "#b7d1ca",
+          "#e4efec"
+        ]
+      },
+      "green-deep": {
+        "role": "primary",
+        "displayName": "Deep Bottle Green",
+        "canonical": "#0a4a40",
+        "tonalRamp": [
+          "#041d19",
+          "#072f29",
+          "#0a4a40",
+          "#1a6356",
+          "#3f8174",
+          "#78a79d",
+          "#b7d1ca",
+          "#e4efec"
+        ]
+      },
+      "green-night": {
+        "role": "primary",
+        "displayName": "Night Green",
+        "canonical": "#083b33",
+        "tonalRamp": [
+          "#031915",
+          "#083b33",
+          "#0f5147",
+          "#1e6a5e",
+          "#46877b",
+          "#7fada3",
+          "#bcd6cf",
+          "#e6f0ed"
+        ]
+      },
+      "green-tint": {
+        "role": "neutral",
+        "displayName": "Green Tint",
+        "canonical": "#e2efeb",
+        "tonalRamp": [
+          "#1d3a33",
+          "#3a5d55",
+          "#5e8279",
+          "#86a79f",
+          "#adc9c1",
+          "#cfe2dc",
+          "#e2efeb",
+          "#f4f9f7"
+        ]
+      },
+      "result-wash": {
+        "role": "neutral",
+        "displayName": "Result Wash",
+        "canonical": "color-mix(in srgb, var(--green-tint) 45%, white)",
+        "tonalRamp": [
+          "#2a3f3a",
+          "#4c645e",
+          "#728a84",
+          "#9bb0aa",
+          "#c3d4cf",
+          "#e2ece9",
+          "#f2f8f6",
+          "#fafcfb"
+        ]
+      },
+      "table": {
+        "role": "neutral",
+        "displayName": "Drafting Table",
+        "canonical": "#edf2f0",
+        "tonalRamp": [
+          "#1f2826",
+          "#3c4744",
+          "#5d6966",
+          "#828d8a",
+          "#a9b3b0",
+          "#cfd7d4",
+          "#edf2f0",
+          "#f7f9f8"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Sheet White",
+        "canonical": "#ffffff",
+        "tonalRamp": [
+          "#262626",
+          "#474747",
+          "#6b6b6b",
+          "#919191",
+          "#b8b8b8",
+          "#dedede",
+          "#f5f5f5",
+          "#ffffff"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Drawing Ink",
+        "canonical": "#0f2420",
+        "tonalRamp": [
+          "#0f2420",
+          "#233a35",
+          "#3c4f4a",
+          "#56696a",
+          "#7a8c88",
+          "#a3b2ae",
+          "#cfdad6",
+          "#edf2f0"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Secondary Ink",
+        "canonical": "#3c4f4a",
+        "tonalRamp": [
+          "#0f2420",
+          "#233a35",
+          "#3c4f4a",
+          "#56696a",
+          "#7a8c88",
+          "#a3b2ae",
+          "#cfdad6",
+          "#edf2f0"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Lettering Grey",
+        "canonical": "#56696a",
+        "tonalRamp": [
+          "#0f2420",
+          "#233a35",
+          "#3c4f4a",
+          "#56696a",
+          "#7a8c88",
+          "#a3b2ae",
+          "#cfdad6",
+          "#edf2f0"
+        ]
+      },
+      "hair": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#cfdad6",
+        "tonalRamp": [
+          "#0f2420",
+          "#3c4f4a",
+          "#56696a",
+          "#7a8c88",
+          "#9fb2ac",
+          "#b9c8c3",
+          "#cfdad6",
+          "#edf2f0"
+        ]
+      },
+      "hair-strong": {
+        "role": "neutral",
+        "displayName": "Strong Hairline",
+        "canonical": "#9fb2ac",
+        "tonalRamp": [
+          "#0f2420",
+          "#3c4f4a",
+          "#56696a",
+          "#7a8c88",
+          "#9fb2ac",
+          "#b9c8c3",
+          "#cfdad6",
+          "#edf2f0"
+        ]
+      },
+      "red": {
+        "role": "error",
+        "displayName": "Fault Red",
+        "canonical": "#b3261e",
+        "tonalRamp": [
+          "#410e0b",
+          "#601410",
+          "#8c1d18",
+          "#b3261e",
+          "#dc362e",
+          "#e46962",
+          "#f2b8b5",
+          "#fbecea"
+        ]
+      },
+      "red-tint": {
+        "role": "error",
+        "displayName": "Fault Tint",
+        "canonical": "#fbecea",
+        "tonalRamp": [
+          "#410e0b",
+          "#601410",
+          "#8c1d18",
+          "#b3261e",
+          "#dc362e",
+          "#e46962",
+          "#f2b8b5",
+          "#fbecea"
+        ]
+      }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Home H1 only. Archivo 750 at 92% width, balanced." },
-      "headline": { "displayName": "Headline", "purpose": "Calculator H1, trust-band statement, 404 title." },
-      "result": { "displayName": "Result", "purpose": "Primary value in the result title block, green ink, tabular figures." },
-      "title": { "displayName": "Title", "purpose": "Home section heads at 80% width, paired with a caps link." },
-      "subtitle": { "displayName": "Subtitle", "purpose": "Calculator page sections: how-to, examples, FAQ." },
-      "body": { "displayName": "Body", "purpose": "Intro and long text, max 68ch." },
-      "value": { "displayName": "Value", "purpose": "Numbers typed into fields; secondary result values at 1.05rem." },
-      "label": { "displayName": "Label", "purpose": "Technical lettering: field labels, legends, title-block labels, drawing numbers, nav. Never below 0.7rem when informational; 0.6rem only for aria-hidden zone marks." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "Home H1 only. Archivo 750 at 92% width, balanced."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Calculator H1, trust-band statement, 404 title."
+      },
+      "result": {
+        "displayName": "Result",
+        "purpose": "Primary value in the result title block, green ink, tabular figures."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Home section heads at 80% width, paired with a caps link."
+      },
+      "subtitle": {
+        "displayName": "Subtitle",
+        "purpose": "Calculator page sections: how-to, examples, FAQ."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Intro and long text, max 68ch."
+      },
+      "value": {
+        "displayName": "Value",
+        "purpose": "Numbers typed into fields; secondary result values at 1.05rem."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Technical lettering: field labels, legends, title-block labels, drawing numbers, nav. Never below 0.7rem when informational; 0.6rem only for aria-hidden zone marks."
+      }
     },
     "shadows": [
-      { "name": "dropdown", "value": "0 12px 28px -8px rgba(8,59,51,0.28)", "purpose": "Search result list and no-result panel." },
-      { "name": "docked-panel", "value": "0 -12px 28px -10px rgba(8,59,51,0.3)", "purpose": "Mobile search panel docked above the bottom nav." },
-      { "name": "dialog", "value": "0 16px 40px -12px rgba(8,59,51,0.35)", "purpose": "Cookie consent dialog." },
-      { "name": "floating-control", "value": "0 6px 16px -6px rgba(8,59,51,0.35)", "purpose": "Scroll-to-top button." },
-      { "name": "inset-focus", "value": "inset 0 0 0 1px var(--green)", "purpose": "Thickens a field border on focus without layout shift (line, not elevation)." },
-      { "name": "inset-selected", "value": "inset 0 0 0 1.5px var(--frame)", "purpose": "Frame line around a selected option (line, not elevation)." }
+      {
+        "name": "dropdown",
+        "value": "0 12px 28px -8px rgba(8,59,51,0.28)",
+        "purpose": "Search result list and no-result panel."
+      },
+      {
+        "name": "docked-panel",
+        "value": "0 -12px 28px -10px rgba(8,59,51,0.3)",
+        "purpose": "Mobile search panel docked above the bottom nav."
+      },
+      {
+        "name": "dialog",
+        "value": "0 16px 40px -12px rgba(8,59,51,0.35)",
+        "purpose": "Cookie consent dialog."
+      },
+      {
+        "name": "floating-control",
+        "value": "0 6px 16px -6px rgba(8,59,51,0.35)",
+        "purpose": "Scroll-to-top button."
+      },
+      {
+        "name": "inset-focus",
+        "value": "inset 0 0 0 1px var(--green)",
+        "purpose": "Thickens a field border on focus without layout shift (line, not elevation)."
+      },
+      {
+        "name": "inset-selected",
+        "value": "inset 0 0 0 1.5px var(--frame)",
+        "purpose": "Frame line around a selected option (line, not elevation)."
+      }
     ],
     "motion": [
-      { "name": "state", "value": "150ms", "purpose": "Colour and border transitions on hover, focus, selection." },
-      { "name": "nudge", "value": "200ms ease-out", "purpose": "Arrow translate on index rows and links; FAQ plus rotates 45deg." },
-      { "name": "ease-draw", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Dimension line draw (520ms, scaleX from centre) and scale marker travel (500ms)." },
-      { "name": "arrows-in", "value": "180ms ease-out 360ms", "purpose": "Dimension arrowheads fade in after the line. Disabled with prefers-reduced-motion." }
+      {
+        "name": "state",
+        "value": "150ms",
+        "purpose": "Colour and border transitions on hover, focus, selection."
+      },
+      {
+        "name": "nudge",
+        "value": "200ms ease-out",
+        "purpose": "Arrow translate on index rows and links; FAQ plus rotates 45deg."
+      },
+      {
+        "name": "ease-draw",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Dimension line draw (520ms, scaleX from centre) and scale marker travel (500ms)."
+      },
+      {
+        "name": "arrows-in",
+        "value": "180ms ease-out 360ms",
+        "purpose": "Dimension arrowheads fade in after the line. Disabled with prefers-reduced-motion."
+      }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" },
-      { "name": "lg", "value": "1024px" }
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
     ]
   },
   "components": [
@@ -57,7 +340,7 @@
       "refersTo": "sheet",
       "description": "The only container: cut-line outline, zone marks 1-4, 1.5px bottle-green frame.",
       "html": "<div class=\"ds-sheet\"><div class=\"ds-sheet-zones\"><span>1</span><span>2</span><span>3</span><span>4</span></div><div class=\"ds-sheet-frame\"><p class=\"ds-caps\">Nr rysunku</p><p class=\"ds-sheet-title\">KO-001</p></div></div>",
-      "css": ".ds-sheet { position: relative; background: var(--paper, #fff); outline: 1px solid var(--hair, #cfdad6); padding: 20px 20px 20px; font-family: Archivo, system-ui, sans-serif; color: var(--ink, #0f2420); } .ds-sheet-zones { position: absolute; top: 0; left: 20px; right: 20px; height: 20px; display: flex; } .ds-sheet-zones span { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; color: var(--ink-3, #56696a); } .ds-sheet-zones span + span { border-left: 1px solid var(--hair-strong, #9fb2ac); } .ds-sheet-frame { border: 1.5px solid var(--frame, #0b4a40); padding: 16px 20px; } .ds-caps { margin: 0; font-size: 0.7rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3, #56696a); } .ds-sheet-title { margin: 2px 0 0; font-size: 0.85rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; }"
+      "css": ".ds-sheet { position: relative; background: var(--paper, #fff); outline: 1px solid var(--hair, #cfdad6); padding: 20px 20px 20px; font-family: Archivo, system-ui, sans-serif; color: var(--ink, #0f2420); } .ds-sheet-zones { position: absolute; top: 0; left: 20px; right: 20px; height: 20px; display: flex; } .ds-sheet-zones span { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; color: var(--ink-3, #56696a); } .ds-sheet-zones span + span { border-left: 1px solid var(--hair-strong, #9fb2ac); } .ds-sheet-frame { border: 1.5px solid var(--frame, #0b4a40); padding: 16px 20px; } .ds-caps { margin: 0; font-size: 0.7rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3, #56696a); } .ds-sheet-title { margin: 2px 0 0; font-size: 0.875rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; }"
     },
     {
       "name": "Dimension Field",
@@ -73,7 +356,7 @@
       "refersTo": "option-segment",
       "description": "Short option set; selected = green tint plus 1.5px inset frame, never solid green.",
       "html": "<div class=\"ds-seg\"><button class=\"ds-seg-opt ds-seg-on\">23%</button><button class=\"ds-seg-opt\">8%</button><button class=\"ds-seg-opt\">5%</button></div>",
-      "css": ".ds-seg { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border: 1px solid var(--hair-strong, #9fb2ac); font-family: Archivo, system-ui, sans-serif; max-width: 320px; } .ds-seg-opt { min-height: 48px; border: 0; border-radius: 0; background: var(--paper, #fff); color: var(--ink-2, #3c4f4a); font: inherit; font-size: 0.95rem; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-seg-opt + .ds-seg-opt { border-left: 1px solid var(--hair-strong, #9fb2ac); } .ds-seg-opt:hover { background: var(--table, #edf2f0); color: var(--ink, #0f2420); } .ds-seg-opt:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: -2px; } .ds-seg-on, .ds-seg-on:hover { background: var(--green-tint, #e2efeb); color: var(--ink, #0f2420); font-weight: 600; box-shadow: inset 0 0 0 1.5px var(--frame, #0b4a40); }"
+      "css": ".ds-seg { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border: 1px solid var(--hair-strong, #9fb2ac); font-family: Archivo, system-ui, sans-serif; max-width: 320px; } .ds-seg-opt { min-height: 48px; border: 0; border-radius: 0; background: var(--paper, #fff); color: var(--ink-2, #3c4f4a); font: inherit; font-size: 0.875rem;5; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-seg-opt + .ds-seg-opt { border-left: 1px solid var(--hair-strong, #9fb2ac); } .ds-seg-opt:hover { background: var(--table, #edf2f0); color: var(--ink, #0f2420); } .ds-seg-opt:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: -2px; } .ds-seg-on, .ds-seg-on:hover { background: var(--green-tint, #e2efeb); color: var(--ink, #0f2420); font-weight: 600; box-shadow: inset 0 0 0 1.5px var(--frame, #0b4a40); }"
     },
     {
       "name": "Result Title Block",
@@ -89,7 +372,7 @@
       "refersTo": "index-row-hover",
       "description": "Drawing-index row: drawing number, name and description, category, green arrow.",
       "html": "<ul class=\"ds-parts\"><li><a href=\"#\"><span class=\"ds-parts-no\">KO-004</span><span><span class=\"ds-parts-name\">Kalkulator VAT</span><span class=\"ds-parts-desc\">Netto, brutto i kwota podatku.</span></span><span class=\"ds-parts-arrow\">&rarr;</span></a></li><li><a href=\"#\"><span class=\"ds-parts-no\">KO-011</span><span><span class=\"ds-parts-name\">Raty kredytu</span><span class=\"ds-parts-desc\">Rata równa i malejąca.</span></span><span class=\"ds-parts-arrow\">&rarr;</span></a></li></ul>",
-      "css": ".ds-parts { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--frame, #0b4a40); font-family: Archivo, system-ui, sans-serif; max-width: 560px; } .ds-parts li { border-bottom: 1px solid var(--hair, #cfdad6); } .ds-parts a { display: grid; grid-template-columns: 3.75rem minmax(0,1fr) auto; align-items: baseline; gap: 0 20px; padding: 16px 12px; text-decoration: none; transition: background-color 150ms; } .ds-parts a:hover { background: var(--green-tint, #e2efeb); } .ds-parts a:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: 2px; } .ds-parts-no { font-size: 0.72rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3, #56696a); } .ds-parts-name { display: block; font-size: 1.06rem; font-weight: 600; color: var(--ink, #0f2420); } .ds-parts-desc { display: block; margin-top: 4px; font-size: 0.9rem; line-height: 1.375; color: var(--ink-2, #3c4f4a); } .ds-parts a:hover .ds-parts-no, .ds-parts a:hover .ds-parts-name { color: var(--green, #0f6b5c); } .ds-parts-arrow { align-self: center; color: var(--green, #0f6b5c); transition: transform 200ms ease-out; } .ds-parts a:hover .ds-parts-arrow { transform: translateX(4px); }"
+      "css": ".ds-parts { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--frame, #0b4a40); font-family: Archivo, system-ui, sans-serif; max-width: 560px; } .ds-parts li { border-bottom: 1px solid var(--hair, #cfdad6); } .ds-parts a { display: grid; grid-template-columns: 3.75rem minmax(0,1fr) auto; align-items: baseline; gap: 0 20px; padding: 16px 12px; text-decoration: none; transition: background-color 150ms; } .ds-parts a:hover { background: var(--green-tint, #e2efeb); } .ds-parts a:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: 2px; } .ds-parts-no { font-size: 0.72rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3, #56696a); } .ds-parts-name { display: block; font-size: 1.06rem; font-weight: 600; color: var(--ink, #0f2420); } .ds-parts-desc { display: block; margin-top: 4px; font-size: 0.875rem; line-height: 1.375; color: var(--ink-2, #3c4f4a); } .ds-parts a:hover .ds-parts-no, .ds-parts a:hover .ds-parts-name { color: var(--green, #0f6b5c); } .ds-parts-arrow { align-self: center; color: var(--green, #0f6b5c); transition: transform 200ms ease-out; } .ds-parts a:hover .ds-parts-arrow { transform: translateX(4px); }"
     },
     {
       "name": "Primary Button",
@@ -97,7 +380,7 @@
       "refersTo": "button-primary",
       "description": "The one filled action per view; square, bottle green.",
       "html": "<button class=\"ds-btn\">Wszystkie kalkulatory &rarr;</button>",
-      "css": ".ds-btn { height: 48px; padding: 0 20px; border: 0; border-radius: 0; background: var(--green, #0f6b5c); color: #fff; font-family: Archivo, system-ui, sans-serif; font-size: 0.98rem; font-weight: 600; cursor: pointer; transition: background-color 150ms; } .ds-btn:hover { background: var(--green-deep, #0a4a40); } .ds-btn:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: 2px; }"
+      "css": ".ds-btn { height: 48px; padding: 0 20px; border: 0; border-radius: 0; background: var(--green, #0f6b5c); color: #fff; font-family: Archivo, system-ui, sans-serif; font-size: 0.875rem;8; font-weight: 600; cursor: pointer; transition: background-color 150ms; } .ds-btn:hover { background: var(--green-deep, #0a4a40); } .ds-btn:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: 2px; }"
     },
     {
       "name": "Ghost Button",
@@ -105,7 +388,7 @@
       "refersTo": "button-ghost",
       "description": "Secondary action beside the primary; hair-strong border on paper.",
       "html": "<button class=\"ds-btn-ghost\">Odrzuć</button>",
-      "css": ".ds-btn-ghost { height: 44px; padding: 0 16px; border: 1px solid var(--hair-strong, #9fb2ac); border-radius: 0; background: var(--paper, #fff); color: var(--ink, #0f2420); font-family: Archivo, system-ui, sans-serif; font-size: 0.9rem; font-weight: 600; cursor: pointer; } .ds-btn-ghost:hover { border-color: var(--ink-3, #56696a); background: var(--table, #edf2f0); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: 2px; }"
+      "css": ".ds-btn-ghost { height: 44px; padding: 0 16px; border: 1px solid var(--hair-strong, #9fb2ac); border-radius: 0; background: var(--paper, #fff); color: var(--ink, #0f2420); font-family: Archivo, system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; cursor: pointer; } .ds-btn-ghost:hover { border-color: var(--ink-3, #56696a); background: var(--table, #edf2f0); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: 2px; }"
     },
     {
       "name": "Hatched Ad Slot",
@@ -136,15 +419,51 @@
       "A dimension line under every numeric value, drawn from the centre outwards."
     ],
     "rules": [
-      { "name": "The Ink-of-Record Rule", "body": "Green marks what the drawing states: results, lines, affordances. A selected option is green-tint with a 1.5px inset frame line, never a solid green fill. Solid green fills are limited to the active band of a result scale, the 3px active marker in the bottom nav, and the single primary button.", "section": "colors" },
-      { "name": "The Red-for-Faults Rule", "body": "Red appears only on validation errors and the 404 sheet. It is never decoration, emphasis or a \"negative\" result colour.", "section": "colors" },
-      { "name": "The Table-and-Sheet Rule", "body": "Content sits on white sheets; the page background is always the green-grey table. Inverted sheets (night green) are the only dark surfaces.", "section": "colors" },
-      { "name": "The Lettering Rule", "body": "Every label is caps at 72% width, weight 600, 0.07em tracking. Informational labels are never smaller than 0.7rem; the 0.6rem size belongs only to the aria-hidden zone marks on the sheet margin.", "section": "typography" },
-      { "name": "The One Family Rule", "body": "Archivo is the only typeface. Hierarchy is made with the width axis and weight, never by adding a second family.", "section": "typography" },
-      { "name": "The Result-in-View Rule", "body": "On a phone the result title block must be visible in the first viewport: breadcrumb, H1, then the sheet with the result above the inputs.", "section": "layout" },
-      { "name": "The Index-Not-Tiles Rule", "body": "Collections of calculators or categories are ruled rows under a 1.5px frame line, never a grid of cards.", "section": "layout" },
-      { "name": "The Flat Sheet Rule", "body": "Anything lying on the table is flat. Only transient floating layers (dropdowns, docked panels, dialogs, the scroll button) cast a shadow.", "section": "elevation" },
-      { "name": "The Square Corner Rule", "body": "No rounded rectangles. A curve is allowed only when it is a full circle with drafting meaning (detail callout, radio, centre mark).", "section": "shapes" }
+      {
+        "name": "The Ink-of-Record Rule",
+        "body": "Green marks what the drawing states: results, lines, affordances. A selected option is green-tint with a 1.5px inset frame line, never a solid green fill. Solid green fills are limited to the active band of a result scale, the 3px active marker in the bottom nav, and the single primary button.",
+        "section": "colors"
+      },
+      {
+        "name": "The Red-for-Faults Rule",
+        "body": "Red appears only on validation errors and the 404 sheet. It is never decoration, emphasis or a \"negative\" result colour.",
+        "section": "colors"
+      },
+      {
+        "name": "The Table-and-Sheet Rule",
+        "body": "Content sits on white sheets; the page background is always the green-grey table. Inverted sheets (night green) are the only dark surfaces.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lettering Rule",
+        "body": "Every label is caps at 72% width, weight 600, 0.07em tracking. Informational labels are never smaller than 0.7rem; the 0.6rem size belongs only to the aria-hidden zone marks on the sheet margin.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Family Rule",
+        "body": "Archivo is the only typeface. Hierarchy is made with the width axis and weight, never by adding a second family.",
+        "section": "typography"
+      },
+      {
+        "name": "The Result-in-View Rule",
+        "body": "On a phone the result title block must be visible in the first viewport: breadcrumb, H1, then the sheet with the result above the inputs.",
+        "section": "layout"
+      },
+      {
+        "name": "The Index-Not-Tiles Rule",
+        "body": "Collections of calculators or categories are ruled rows under a 1.5px frame line, never a grid of cards.",
+        "section": "layout"
+      },
+      {
+        "name": "The Flat Sheet Rule",
+        "body": "Anything lying on the table is flat. Only transient floating layers (dropdowns, docked panels, dialogs, the scroll button) cast a shadow.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Square Corner Rule",
+        "body": "No rounded rectangles. A curve is allowed only when it is a full circle with drafting meaning (detail callout, radio, centre mark).",
+        "section": "shapes"
+      }
     ],
     "dos": [
       "Do put every calculator on a Sheet with zone marks and a title block (drawing number, category, calculation note, clear action).",
