@@ -48,16 +48,16 @@ export default function BottomNav() {
         <div
           role="dialog"
           aria-label="Szukaj kalkulatora"
-          className="fixed inset-x-0 bottom-16 z-50 border-t-[1.5px] border-frame bg-paper px-3 pb-3 pt-2.5 shadow-[0_-12px_28px_-10px_rgba(8,59,51,0.3)]"
+          className="fixed inset-x-0 bottom-[4.5rem] z-50 mx-2 rounded-2xl border border-line bg-white px-3 pb-3 pt-2.5 shadow-[var(--shadow-float)]"
           style={{ marginBottom: "env(safe-area-inset-bottom)" }}
         >
           <div className="mb-2 flex items-center justify-between">
-            <p className="caps text-[0.7rem] text-ink-2">Szukaj kalkulatora</p>
+            <p className="text-[1rem] font-bold text-ink">Szukaj kalkulatora</p>
             <button
               type="button"
               onClick={() => setSearchOpen(false)}
               aria-label="Zamknij wyszukiwanie"
-              className="focus-ring -mr-1 flex h-9 w-9 items-center justify-center text-ink-2"
+              className="focus-ring -mr-1 flex h-10 w-10 items-center justify-center rounded-full text-ink-2 hover:bg-mist"
             >
               <X className="h-5 w-5" strokeWidth={1.75} aria-hidden />
             </button>
@@ -68,41 +68,41 @@ export default function BottomNav() {
 
       <nav
         aria-label="Nawigacja mobilna"
-        className="fixed inset-x-0 bottom-0 z-40 border-t-[1.5px] border-frame bg-paper"
+        className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-white shadow-[0_-8px_24px_-16px_rgba(4,38,31,0.4)]"
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
         <ul className="grid grid-cols-4">
-          {items.map((item, i) => {
+          {items.map((item) => {
             const active = !searchOpen && item.match(pathname ?? "");
             const Icon = item.icon;
             return (
-              <li key={item.href} className={i > 0 ? "border-l border-hair" : ""}>
+              <li key={item.href} className="">
                 <Link
                   href={item.href}
-                  className={`focus-ring relative flex h-16 flex-col items-center justify-center gap-1 ${
-                    active ? "text-green" : "text-ink-2"
-                  }`}
+                  className={`focus-ring flex h-[4.5rem] flex-col items-center justify-center gap-1 ${active ? "text-green-800" : "text-ink-3"}`}
                   aria-current={active ? "page" : undefined}
                 >
-                  {active && <span aria-hidden className="absolute inset-x-4 top-0 h-[3px] bg-green" />}
-                  <Icon className="h-5 w-5" strokeWidth={active ? 2.25 : 1.75} aria-hidden />
-                  <span className="caps text-[0.7rem]">{item.label}</span>
+                  
+                  <span className={`flex h-8 w-14 items-center justify-center rounded-full transition-colors duration-150 ${active ? "bg-green-100" : ""}`}>
+                    <Icon className="h-6 w-6" strokeWidth={active ? 2.5 : 2} aria-hidden />
+                  </span>
+                  <span className="text-[0.8125rem] font-bold">{item.label}</span>
                 </Link>
               </li>
             );
           })}
-          <li className="border-l border-hair">
+          <li>
             <button
               type="button"
               onClick={() => setSearchOpen((v) => !v)}
               aria-expanded={searchOpen}
-              className={`focus-ring relative flex h-16 w-full flex-col items-center justify-center gap-1 ${
-                searchOpen ? "text-green" : "text-ink-2"
-              }`}
+              className={`focus-ring flex h-[4.5rem] w-full flex-col items-center justify-center gap-1 ${searchOpen ? "text-green-800" : "text-ink-3"}`}
             >
-              {searchOpen && <span aria-hidden className="absolute inset-x-4 top-0 h-[3px] bg-green" />}
-              <Search className="h-5 w-5" strokeWidth={searchOpen ? 2.25 : 1.75} aria-hidden />
-              <span className="caps text-[0.7rem]">Szukaj</span>
+              
+              <span className={`flex h-8 w-14 items-center justify-center rounded-full transition-colors duration-150 ${searchOpen ? "bg-green-100" : ""}`}>
+                <Search className="h-6 w-6" strokeWidth={searchOpen ? 2.5 : 2} aria-hidden />
+              </span>
+              <span className="text-[0.8125rem] font-bold">Szukaj</span>
             </button>
           </li>
         </ul>

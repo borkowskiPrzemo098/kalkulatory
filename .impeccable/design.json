@@ -1,489 +1,176 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-25T18:23:04.689Z",
+  "generatedAt": "2026-09-25T12:00:00Z",
   "title": "Design System: Kalkulatory Online",
   "extensions": {
     "colorMeta": {
-      "green": {
-        "role": "primary",
-        "displayName": "Bottle Green Ink",
-        "canonical": "#0f6b5c",
-        "tonalRamp": [
-          "#062a24",
-          "#083b33",
-          "#0a4a40",
-          "#0f6b5c",
-          "#3d8a7c",
-          "#7fb3a8",
-          "#c2ddd6",
-          "#e2efeb"
-        ]
-      },
-      "frame": {
-        "role": "primary",
-        "displayName": "Drafting Frame Green",
-        "canonical": "#0b4a40",
-        "tonalRamp": [
-          "#041d19",
-          "#072f29",
-          "#0b4a40",
-          "#1a6356",
-          "#3f8174",
-          "#78a79d",
-          "#b7d1ca",
-          "#e4efec"
-        ]
-      },
-      "green-deep": {
-        "role": "primary",
-        "displayName": "Deep Bottle Green",
-        "canonical": "#0a4a40",
-        "tonalRamp": [
-          "#041d19",
-          "#072f29",
-          "#0a4a40",
-          "#1a6356",
-          "#3f8174",
-          "#78a79d",
-          "#b7d1ca",
-          "#e4efec"
-        ]
-      },
-      "green-night": {
-        "role": "primary",
-        "displayName": "Night Green",
-        "canonical": "#083b33",
-        "tonalRamp": [
-          "#031915",
-          "#083b33",
-          "#0f5147",
-          "#1e6a5e",
-          "#46877b",
-          "#7fada3",
-          "#bcd6cf",
-          "#e6f0ed"
-        ]
-      },
-      "green-tint": {
-        "role": "neutral",
-        "displayName": "Green Tint",
-        "canonical": "#e2efeb",
-        "tonalRamp": [
-          "#1d3a33",
-          "#3a5d55",
-          "#5e8279",
-          "#86a79f",
-          "#adc9c1",
-          "#cfe2dc",
-          "#e2efeb",
-          "#f4f9f7"
-        ]
-      },
-      "result-wash": {
-        "role": "neutral",
-        "displayName": "Result Wash",
-        "canonical": "color-mix(in srgb, var(--green-tint) 45%, white)",
-        "tonalRamp": [
-          "#2a3f3a",
-          "#4c645e",
-          "#728a84",
-          "#9bb0aa",
-          "#c3d4cf",
-          "#e2ece9",
-          "#f2f8f6",
-          "#fafcfb"
-        ]
-      },
-      "table": {
-        "role": "neutral",
-        "displayName": "Drafting Table",
-        "canonical": "#edf2f0",
-        "tonalRamp": [
-          "#1f2826",
-          "#3c4744",
-          "#5d6966",
-          "#828d8a",
-          "#a9b3b0",
-          "#cfd7d4",
-          "#edf2f0",
-          "#f7f9f8"
-        ]
-      },
-      "paper": {
-        "role": "neutral",
-        "displayName": "Sheet White",
-        "canonical": "#ffffff",
-        "tonalRamp": [
-          "#262626",
-          "#474747",
-          "#6b6b6b",
-          "#919191",
-          "#b8b8b8",
-          "#dedede",
-          "#f5f5f5",
-          "#ffffff"
-        ]
-      },
-      "ink": {
-        "role": "neutral",
-        "displayName": "Drawing Ink",
-        "canonical": "#0f2420",
-        "tonalRamp": [
-          "#0f2420",
-          "#233a35",
-          "#3c4f4a",
-          "#56696a",
-          "#7a8c88",
-          "#a3b2ae",
-          "#cfdad6",
-          "#edf2f0"
-        ]
-      },
-      "ink-2": {
-        "role": "neutral",
-        "displayName": "Secondary Ink",
-        "canonical": "#3c4f4a",
-        "tonalRamp": [
-          "#0f2420",
-          "#233a35",
-          "#3c4f4a",
-          "#56696a",
-          "#7a8c88",
-          "#a3b2ae",
-          "#cfdad6",
-          "#edf2f0"
-        ]
-      },
-      "ink-3": {
-        "role": "neutral",
-        "displayName": "Lettering Grey",
-        "canonical": "#56696a",
-        "tonalRamp": [
-          "#0f2420",
-          "#233a35",
-          "#3c4f4a",
-          "#56696a",
-          "#7a8c88",
-          "#a3b2ae",
-          "#cfdad6",
-          "#edf2f0"
-        ]
-      },
-      "hair": {
-        "role": "neutral",
-        "displayName": "Hairline",
-        "canonical": "#cfdad6",
-        "tonalRamp": [
-          "#0f2420",
-          "#3c4f4a",
-          "#56696a",
-          "#7a8c88",
-          "#9fb2ac",
-          "#b9c8c3",
-          "#cfdad6",
-          "#edf2f0"
-        ]
-      },
-      "hair-strong": {
-        "role": "neutral",
-        "displayName": "Strong Hairline",
-        "canonical": "#9fb2ac",
-        "tonalRamp": [
-          "#0f2420",
-          "#3c4f4a",
-          "#56696a",
-          "#7a8c88",
-          "#9fb2ac",
-          "#b9c8c3",
-          "#cfdad6",
-          "#edf2f0"
-        ]
-      },
-      "red": {
-        "role": "error",
-        "displayName": "Fault Red",
-        "canonical": "#b3261e",
-        "tonalRamp": [
-          "#410e0b",
-          "#601410",
-          "#8c1d18",
-          "#b3261e",
-          "#dc362e",
-          "#e46962",
-          "#f2b8b5",
-          "#fbecea"
-        ]
-      },
-      "red-tint": {
-        "role": "error",
-        "displayName": "Fault Tint",
-        "canonical": "#fbecea",
-        "tonalRamp": [
-          "#410e0b",
-          "#601410",
-          "#8c1d18",
-          "#b3261e",
-          "#dc362e",
-          "#e46962",
-          "#f2b8b5",
-          "#fbecea"
-        ]
-      }
+      "green-950": { "role": "primary", "displayName": "Pine Black", "canonical": "#04261f", "tonalRamp": ["#04261f", "#073d33", "#0a5246", "#0f6b5c", "#138571", "#bfe5d6", "#d9f0e7", "#eef8f4"] },
+      "green-900": { "role": "primary", "displayName": "Forest Night", "canonical": "#073d33", "tonalRamp": ["#04261f", "#073d33", "#0a5246", "#0f6b5c", "#138571", "#bfe5d6", "#d9f0e7", "#eef8f4"] },
+      "green-800": { "role": "primary", "displayName": "Deep Bottle", "canonical": "#0a5246", "tonalRamp": ["#04261f", "#073d33", "#0a5246", "#0f6b5c", "#138571", "#bfe5d6", "#d9f0e7", "#eef8f4"] },
+      "green-700": { "role": "primary", "displayName": "Bottle Green", "canonical": "#0f6b5c", "tonalRamp": ["#04261f", "#073d33", "#0a5246", "#0f6b5c", "#138571", "#bfe5d6", "#d9f0e7", "#eef8f4"] },
+      "green-600": { "role": "primary", "displayName": "Leaf", "canonical": "#138571", "tonalRamp": ["#04261f", "#073d33", "#0a5246", "#0f6b5c", "#138571", "#bfe5d6", "#d9f0e7", "#eef8f4"] },
+      "green-200": { "role": "primary", "displayName": "Sea Glass", "canonical": "#bfe5d6", "tonalRamp": ["#04261f", "#073d33", "#0a5246", "#0f6b5c", "#138571", "#bfe5d6", "#d9f0e7", "#eef8f4"] },
+      "green-100": { "role": "primary", "displayName": "Pale Mint", "canonical": "#d9f0e7", "tonalRamp": ["#04261f", "#073d33", "#0a5246", "#0f6b5c", "#138571", "#bfe5d6", "#d9f0e7", "#eef8f4"] },
+      "green-50": { "role": "primary", "displayName": "Mint Wash", "canonical": "#eef8f4", "tonalRamp": ["#04261f", "#073d33", "#0a5246", "#0f6b5c", "#138571", "#bfe5d6", "#d9f0e7", "#eef8f4"] },
+      "sun": { "role": "secondary", "displayName": "Sun", "canonical": "#ffd24d", "tonalRamp": ["#4a3600", "#7a5a00", "#a87c00", "#f2b90f", "#ffd24d", "#ffe082", "#ffedb8", "#fff8e0"] },
+      "sun-600": { "role": "secondary", "displayName": "Marigold", "canonical": "#f2b90f", "tonalRamp": ["#4a3600", "#7a5a00", "#a87c00", "#f2b90f", "#ffd24d", "#ffe082", "#ffedb8", "#fff8e0"] },
+      "bg": { "role": "neutral", "displayName": "Paper", "canonical": "#ffffff", "tonalRamp": ["#0b1f1a", "#2f4540", "#56706a", "#b4cdc4", "#d7e6e0", "#eef7f3", "#f7fbf9", "#ffffff"] },
+      "mist": { "role": "neutral", "displayName": "Mist", "canonical": "#eef7f3", "tonalRamp": ["#0b1f1a", "#2f4540", "#56706a", "#b4cdc4", "#d7e6e0", "#eef7f3", "#f7fbf9", "#ffffff"] },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#0b1f1a", "tonalRamp": ["#0b1f1a", "#2f4540", "#56706a", "#b4cdc4", "#d7e6e0", "#eef7f3", "#f7fbf9", "#ffffff"] },
+      "ink-2": { "role": "neutral", "displayName": "Ink Two", "canonical": "#2f4540", "tonalRamp": ["#0b1f1a", "#2f4540", "#56706a", "#b4cdc4", "#d7e6e0", "#eef7f3", "#f7fbf9", "#ffffff"] },
+      "ink-3": { "role": "neutral", "displayName": "Ink Three", "canonical": "#56706a", "tonalRamp": ["#0b1f1a", "#2f4540", "#56706a", "#b4cdc4", "#d7e6e0", "#eef7f3", "#f7fbf9", "#ffffff"] },
+      "line": { "role": "neutral", "displayName": "Line", "canonical": "#d7e6e0", "tonalRamp": ["#0b1f1a", "#2f4540", "#56706a", "#b4cdc4", "#d7e6e0", "#eef7f3", "#f7fbf9", "#ffffff"] },
+      "line-strong": { "role": "neutral", "displayName": "Line Strong", "canonical": "#b4cdc4", "tonalRamp": ["#0b1f1a", "#2f4540", "#56706a", "#b4cdc4", "#d7e6e0", "#eef7f3", "#f7fbf9", "#ffffff"] },
+      "red": { "role": "tertiary", "displayName": "Alarm Red", "canonical": "#c0271d", "tonalRamp": ["#3d0c09", "#6b1610", "#961f17", "#c0271d", "#e0564c", "#f09a93", "#f8cbc7", "#fdeceb"] },
+      "red-50": { "role": "tertiary", "displayName": "Alarm Wash", "canonical": "#fdeceb", "tonalRamp": ["#3d0c09", "#6b1610", "#961f17", "#c0271d", "#e0564c", "#f09a93", "#f8cbc7", "#fdeceb"] }
     },
     "typographyMeta": {
-      "display": {
-        "displayName": "Display",
-        "purpose": "Home H1 only. Archivo 750 at 92% width, balanced."
-      },
-      "headline": {
-        "displayName": "Headline",
-        "purpose": "Calculator H1, trust-band statement, 404 title."
-      },
-      "result": {
-        "displayName": "Result",
-        "purpose": "Primary value in the result title block, green ink, tabular figures."
-      },
-      "title": {
-        "displayName": "Title",
-        "purpose": "Home section heads at 80% width, paired with a caps link."
-      },
-      "subtitle": {
-        "displayName": "Subtitle",
-        "purpose": "Calculator page sections: how-to, examples, FAQ."
-      },
-      "body": {
-        "displayName": "Body",
-        "purpose": "Intro and long text, max 68ch."
-      },
-      "value": {
-        "displayName": "Value",
-        "purpose": "Numbers typed into fields; secondary result values at 1.05rem."
-      },
-      "label": {
-        "displayName": "Label",
-        "purpose": "Technical lettering: field labels, legends, title-block labels, drawing numbers, nav. Never below 0.7rem when informational; 0.6rem only for aria-hidden zone marks."
-      }
+      "display-hero": { "displayName": "Display, hero", "purpose": "Home H1 only." },
+      "display-result": { "displayName": "Display, result", "purpose": "Primary result number on calculator pages; must be the largest type on the page." },
+      "headline-page": { "displayName": "Headline, page", "purpose": "Calculator H1; listing, category and trust-band headings use neighbouring clamps up to 3.5rem." },
+      "headline-section": { "displayName": "Headline, section", "purpose": "Home section heads." },
+      "title-block": { "displayName": "Title, block", "purpose": "Calculator-page content section titles with a Pale Mint icon square." },
+      "title-tile": { "displayName": "Title, tile", "purpose": "Tile names (1.125rem mobile, 1.25rem desktop), secondary result values, formula lines." },
+      "body-lead": { "displayName": "Body lead", "purpose": "Calculator intro paragraph, max 68ch." },
+      "body": { "displayName": "Body", "purpose": "Base body size with tabular numerals." },
+      "label": { "displayName": "Label", "purpose": "Field labels, legends, buttons, chips, nav links." },
+      "help": { "displayName": "Help", "purpose": "Help text, breadcrumbs, disclaimers, secondary result labels." },
+      "caption": { "displayName": "Caption", "purpose": "Count badges, scale-bar boundaries, footer legal line." },
+      "nav-label": { "displayName": "Nav label", "purpose": "Bottom-nav labels only; floor of the ramp." }
     },
     "shadows": [
-      {
-        "name": "dropdown",
-        "value": "0 12px 28px -8px rgba(8,59,51,0.28)",
-        "purpose": "Search result list and no-result panel."
-      },
-      {
-        "name": "docked-panel",
-        "value": "0 -12px 28px -10px rgba(8,59,51,0.3)",
-        "purpose": "Mobile search panel docked above the bottom nav."
-      },
-      {
-        "name": "dialog",
-        "value": "0 16px 40px -12px rgba(8,59,51,0.35)",
-        "purpose": "Cookie consent dialog."
-      },
-      {
-        "name": "floating-control",
-        "value": "0 6px 16px -6px rgba(8,59,51,0.35)",
-        "purpose": "Scroll-to-top button."
-      },
-      {
-        "name": "inset-focus",
-        "value": "inset 0 0 0 1px var(--green)",
-        "purpose": "Thickens a field border on focus without layout shift (line, not elevation)."
-      },
-      {
-        "name": "inset-selected",
-        "value": "inset 0 0 0 1.5px var(--frame)",
-        "purpose": "Frame line around a selected option (line, not elevation)."
-      }
+      { "name": "tile", "value": "0 1px 2px rgba(7,61,51,0.06), 0 10px 28px -14px rgba(7,61,51,0.28)", "purpose": "Resting tiles and the input card." },
+      { "name": "tile-hover", "value": "0 2px 4px rgba(7,61,51,0.08), 0 18px 40px -16px rgba(7,61,51,0.38)", "purpose": "Linked tile hover, paired with a 3px lift." },
+      { "name": "float", "value": "0 20px 50px -18px rgba(4,38,31,0.45)", "purpose": "Result panel, hero demo, hero search, dropdowns, mobile search sheet, cookie banner." },
+      { "name": "bottom-bar", "value": "0 -8px 24px -16px rgba(4,38,31,0.4)", "purpose": "Fixed bottom navigation." },
+      { "name": "focus-glow", "value": "0 0 0 4px #d9f0e7", "purpose": "Field focus-within glow in Pale Mint." }
     ],
     "motion": [
-      {
-        "name": "state",
-        "value": "150ms",
-        "purpose": "Colour and border transitions on hover, focus, selection."
-      },
-      {
-        "name": "nudge",
-        "value": "200ms ease-out",
-        "purpose": "Arrow translate on index rows and links; FAQ plus rotates 45deg."
-      },
-      {
-        "name": "ease-draw",
-        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
-        "purpose": "Dimension line draw (520ms, scaleX from centre) and scale marker travel (500ms)."
-      },
-      {
-        "name": "arrows-in",
-        "value": "180ms ease-out 360ms",
-        "purpose": "Dimension arrowheads fade in after the line. Disabled with prefers-reduced-motion."
-      }
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Tile lift, result pop, scale-bar marker." },
+      { "name": "duration-color", "value": "150ms", "purpose": "Colour and border transitions on buttons, chips, fields." },
+      { "name": "duration-lift", "value": "200ms", "purpose": "Tile lift and shadow, arrow nudges, icon-square fills." },
+      { "name": "result-pop", "value": "320ms; translateY(6px) opacity 0.35 to none/1", "purpose": "Replays on every result value change; disabled under reduced motion." },
+      { "name": "duration-marker", "value": "500ms", "purpose": "Scale-bar marker sliding to a new value." }
     ],
     "breakpoints": [
-      {
-        "name": "sm",
-        "value": "640px"
-      },
-      {
-        "name": "md",
-        "value": "768px"
-      },
-      {
-        "name": "lg",
-        "value": "1024px"
-      }
+      { "name": "xs", "value": "420px" },
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
     ]
   },
   "components": [
     {
-      "name": "Drawing Sheet",
+      "name": "Sun Primary Button",
+      "kind": "button",
+      "refersTo": "button-sun",
+      "description": "Main action on a green field; Pine Black text on Sun.",
+      "html": "<div class=\"ds-green-field\"><a class=\"ds-btn-sun\" href=\"#\">Zobacz wszystkie 60 kalkulatorów <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14\"/><path d=\"m12 5 7 7-7 7\"/></svg></a></div>",
+      "css": ".ds-green-field { background: var(--green-900, #073d33); padding: 32px; border-radius: 24px; } .ds-btn-sun { display: inline-flex; align-items: center; gap: 10px; height: 56px; padding: 0 28px; border-radius: 16px; background: var(--sun, #ffd24d); color: var(--green-950, #04261f); font-family: Figtree, system-ui, sans-serif; font-size: 1.125rem; font-weight: 800; text-decoration: none; transition: background-color 150ms; } .ds-btn-sun:hover { background: var(--sun-600, #f2b90f); } .ds-btn-sun:focus-visible { outline: 3px solid var(--sun-600, #f2b90f); outline-offset: 2px; }"
+    },
+    {
+      "name": "Green Primary Button",
+      "kind": "button",
+      "refersTo": "button-green",
+      "description": "Primary action on white surfaces.",
+      "html": "<button class=\"ds-btn-green\" type=\"button\">Akceptuję</button>",
+      "css": ".ds-btn-green { height: 48px; padding: 0 20px; border: none; border-radius: 12px; background: var(--green-700, #0f6b5c); color: #fff; font-family: Figtree, system-ui, sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background-color 150ms; } .ds-btn-green:hover { background: var(--green-800, #0a5246); } .ds-btn-green:focus-visible { outline: 3px solid var(--sun-600, #f2b90f); outline-offset: 2px; }"
+    },
+    {
+      "name": "Outline Button",
+      "kind": "button",
+      "refersTo": "button-outline",
+      "description": "Secondary action such as Wyczyść or Odrzuć.",
+      "html": "<button class=\"ds-btn-outline\" type=\"button\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8\"/><path d=\"M3 3v5h5\"/></svg>Wyczyść</button>",
+      "css": ".ds-btn-outline { display: inline-flex; align-items: center; gap: 8px; height: 48px; padding: 0 20px; border: 2px solid var(--line, #d7e6e0); border-radius: 12px; background: #fff; color: var(--ink-2, #2f4540); font-family: Figtree, system-ui, sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: border-color 150ms, color 150ms; } .ds-btn-outline:hover { border-color: var(--green-700, #0f6b5c); color: var(--green-800, #0a5246); } .ds-btn-outline:focus-visible { outline: 3px solid var(--sun-600, #f2b90f); outline-offset: 2px; }"
+    },
+    {
+      "name": "Calculator Tile",
       "kind": "card",
-      "refersTo": "sheet",
-      "description": "The only container: cut-line outline, zone marks 1-4, 1.5px bottle-green frame.",
-      "html": "<div class=\"ds-sheet\"><div class=\"ds-sheet-zones\"><span>1</span><span>2</span><span>3</span><span>4</span></div><div class=\"ds-sheet-frame\"><p class=\"ds-caps\">Nr rysunku</p><p class=\"ds-sheet-title\">KO-001</p></div></div>",
-      "css": ".ds-sheet { position: relative; background: var(--paper, #fff); outline: 1px solid var(--hair, #cfdad6); padding: 20px 20px 20px; font-family: Archivo, system-ui, sans-serif; color: var(--ink, #0f2420); } .ds-sheet-zones { position: absolute; top: 0; left: 20px; right: 20px; height: 20px; display: flex; } .ds-sheet-zones span { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; color: var(--ink-3, #56696a); } .ds-sheet-zones span + span { border-left: 1px solid var(--hair-strong, #9fb2ac); } .ds-sheet-frame { border: 1.5px solid var(--frame, #0b4a40); padding: 16px 20px; } .ds-caps { margin: 0; font-size: 0.7rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3, #56696a); } .ds-sheet-title { margin: 2px 0 0; font-size: 0.875rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; }"
+      "refersTo": "tile",
+      "description": "Large tappable tile: filled icon square plus full calculator name, lifts on hover.",
+      "html": "<a class=\"ds-tile\" href=\"#\"><span class=\"ds-tile-icon\"><svg width=\"28\" height=\"28\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><line x1=\"19\" x2=\"5\" y1=\"5\" y2=\"19\"/><circle cx=\"6.5\" cy=\"6.5\" r=\"2.5\"/><circle cx=\"17.5\" cy=\"17.5\" r=\"2.5\"/></svg></span><span class=\"ds-tile-name\">Kalkulator procentów</span></a>",
+      "css": ".ds-tile { display: flex; flex-direction: column; gap: 16px; width: 200px; padding: 20px; background: #fff; border: 1px solid var(--line, #d7e6e0); border-radius: 20px; box-shadow: 0 1px 2px rgba(7,61,51,0.06), 0 10px 28px -14px rgba(7,61,51,0.28); text-decoration: none; transition: transform 200ms cubic-bezier(0.16,1,0.3,1), box-shadow 200ms cubic-bezier(0.16,1,0.3,1), border-color 200ms; } .ds-tile:hover { transform: translateY(-3px); box-shadow: 0 2px 4px rgba(7,61,51,0.08), 0 18px 40px -16px rgba(7,61,51,0.38); border-color: var(--green-200, #bfe5d6); } .ds-tile:focus-visible { outline: 3px solid var(--sun-600, #f2b90f); outline-offset: 2px; } .ds-tile-icon { display: flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 16px; background: var(--green-700, #0f6b5c); color: #fff; transition: background-color 200ms; } .ds-tile:hover .ds-tile-icon { background: var(--green-800, #0a5246); } .ds-tile-name { font-family: Figtree, system-ui, sans-serif; font-size: 1.25rem; font-weight: 700; line-height: 1.25; color: var(--ink, #0b1f1a); }"
     },
     {
-      "name": "Dimension Field",
+      "name": "Result Panel",
+      "kind": "custom",
+      "refersTo": "result-panel",
+      "description": "Signature component: full Bottle Green panel with the largest number on the page.",
+      "html": "<div class=\"ds-result\" aria-live=\"polite\"><p class=\"ds-result-label\">Kwota brutto</p><p class=\"ds-result-value\">1 230,00 zł</p><dl class=\"ds-result-grid\"><div class=\"ds-result-sub\"><dt>Netto</dt><dd>1 000,00 zł</dd></div><div class=\"ds-result-sub\"><dt>VAT 23%</dt><dd>230,00 zł</dd></div></dl></div>",
+      "css": ".ds-result { max-width: 420px; padding: 28px; border-radius: 24px; background: var(--green-700, #0f6b5c); color: #fff; box-shadow: 0 20px 50px -18px rgba(4,38,31,0.45); font-family: Figtree, system-ui, sans-serif; font-variant-numeric: tabular-nums; } .ds-result-label { margin: 0; font-size: 1.0625rem; font-weight: 600; color: rgba(255,255,255,0.85); } .ds-result-value { margin: 4px 0 0; font-size: clamp(2.75rem, 11vw, 4.25rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.04; animation: ds-pop 320ms cubic-bezier(0.16,1,0.3,1); } .ds-result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 20px 0 0; } .ds-result-sub { padding: 12px 16px; border-radius: 16px; background: rgba(255,255,255,0.12); } .ds-result-sub dt { font-size: 0.9375rem; font-weight: 500; color: rgba(255,255,255,0.8); } .ds-result-sub dd { margin: 2px 0 0; font-size: 1.25rem; font-weight: 700; } @keyframes ds-pop { from { transform: translateY(6px); opacity: 0.35; } to { transform: none; opacity: 1; } } @media (prefers-reduced-motion: reduce) { .ds-result-value { animation: none; } }"
+    },
+    {
+      "name": "Number Field",
       "kind": "input",
-      "refersTo": "field",
-      "description": "Numeric field with unit cell and a dimension line under it.",
-      "html": "<div class=\"ds-field-wrap\"><label class=\"ds-field-label\" for=\"ds-f\">Kwota netto</label><div class=\"ds-field\"><input id=\"ds-f\" value=\"1000\" inputmode=\"decimal\"><span class=\"ds-field-unit\">zł</span></div><div class=\"ds-dim\"><i class=\"ds-dim-l\"></i><i class=\"ds-dim-line\"></i><i class=\"ds-dim-r\"></i></div></div>",
-      "css": ".ds-field-wrap { font-family: Archivo, system-ui, sans-serif; max-width: 320px; } .ds-field-label { display: block; margin-bottom: 6px; font-size: 0.7rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-2, #3c4f4a); } .ds-field { display: flex; height: 48px; border: 1px solid var(--hair-strong, #9fb2ac); background: var(--paper, #fff); transition: border-color 150ms, box-shadow 150ms; } .ds-field:hover { border-color: var(--ink-3, #56696a); } .ds-field:focus-within { border-color: var(--green, #0f6b5c); box-shadow: inset 0 0 0 1px var(--green, #0f6b5c); } .ds-field input { flex: 1; min-width: 0; border: 0; outline: none; background: transparent; padding: 0 14px; font: inherit; font-size: 1.125rem; font-weight: 600; color: var(--ink, #0f2420); font-variant-numeric: tabular-nums; caret-color: var(--green, #0f6b5c); } .ds-field-unit { display: flex; align-items: center; padding: 0 12px; border-left: 1px solid var(--hair, #cfdad6); font-size: 0.72rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; color: var(--green, #0f6b5c); } .ds-dim { position: relative; height: 14px; margin-top: 6px; } .ds-dim-l, .ds-dim-r { position: absolute; top: 0; width: 1px; height: 100%; background: var(--green, #0f6b5c); } .ds-dim-l { left: 0; } .ds-dim-r { right: 0; } .ds-dim-line { position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: var(--green, #0f6b5c); }"
+      "refersTo": "input-field",
+      "description": "56px field with bold value, unit badge and green focus with mint glow.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-amount\">Kwota netto</label><div class=\"ds-field\"><input id=\"ds-amount\" inputmode=\"decimal\" placeholder=\"np. 1000\" value=\"1000\"><span class=\"ds-unit\">zł</span></div>",
+      "css": ".ds-field-label { display: block; margin-bottom: 8px; font-family: Figtree, system-ui, sans-serif; font-size: 1rem; font-weight: 600; color: var(--ink, #0b1f1a); } .ds-field { display: flex; align-items: center; width: 320px; height: 56px; border: 2px solid var(--line, #d7e6e0); border-radius: 12px; background: #fff; transition: border-color 150ms, box-shadow 150ms; } .ds-field:hover { border-color: var(--line-strong, #b4cdc4); } .ds-field:focus-within { border-color: var(--green-700, #0f6b5c); box-shadow: 0 0 0 4px var(--green-100, #d9f0e7); } .ds-field input { flex: 1; min-width: 0; height: 100%; padding: 0 16px; border: none; background: transparent; outline: none; font-family: Figtree, system-ui, sans-serif; font-size: 1.25rem; font-weight: 700; color: var(--ink, #0b1f1a); } .ds-field input::placeholder { font-weight: 400; color: var(--ink-3, #56706a); } .ds-unit { margin-right: 8px; padding: 6px 10px; border-radius: 8px; background: var(--green-50, #eef8f4); font-family: Figtree, system-ui, sans-serif; font-size: 1rem; font-weight: 700; color: var(--green-800, #0a5246); }"
     },
     {
-      "name": "Segmented Choice",
+      "name": "Option Buttons",
       "kind": "chip",
-      "refersTo": "option-segment",
-      "description": "Short option set; selected = green tint plus 1.5px inset frame, never solid green.",
-      "html": "<div class=\"ds-seg\"><button class=\"ds-seg-opt ds-seg-on\">23%</button><button class=\"ds-seg-opt\">8%</button><button class=\"ds-seg-opt\">5%</button></div>",
-      "css": ".ds-seg { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); border: 1px solid var(--hair-strong, #9fb2ac); font-family: Archivo, system-ui, sans-serif; max-width: 320px; } .ds-seg-opt { min-height: 48px; border: 0; border-radius: 0; background: var(--paper, #fff); color: var(--ink-2, #3c4f4a); font: inherit; font-size: 0.875rem;5; cursor: pointer; transition: background-color 150ms, color 150ms; } .ds-seg-opt + .ds-seg-opt { border-left: 1px solid var(--hair-strong, #9fb2ac); } .ds-seg-opt:hover { background: var(--table, #edf2f0); color: var(--ink, #0f2420); } .ds-seg-opt:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: -2px; } .ds-seg-on, .ds-seg-on:hover { background: var(--green-tint, #e2efeb); color: var(--ink, #0f2420); font-weight: 600; box-shadow: inset 0 0 0 1.5px var(--frame, #0b4a40); }"
+      "refersTo": "option-button",
+      "description": "Short option sets as a wrapping row of big buttons; selected is solid Bottle Green.",
+      "html": "<div class=\"ds-options\" role=\"radiogroup\"><button class=\"ds-option\" type=\"button\">5%</button><button class=\"ds-option\" type=\"button\">8%</button><button class=\"ds-option is-selected\" type=\"button\" aria-pressed=\"true\">23%</button></div>",
+      "css": ".ds-options { display: flex; flex-wrap: wrap; gap: 8px; width: 320px; } .ds-option { flex: 1; min-width: 72px; min-height: 48px; padding: 10px 16px; border: 2px solid var(--line, #d7e6e0); border-radius: 12px; background: #fff; color: var(--ink-2, #2f4540); font-family: Figtree, system-ui, sans-serif; font-size: 1rem; font-weight: 600; cursor: pointer; transition: background-color 150ms, border-color 150ms, color 150ms; } .ds-option:hover { border-color: var(--green-200, #bfe5d6); background: var(--green-50, #eef8f4); color: var(--ink, #0b1f1a); } .ds-option.is-selected { border-color: var(--green-700, #0f6b5c); background: var(--green-700, #0f6b5c); color: #fff; } .ds-option:focus-visible { outline: 3px solid var(--sun-600, #f2b90f); outline-offset: 2px; }"
     },
     {
-      "name": "Result Title Block",
-      "kind": "custom",
-      "refersTo": "result-zone",
-      "description": "Result wash zone with caps label, framed box, green result lettering and dimension line, secondary cells below.",
-      "html": "<div class=\"ds-res\"><p class=\"ds-res-k\">Wynik</p><div class=\"ds-res-box\"><div class=\"ds-res-main\"><p class=\"ds-res-lab\">Kwota brutto</p><p class=\"ds-res-val\">1 230,00 zł</p><div class=\"ds-res-dim\"></div></div><dl class=\"ds-res-grid\"><div><dt>VAT</dt><dd>230,00 zł</dd></div><div><dt>Stawka</dt><dd>23%</dd></div></dl></div></div>",
-      "css": ".ds-res { background: #f2f8f6; padding: 20px 16px; font-family: Archivo, system-ui, sans-serif; max-width: 380px; } .ds-res-k, .ds-res-lab, .ds-res-grid dt { margin: 0; font-size: 0.7rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; } .ds-res-k { color: var(--green, #0f6b5c); margin-bottom: 10px; } .ds-res-lab, .ds-res-grid dt { color: var(--ink-3, #56696a); } .ds-res-box { border: 1.5px solid var(--frame, #0b4a40); } .ds-res-main { padding: 12px 16px 16px; } .ds-res-val { margin: 8px 0 0; font-size: clamp(2.1rem, 8vw, 3.25rem); font-weight: 750; font-stretch: 92%; letter-spacing: -0.025em; line-height: 1.02; color: var(--green, #0f6b5c); font-variant-numeric: tabular-nums; } .ds-res-dim { height: 14px; margin-top: 12px; border-left: 1px solid var(--green, #0f6b5c); border-right: 1px solid var(--green, #0f6b5c); background: linear-gradient(var(--green, #0f6b5c), var(--green, #0f6b5c)) center / 100% 1px no-repeat; } .ds-res-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin: 0; border-top: 1px solid var(--frame, #0b4a40); background: var(--hair-strong, #9fb2ac); } .ds-res-grid div { background: var(--paper, #fff); padding: 12px 16px; } .ds-res-grid dd { margin: 4px 0 0; font-size: 1.05rem; font-weight: 600; color: var(--ink, #0f2420); }"
+      "name": "Hero Search",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "64px search on the green hero with an inset Sun submit button.",
+      "html": "<div class=\"ds-hero\"><form class=\"ds-search\" role=\"search\"><svg class=\"ds-search-icon\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input type=\"search\" placeholder=\"Np. VAT, BMI, raty kredytu…\" aria-label=\"Szukaj kalkulatora\"><button type=\"submit\">Szukaj</button></form></div>",
+      "css": ".ds-hero { padding: 32px; background: var(--green-800, #0a5246); border-radius: 24px; } .ds-search { position: relative; display: flex; align-items: center; max-width: 520px; } .ds-search-icon { position: absolute; left: 20px; color: var(--green-700, #0f6b5c); pointer-events: none; } .ds-search input { width: 100%; height: 64px; padding: 0 112px 0 56px; border: 2px solid transparent; border-radius: 16px; background: #fff; box-shadow: 0 20px 50px -18px rgba(4,38,31,0.45); outline: none; font-family: Figtree, system-ui, sans-serif; font-size: 1.125rem; font-weight: 500; color: var(--ink, #0b1f1a); transition: border-color 150ms; } .ds-search input:focus { border-color: var(--sun, #ffd24d); } .ds-search button { position: absolute; top: 8px; right: 8px; bottom: 8px; padding: 0 20px; border: none; border-radius: 12px; background: var(--sun, #ffd24d); color: var(--green-950, #04261f); font-family: Figtree, system-ui, sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: background-color 150ms; } .ds-search button:hover { background: var(--sun-600, #f2b90f); } .ds-search button:focus-visible { outline: 3px solid var(--sun-600, #f2b90f); outline-offset: 2px; }"
     },
     {
-      "name": "Parts List Row",
-      "kind": "nav",
-      "refersTo": "index-row-hover",
-      "description": "Drawing-index row: drawing number, name and description, category, green arrow.",
-      "html": "<ul class=\"ds-parts\"><li><a href=\"#\"><span class=\"ds-parts-no\">KO-004</span><span><span class=\"ds-parts-name\">Kalkulator VAT</span><span class=\"ds-parts-desc\">Netto, brutto i kwota podatku.</span></span><span class=\"ds-parts-arrow\">&rarr;</span></a></li><li><a href=\"#\"><span class=\"ds-parts-no\">KO-011</span><span><span class=\"ds-parts-name\">Raty kredytu</span><span class=\"ds-parts-desc\">Rata równa i malejąca.</span></span><span class=\"ds-parts-arrow\">&rarr;</span></a></li></ul>",
-      "css": ".ds-parts { list-style: none; margin: 0; padding: 0; border-top: 1.5px solid var(--frame, #0b4a40); font-family: Archivo, system-ui, sans-serif; max-width: 560px; } .ds-parts li { border-bottom: 1px solid var(--hair, #cfdad6); } .ds-parts a { display: grid; grid-template-columns: 3.75rem minmax(0,1fr) auto; align-items: baseline; gap: 0 20px; padding: 16px 12px; text-decoration: none; transition: background-color 150ms; } .ds-parts a:hover { background: var(--green-tint, #e2efeb); } .ds-parts a:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: 2px; } .ds-parts-no { font-size: 0.72rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3, #56696a); } .ds-parts-name { display: block; font-size: 1.06rem; font-weight: 600; color: var(--ink, #0f2420); } .ds-parts-desc { display: block; margin-top: 4px; font-size: 0.875rem; line-height: 1.375; color: var(--ink-2, #3c4f4a); } .ds-parts a:hover .ds-parts-no, .ds-parts a:hover .ds-parts-name { color: var(--green, #0f6b5c); } .ds-parts-arrow { align-self: center; color: var(--green, #0f6b5c); transition: transform 200ms ease-out; } .ds-parts a:hover .ds-parts-arrow { transform: translateX(4px); }"
-    },
-    {
-      "name": "Primary Button",
-      "kind": "button",
-      "refersTo": "button-primary",
-      "description": "The one filled action per view; square, bottle green.",
-      "html": "<button class=\"ds-btn\">Wszystkie kalkulatory &rarr;</button>",
-      "css": ".ds-btn { height: 48px; padding: 0 20px; border: 0; border-radius: 0; background: var(--green, #0f6b5c); color: #fff; font-family: Archivo, system-ui, sans-serif; font-size: 0.875rem;8; font-weight: 600; cursor: pointer; transition: background-color 150ms; } .ds-btn:hover { background: var(--green-deep, #0a4a40); } .ds-btn:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: 2px; }"
-    },
-    {
-      "name": "Ghost Button",
-      "kind": "button",
-      "refersTo": "button-ghost",
-      "description": "Secondary action beside the primary; hair-strong border on paper.",
-      "html": "<button class=\"ds-btn-ghost\">Odrzuć</button>",
-      "css": ".ds-btn-ghost { height: 44px; padding: 0 16px; border: 1px solid var(--hair-strong, #9fb2ac); border-radius: 0; background: var(--paper, #fff); color: var(--ink, #0f2420); font-family: Archivo, system-ui, sans-serif; font-size: 0.875rem; font-weight: 600; cursor: pointer; } .ds-btn-ghost:hover { border-color: var(--ink-3, #56696a); background: var(--table, #edf2f0); } .ds-btn-ghost:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: 2px; }"
-    },
-    {
-      "name": "Hatched Ad Slot",
-      "kind": "custom",
-      "refersTo": "ad-slot",
-      "description": "Deliberately empty field in -45deg section hatching.",
-      "html": "<div class=\"ds-ad\"><span>Reklama</span></div>",
-      "css": ".ds-ad { display: flex; align-items: center; justify-content: center; min-height: 96px; border: 1px solid var(--hair-strong, #9fb2ac); background-image: repeating-linear-gradient(-45deg, var(--hair, #cfdad6) 0 1px, transparent 1px 7px); font-family: Archivo, system-ui, sans-serif; } .ds-ad span { background: var(--table, #edf2f0); padding: 0 8px; font-size: 0.7rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; color: var(--ink-3, #56696a); }"
-    },
-    {
-      "name": "Bottom Nav",
+      "name": "Bottom Navigation",
       "kind": "nav",
       "refersTo": "nav-bottom",
-      "description": "Mobile fixed bar; active cell = green text and a 3px green top marker.",
-      "html": "<nav class=\"ds-bnav\"><a class=\"ds-bnav-on\" href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.25\"><rect x=\"4\" y=\"2\" width=\"16\" height=\"20\"/><path d=\"M8 6h8M8 11h2M14 11h2M8 15h2M14 15h2M8 19h2M14 19h2\"/></svg><span>Kalkulatory</span></a><a href=\"#\"><svg viewBox=\"0 0 24 24\" width=\"20\" height=\"20\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.75\"><circle cx=\"11\" cy=\"11\" r=\"7\"/><path d=\"m21 21-4.3-4.3\"/></svg><span>Szukaj</span></a></nav>",
-      "css": ".ds-bnav { display: grid; grid-template-columns: 1fr 1fr; border-top: 1.5px solid var(--frame, #0b4a40); background: var(--paper, #fff); font-family: Archivo, system-ui, sans-serif; max-width: 360px; } .ds-bnav a { position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; height: 64px; color: var(--ink-2, #3c4f4a); text-decoration: none; } .ds-bnav a + a { border-left: 1px solid var(--hair, #cfdad6); } .ds-bnav a span { font-size: 0.7rem; font-weight: 600; font-stretch: 72%; letter-spacing: 0.07em; text-transform: uppercase; } .ds-bnav a:focus-visible { outline: 2px solid var(--green, #0f6b5c); outline-offset: 2px; } .ds-bnav-on { color: var(--green, #0f6b5c) !important; } .ds-bnav-on::before { content: ''; position: absolute; top: 0; left: 16px; right: 16px; height: 3px; background: var(--green, #0f6b5c); }"
+      "description": "Fixed 72px phone nav; active item gets a Pale Mint pill and Deep Bottle colour.",
+      "html": "<nav class=\"ds-bnav\" aria-label=\"Nawigacja mobilna\"><a href=\"#\" class=\"ds-bnav-item is-active\" aria-current=\"page\"><span class=\"ds-bnav-pill\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8\"/><path d=\"M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z\"/></svg></span>Start</a><a href=\"#\" class=\"ds-bnav-item\"><span class=\"ds-bnav-pill\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\"/><line x1=\"8\" x2=\"16\" y1=\"6\" y2=\"6\"/><line x1=\"16\" x2=\"16\" y1=\"14\" y2=\"18\"/><path d=\"M8 10h.01M12 10h.01M16 10h.01M8 14h.01M12 14h.01M8 18h.01M12 18h.01\"/></svg></span>Kalkulatory</a><a href=\"#\" class=\"ds-bnav-item\"><span class=\"ds-bnav-pill\"><svg width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg></span>Szukaj</a></nav>",
+      "css": ".ds-bnav { display: grid; grid-template-columns: repeat(3, 1fr); width: 360px; background: #fff; border-top: 1px solid var(--line, #d7e6e0); box-shadow: 0 -8px 24px -16px rgba(4,38,31,0.4); } .ds-bnav-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; height: 72px; color: var(--ink-3, #56706a); font-family: Figtree, system-ui, sans-serif; font-size: 0.8125rem; font-weight: 700; text-decoration: none; } .ds-bnav-item.is-active { color: var(--green-800, #0a5246); } .ds-bnav-pill { display: flex; align-items: center; justify-content: center; width: 56px; height: 32px; border-radius: 999px; transition: background-color 150ms; } .ds-bnav-item.is-active .ds-bnav-pill { background: var(--green-100, #d9f0e7); } .ds-bnav-item:hover { color: var(--green-800, #0a5246); } .ds-bnav-item:focus-visible { outline: 3px solid var(--sun-600, #f2b90f); outline-offset: -3px; }"
     }
   ],
   "narrative": {
-    "northStar": "The Drafting Table",
-    "overview": "Every page is a drafting table (a pale green-grey surface) with white drawing sheets laid on it. A calculator is one sheet: a cut line, a double frame in bottle green, zone marks 1–4 across the top and A–C down the side, the inputs drawn as dimensions, and the result lettered into a title block with a dimension line under it. The formula sits in an annotation zone marked with a circled detail letter, not in a tooltip or a separate page. Lists of calculators and categories are parts lists and drawing indexes: ruled rows with a drawing number, never a grid of cards.\n\nThe system is dense, flat and exact. Hierarchy comes from one typeface worked through its width axis (condensed caps for lettering, near-normal width for headlines), from line weight (1px hairlines against a 1.5px frame line), and from one ink colour. Green is the ink of the drawing: results, dimension lines, frames, links and arrows. Red appears only when the drawing is wrong. The inverted sheet, white lines on night green, is reserved for the footer and the home trust band.\n\nThe world rejects the white-card grid with icon tiles and the search-on-gradient hero. Its home hero is a sheet with the H1 and search on the left and a working \"15% z 250\" mini-sheet on the right.",
+    "northStar": "The Pocket Calculator App",
+    "overview": "The portal behaves like a well-made phone app, not a document. Every route into a calculator is a big, tappable tile with a solid green icon square and the full calculator name; every calculator answers with one huge white number on a full bottle-green panel. The system is built for someone standing in a shop or halfway through an invoice: large type, few words, strong colour fields that tell you where you are at a glance.\n\nPages alternate full-bleed bands: deep green fields (hero, category header, trust band, footer, the result panel, the formula card) against white and mint (`mist`) sections that carry the tiles, forms and reading content. One colour family does all the work; a sunny yellow appears only where an action or emphasis must pop off the green. Figtree carries everything from the 800-weight display numbers down to 13px bottom-nav labels, with tabular numerals on by default so numbers never jitter while typing.\n\nThe owner rejected the previous pale, hairline, small-caps, text-list world as looking like a \"hospital portal\" or an \"unfinished template\". This audience wants big targets with icons, strong colour, large type and little text; the system is tuned for that.",
     "keyCharacteristics": [
-      "White sheets with double bottle-green frame and zone marks on a green-grey table.",
-      "One typeface (Archivo variable) with width axis: 72% caps lettering, 80% section heads, 92% display.",
-      "Sharp corners everywhere; circles only as drawing callouts and radio dots.",
-      "Green is ink, never a selected-state fill; red only for errors.",
-      "Parts lists and drawing indexes instead of cards; 45° section hatching for empty and ad fields.",
-      "A dimension line under every numeric value, drawn from the centre outwards."
+      "One bottle-green family from near-black `green-950` to mint `green-50`, plus sun yellow as the single warm accent.",
+      "Big white tiles (20px radius, soft green-tinted shadow, 3px lift on hover) with a 56px green icon square and a bold name.",
+      "The result number is the largest element on every calculator page, white on full green.",
+      "Full-bleed green fields alternate with white and mint sections; no pale grey page chrome.",
+      "Every interactive target is at least 44px tall; inputs and primary controls are 48-64px."
     ],
     "rules": [
-      {
-        "name": "The Ink-of-Record Rule",
-        "body": "Green marks what the drawing states: results, lines, affordances. A selected option is green-tint with a 1.5px inset frame line, never a solid green fill. Solid green fills are limited to the active band of a result scale, the 3px active marker in the bottom nav, and the single primary button.",
-        "section": "colors"
-      },
-      {
-        "name": "The Red-for-Faults Rule",
-        "body": "Red appears only on validation errors and the 404 sheet. It is never decoration, emphasis or a \"negative\" result colour.",
-        "section": "colors"
-      },
-      {
-        "name": "The Table-and-Sheet Rule",
-        "body": "Content sits on white sheets; the page background is always the green-grey table. Inverted sheets (night green) are the only dark surfaces.",
-        "section": "colors"
-      },
-      {
-        "name": "The Lettering Rule",
-        "body": "Every label is caps at 72% width, weight 600, 0.07em tracking. Informational labels are never smaller than 0.7rem; the 0.6rem size belongs only to the aria-hidden zone marks on the sheet margin.",
-        "section": "typography"
-      },
-      {
-        "name": "The One Family Rule",
-        "body": "Archivo is the only typeface. Hierarchy is made with the width axis and weight, never by adding a second family.",
-        "section": "typography"
-      },
-      {
-        "name": "The Result-in-View Rule",
-        "body": "On a phone the result title block must be visible in the first viewport: breadcrumb, H1, then the sheet with the result above the inputs.",
-        "section": "layout"
-      },
-      {
-        "name": "The Index-Not-Tiles Rule",
-        "body": "Collections of calculators or categories are ruled rows under a 1.5px frame line, never a grid of cards.",
-        "section": "layout"
-      },
-      {
-        "name": "The Flat Sheet Rule",
-        "body": "Anything lying on the table is flat. Only transient floating layers (dropdowns, docked panels, dialogs, the scroll button) cast a shadow.",
-        "section": "elevation"
-      },
-      {
-        "name": "The Square Corner Rule",
-        "body": "No rounded rectangles. A curve is allowed only when it is a full circle with drafting meaning (detail callout, radio, centre mark).",
-        "section": "shapes"
-      }
+      { "name": "The One Family Rule", "body": "Every surface, border and tint comes from the bottle-green ramp or its green-tinted neutrals. No blues, purples, greys or second brand hues.", "section": "colors" },
+      { "name": "The Sun On Green Rule", "body": "Sun yellow appears on or beside green fields, for the one primary action or the one emphasised phrase. Text on Sun is always Pine Black. On white surfaces the primary action is Bottle Green, not Sun.", "section": "colors" },
+      { "name": "The Full Field Rule", "body": "Hero, category header, trust band, result panel, formula card and footer are solid green fields edge to edge (or full-bleed panels), never tinted outlines or pale washes.", "section": "colors" },
+      { "name": "The Number Is King Rule", "body": "On a calculator page the primary result number is the largest type on screen (result max 4.25rem vs H1 max 3rem). No heading, promo or ad may outsize it.", "section": "typography" },
+      { "name": "The No Kicker Rule", "body": "Headings stand alone. No eyebrow, kicker, small-caps label or uppercase tag above any heading.", "section": "typography" },
+      { "name": "The 13px Floor Rule", "body": "Nothing renders below 0.8125rem, and that size is reserved for bottom-nav labels. Everything a user reads to act is 1rem or larger.", "section": "typography" },
+      { "name": "The Lift On Touch Rule", "body": "Linked tiles rise 3px and deepen their shadow on hover (200ms, ease-out-expo). Static containers do not move. Reduced motion removes the lift entirely.", "section": "elevation" }
     ],
     "dos": [
-      "Do put every calculator on a Sheet with zone marks and a title block (drawing number, category, calculation note, clear action).",
-      "Do draw a dimension line under every numeric input and under a single-value result.",
-      "Do letter all labels in 72%-width caps at 600, 0.07em, at least 0.7rem.",
-      "Do mark selection with green-tint plus a 1.5px inset frame line, and focus with green (outline or 1px inset).",
-      "Do keep the formula and first example inside the sheet's annotation zone.",
-      "Do list calculators and categories as ruled index rows with drawing numbers or zone codes and a trailing green arrow.",
-      "Do use -45° hatching for fields that are intentionally empty: ad slots, the pre-input result, inactive scale bands.",
-      "Do use the inverted night-green sheet for the footer and the home trust band."
+      "Do route to every calculator through a tile with a filled icon square and the full calculator name.",
+      "Do make the primary result number the largest element on a calculator page, white on Bottle Green, and place the result panel above the fields on phones.",
+      "Do alternate full green fields with white and Mist sections so each band reads at a glance.",
+      "Do use Sun only for the main action or the emphasised phrase on green, with Pine Black text on it.",
+      "Do render short option sets as a wrapping row of big buttons, with the selected one in solid Bottle Green.",
+      "Do keep every tappable target at least 44px tall and every readable string at 1rem or more (13px only for bottom-nav labels).",
+      "Do use the documented type sizes above; add a new size only by adding it to this ramp.",
+      "Do tint every shadow with the green family and keep it soft and diffuse."
     ],
     "donts": [
-      "Don't fill a selected option, tab or chip with solid green.",
-      "Don't use red for anything except errors.",
-      "Don't round corners; the only curves are circles with drafting meaning (detail callout, radio dot, centre mark).",
-      "Don't build card grids or icon tiles for collections; use the index rows.",
-      "Don't put a shadow on a sheet, field, table or list; shadows belong only to floating layers.",
-      "Don't add a second typeface or a system display face.",
-      "Don't set a caps line above a page or section heading as a kicker; caps lettering labels a field, zone, cell or list, not a headline.",
-      "Don't let an ad slot or any other block sit between the H1 and the calculator sheet on mobile."
+      "Don't return to the rejected world: pale surfaces, hairline rules, small caps, tiny labels and text-only lists read as a \"hospital portal\" or an \"unfinished template\".",
+      "Don't put an eyebrow, kicker or uppercase label above any heading.",
+      "Don't add descriptions or clamped blurbs to calculator tiles; icon plus full name only.",
+      "Don't render placeholder ad boxes; ad slots output nothing until AdSense is configured.",
+      "Don't introduce a second hue family (blue, purple, grey) or use Sun as a large background on white.",
+      "Don't let any heading, promo or ad outsize or push down the result panel on mobile.",
+      "Don't use emoji or text glyphs as icons, and don't show a calculator or category icon without its filled rounded square.",
+      "Don't use hard offset shadows or black shadows."
     ]
   }
 }

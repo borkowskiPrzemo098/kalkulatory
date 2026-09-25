@@ -13,18 +13,17 @@ export const metadata: Metadata = {
 
 export default function KategoriePage() {
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-16 pt-6 sm:px-6 sm:pt-10">
-      <Breadcrumbs items={[{ href: "/", label: "Start" }, { href: "/kategorie", label: "Kategorie" }]} />
-
-      <header className="mt-4 max-w-3xl">
-        <h1 className="display text-[clamp(2rem,6vw,3.25rem)] text-ink">Kategorie kalkulatorów</h1>
-        <p className="mt-3 text-[1.05rem] leading-relaxed text-ink-2">
-          {calculators.length} kalkulatorów w {categories.length} kategoriach. Wybierz dziedzinę, żeby zobaczyć
-          wszystkie narzędzia, które do niej należą.
-        </p>
+    <div>
+      <header className="bg-mist">
+        <div className="mx-auto max-w-6xl px-4 pb-8 pt-5 sm:px-6 sm:pb-10 sm:pt-8">
+          <Breadcrumbs items={[{ href: "/", label: "Start" }, { href: "/kategorie", label: "Kategorie" }]} />
+          <h1 className="display mt-5 text-[clamp(2rem,7vw,3.25rem)] text-ink">Kategorie kalkulatorów</h1>
+          <p className="mt-2 text-[1.125rem] text-ink-2">
+            {calculators.length} kalkulatorów w {categories.length} kategoriach. Wybierz, co chcesz policzyć.
+          </p>
+        </div>
       </header>
-
-      <div className="mt-10">
+      <div className="mx-auto max-w-6xl px-4 pb-16 pt-8 sm:px-6">
         <CategoryGrid withDescriptions />
       </div>
     </div>

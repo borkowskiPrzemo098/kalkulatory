@@ -12,43 +12,38 @@ function countLabel(n: number) {
   return `${n} kalkulatorów`;
 }
 
-/**
- * Spis arkuszy: kategorie jako wiersze tej samej siatki etykiet co wykaz kalkulatorów
- * (strefa | nazwa i liczba | przykładowe arkusze | strzałka).
- */
+/** Kategorie jako duże kafle z ikoną i liczbą kalkulatorów. */
 export default function CategoryGrid({ withDescriptions = false }: { withDescriptions?: boolean }) {
   return (
-    <ul className="border-t-[1.5px] border-frame">
+    <ul className="grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-3">
       {categories.map((cat, i) => {
-        const items = calculators.filter((c) => c.category === cat.slug);
+        const count = calculators.filter((c) => c.category === cat.slug).length;
         const Icon = categoryIcons[cat.slug];
-        const zone = `${"ABC"[Math.floor(i / 3)]}${(i % 3) + 1}`;
-        const samples = items.slice(0, 3).map((c) => c.shortName ?? c.name.replace(/^Kalkulator\s+/i, ""));
         return (
-          <li key={cat.slug} className="border-b border-hair">
+          <li
+            key={cat.slug}
+            className={`min-w-0 ${categories.length % 2 === 1 && i === categories.length - 1 ? "col-span-2 lg:col-span-1" : ""}`}
+          >
             <Link
               href={`/kategorie/${cat.slug}`}
-              className="focus-ring group grid grid-cols-[3.75rem_minmax(0,1fr)_auto] items-baseline gap-x-3 px-1 py-4 transition-colors duration-150 hover:bg-green-tint sm:gap-x-5 sm:px-3 md:grid-cols-[4.5rem_minmax(0,16rem)_minmax(0,1fr)_auto]"
+              className="tile focus-ring group flex h-full flex-col gap-4 p-4 sm:flex-row sm:items-center sm:p-5"
             >
-              <span className="caps flex items-center gap-2 text-[0.72rem] text-ink-3">
-                {Icon && <Icon className="h-4 w-4 translate-y-[1px] text-green" strokeWidth={1.75} aria-hidden />}
-                {zone}
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-green-700 text-white transition-transform duration-200 group-hover:scale-105 sm:h-16 sm:w-16">
+                {Icon && <Icon className="h-7 w-7 sm:h-8 sm:w-8" strokeWidth={2} aria-hidden />}
               </span>
-              <span className="min-w-0">
-                <span className="block text-[1.1rem] font-bold text-ink group-hover:text-green">{cat.name}</span>
-                <span className="caps mt-1 block text-[0.7rem] text-ink-3">{countLabel(items.length)}</span>
-                <span className="mt-1.5 block text-[0.875rem] leading-snug text-ink-2 md:hidden">{samples.join(" · ")}</span>
-              </span>
-              <span className="hidden min-w-0 md:block">
-                <span className="block text-[1rem] leading-snug text-ink-2">{samples.join(" · ")}</span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-[1.125rem] font-bold leading-tight text-ink sm:text-[1.25rem]">{cat.name}</span>
+                <span className="mt-1.5 inline-flex rounded-full bg-green-50 px-2.5 py-0.5 text-[0.875rem] font-semibold text-green-800">
+                  {countLabel(count)}
+                </span>
                 {withDescriptions && (
-                  <span className="mt-1 block text-[0.875rem] leading-snug text-ink-3">{cat.description}</span>
+                  <span className="mt-2 hidden text-[0.9375rem] leading-snug text-ink-3 sm:block">{cat.description}</span>
                 )}
               </span>
               <ArrowRight
                 aria-hidden
-                className="h-4 w-4 self-center text-green transition-transform duration-200 ease-out group-hover:translate-x-1"
-                strokeWidth={2}
+                className="hidden h-5 w-5 shrink-0 text-green-700 transition-transform duration-200 group-hover:translate-x-1 sm:block"
+                strokeWidth={2.25}
               />
             </Link>
           </li>

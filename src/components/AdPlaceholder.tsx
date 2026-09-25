@@ -3,18 +3,14 @@ interface AdPlaceholderProps {
   className?: string;
 }
 
+const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+
 /**
- * Miejsce na reklamę jako pole kreskowane (przekrój) — czytelnie „puste”, nie udaje treści.
- * Po podłączeniu AdSense wystarczy podmienić zawartość tego komponentu.
+ * Miejsce na reklamę. Dopóki nie ma aktywnego AdSense (NEXT_PUBLIC_ADSENSE_CLIENT),
+ * nic się nie renderuje — puste ramki „Reklama” wyglądały jak niedokończony szablon.
+ * Po podłączeniu AdSense wstaw tu jednostkę reklamową (ins.adsbygoogle).
  */
-export default function AdPlaceholder({ label = "Miejsce na reklamę", className = "" }: AdPlaceholderProps) {
-  return (
-    <div
-      className={`hatch flex min-h-[96px] items-center justify-center border border-hair-strong ${className}`}
-      aria-hidden="true"
-      role="presentation"
-    >
-      <span className="caps bg-table px-2 text-[0.7rem] text-ink-3">{label}</span>
-    </div>
-  );
+export default function AdPlaceholder({ className = "" }: AdPlaceholderProps) {
+  if (!ADSENSE_CLIENT) return null;
+  return <div className={`min-h-[96px] ${className}`} aria-hidden="true" role="presentation" />;
 }

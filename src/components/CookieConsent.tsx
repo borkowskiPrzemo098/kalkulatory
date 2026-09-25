@@ -25,13 +25,13 @@ export default function CookieConsent() {
     <div
       role="dialog"
       aria-label="Zgoda na pliki cookies"
-      className="fixed inset-x-0 bottom-16 z-50 px-3 pb-3 md:bottom-4 md:px-6"
+      className="fixed inset-x-0 bottom-[4.5rem] z-50 px-2 pb-2 md:bottom-4 md:px-6"
     >
-      <div className="mx-auto flex max-w-2xl flex-col gap-4 border-[1.5px] border-frame bg-paper p-4 shadow-[0_16px_40px_-12px_rgba(8,59,51,0.35)] sm:flex-row sm:items-center sm:p-5">
-        <p className="flex-1 text-[0.875rem] leading-relaxed text-ink-2">
+      <div className="mx-auto flex max-w-2xl flex-col gap-4 rounded-3xl border border-line bg-white p-5 shadow-[var(--shadow-float)] sm:flex-row sm:items-center sm:p-5">
+        <p className="flex-1 text-[0.9375rem] leading-relaxed text-ink-2">
           Używamy plików cookies do statystyk odwiedzin i wyświetlania reklam wspierających działanie serwisu.
           Możesz zaakceptować lub odrzucić — kalkulatory działają tak samo w obu przypadkach. Więcej w{" "}
-          <Link href="/polityka-cookies" className="text-accent hover:underline">
+          <Link href="/polityka-cookies" className="font-semibold text-green-700 underline">
             polityce cookies
           </Link>
           .
@@ -40,14 +40,14 @@ export default function CookieConsent() {
           <button
             type="button"
             onClick={() => respond(false)}
-            className="focus-ring h-11 border border-hair-strong px-4 text-[0.875rem] font-semibold text-ink hover:border-ink-3 hover:bg-table"
+            className="focus-ring h-12 rounded-xl border-2 border-line px-5 text-[1rem] font-bold text-ink hover:border-line-strong"
           >
             Odrzuć
           </button>
           <button
             type="button"
             onClick={() => respond(true)}
-            className="focus-ring h-11 bg-green px-4 text-[0.875rem] font-semibold text-white hover:bg-green-deep"
+            className="focus-ring h-12 rounded-xl bg-green-700 px-5 text-[1rem] font-bold text-white hover:bg-green-800"
           >
             Akceptuję
           </button>

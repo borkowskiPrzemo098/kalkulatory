@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 
 export default function ONasPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
+    <div className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
       <Breadcrumbs items={[{ href: "/", label: "Start" }, { href: "/o-nas", label: "O nas" }]} />
-      <h1 className="display mt-4 text-[clamp(2rem,6vw,3rem)] text-ink">O nas</h1>
-      <div className="mt-6 max-w-[68ch] space-y-4 text-[1rem] leading-relaxed text-ink-2">
+      <h1 className="display mt-5 text-[clamp(2rem,7vw,3rem)] text-ink">O nas</h1>
+      <div className="mt-6 max-w-[68ch] space-y-4 text-[1.0625rem] leading-relaxed text-ink-2">
         <p>
           Kalkulatory Online to serwis stworzony z myślą o szybkich, prostych obliczeniach, które każdy z nas
           wykonuje na co dzień — od przeliczenia VAT, przez rabat, po sprawdzenie BMI czy raty kredytu.
@@ -22,7 +22,7 @@ export default function ONasPage() {
           Wszystkie kalkulatory działają w całości w przeglądarce użytkownika — nie wymagają zakładania konta ani
           podawania danych osobowych, a wpisywane wartości nie są wysyłane na żaden serwer.
         </p>
-        <h2 className="condensed pt-4 text-[1.35rem] font-bold text-ink">Kto to robi</h2>
+        <h2 className="pt-4 text-[1.5rem] font-extrabold tracking-[-0.02em] text-ink">Kto to robi</h2>
         <p>
           Kalkulatory Online to projekt jednoosobowy — prowadzę go jako student informatyki, dla którego pisanie
           narzędzi, z których realnie ktoś korzysta, jest ciekawsze niż kolejny projekt zaliczeniowy leżący na
@@ -33,7 +33,7 @@ export default function ONasPage() {
           Serwis rozwija się stopniowo — kalkulatory są dodawane i poprawiane na bieżąco, a każdy wzór jest
           weryfikowany ręcznie policzonymi przykładami, zanim trafi na stronę. Jeśli zauważysz błąd albo brakuje
           Ci jakiegoś kalkulatora, daj znać na{" "}
-          <Link href="/kontakt" className="text-accent hover:underline">
+          <Link href="/kontakt" className="font-semibold text-green-700 underline">
             stronie kontaktowej
           </Link>{" "}
           — to pomaga rozwijać serwis w stronę, która faktycznie jest ludziom potrzebna.

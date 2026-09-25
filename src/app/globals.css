@@ -1,57 +1,67 @@
 @import "tailwindcss";
 
 /*
- * Świat: arkusz rysunku technicznego.
- * Biały arkusz na zielonkawoszarym stole kreślarskim, rama i linie w zieleni butelkowej.
- * Prawo koloru: zieleń = tusz wyniku i linii, czerwień wyłącznie dla błędów.
+ * Świat: „duże kafle, mocna zieleń”.
+ * Jedna rodzina barw — zieleń butelkowa od ciemnej do bardzo jasnej — plus ciepły żółty akcent
+ * dla głównych akcji na zielonym tle. Duże, klikalne elementy, mocny kontrast, zaokrąglone kafle.
  */
 :root {
-  --table: #edf2f0; /* stół kreślarski — tło strony */
-  --paper: #ffffff; /* arkusz */
-  --ink: #0f2420; /* tekst */
-  --ink-2: #3c4f4a; /* tekst drugorzędny (≈8:1 na bieli) */
-  --ink-3: #56696a; /* etykiety (≈5.6:1 na bieli) */
-  --hair: #cfdad6; /* linie cienkie */
-  --hair-strong: #9fb2ac;
-  --frame: #0b4a40; /* rama arkusza */
-  --green: #0f6b5c; /* zieleń butelkowa — marka, wynik */
-  --green-deep: #0a4a40;
-  --green-night: #083b33; /* odwrócony arkusz (stopka, pas) */
-  --green-tint: #e2efeb;
-  --red: #b3261e;
-  --red-tint: #fbecea;
+  --bg: #ffffff;
+  --mist: #eef7f3; /* jasne sekcje */
+  --ink: #0b1f1a;
+  --ink-2: #2f4540; /* tekst drugorzędny (≈10:1 na bieli) */
+  --ink-3: #56706a; /* opisy pomocnicze (≈5:1) */
+  --line: #d7e6e0;
+  --line-strong: #b4cdc4;
+  --green-950: #04261f;
+  --green-900: #073d33;
+  --green-800: #0a5246;
+  --green-700: #0f6b5c; /* zieleń butelkowa — marka */
+  --green-600: #138571;
+  --green-200: #bfe5d6;
+  --green-100: #d9f0e7;
+  --green-50: #eef8f4;
+  --sun: #ffd24d; /* ciepły akcent: główne akcje na zieleni */
+  --sun-600: #f2b90f;
+  --red: #c0271d;
+  --red-50: #fdeceb;
 
-  /* aliasy zachowujące zgodność z istniejącymi stronami */
-  --background: var(--table);
-  --surface: var(--paper);
+  /* aliasy zgodności */
+  --background: var(--bg);
+  --surface: #ffffff;
   --foreground: var(--ink);
   --muted: var(--ink-2);
   --muted-2: var(--ink-3);
-  --border: var(--hair);
-  --border-strong: var(--hair-strong);
-  --accent: var(--green);
-  --accent-hover: var(--green-deep);
-  --accent-soft: var(--green-tint);
+  --border: var(--line);
+  --border-strong: var(--line-strong);
+  --accent: var(--green-700);
+  --accent-hover: var(--green-800);
+  --accent-soft: var(--green-100);
   --accent-contrast: #ffffff;
   --danger: var(--red);
-  --danger-soft: var(--red-tint);
+  --danger-soft: var(--red-50);
 }
 
 @theme inline {
-  --color-table: var(--table);
-  --color-paper: var(--paper);
+  --color-bg: var(--bg);
+  --color-mist: var(--mist);
   --color-ink: var(--ink);
   --color-ink-2: var(--ink-2);
   --color-ink-3: var(--ink-3);
-  --color-hair: var(--hair);
-  --color-hair-strong: var(--hair-strong);
-  --color-frame: var(--frame);
-  --color-green: var(--green);
-  --color-green-deep: var(--green-deep);
-  --color-green-night: var(--green-night);
-  --color-green-tint: var(--green-tint);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-green-950: var(--green-950);
+  --color-green-900: var(--green-900);
+  --color-green-800: var(--green-800);
+  --color-green-700: var(--green-700);
+  --color-green-600: var(--green-600);
+  --color-green-200: var(--green-200);
+  --color-green-100: var(--green-100);
+  --color-green-50: var(--green-50);
+  --color-sun: var(--sun);
+  --color-sun-600: var(--sun-600);
   --color-red: var(--red);
-  --color-red-tint: var(--red-tint);
+  --color-red-50: var(--red-50);
 
   --color-background: var(--background);
   --color-surface: var(--surface);
@@ -67,31 +77,35 @@
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);
 
-  --font-sans: var(--font-archivo), system-ui, sans-serif;
-  --font-display: var(--font-archivo), system-ui, sans-serif;
+  --font-sans: var(--font-figtree), system-ui, sans-serif;
+  --font-display: var(--font-figtree), system-ui, sans-serif;
+
+  --shadow-tile: 0 1px 2px rgba(7, 61, 51, 0.06), 0 10px 28px -14px rgba(7, 61, 51, 0.28);
+  --shadow-tile-hover: 0 2px 4px rgba(7, 61, 51, 0.08), 0 18px 40px -16px rgba(7, 61, 51, 0.38);
+  --shadow-float: 0 20px 50px -18px rgba(4, 38, 31, 0.45);
 }
 
 html {
   -webkit-text-size-adjust: 100%;
-  scrollbar-color: var(--hair-strong) var(--table);
+  scrollbar-color: var(--line-strong) var(--bg);
 }
 
 body {
-  background: var(--table);
+  background: var(--bg);
   color: var(--ink);
-  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-family: var(--font-figtree), system-ui, sans-serif;
+  font-size: 1.0625rem;
   font-variant-numeric: tabular-nums;
-  caret-color: var(--green);
+  caret-color: var(--green-700);
 }
 
 ::selection {
-  background: var(--green);
+  background: var(--green-700);
   color: #ffffff;
 }
 
 a {
   text-underline-offset: 0.2em;
-  text-decoration-thickness: 1px;
 }
 
 ::-webkit-scrollbar {
@@ -99,92 +113,82 @@ a {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--table);
+  background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--hair-strong);
-  border: 2px solid var(--table);
+  background: var(--line-strong);
+  border-radius: 999px;
+  border: 2px solid var(--bg);
 }
 
 .focus-ring {
   outline: none;
 }
+/* Podwójna obwódka: ciemna zieleń (kontrast na jasnym) + żółty pierścień (kontrast na zielonym). */
 .focus-ring:focus-visible {
-  outline: 2px solid var(--green);
+  outline: 3px solid var(--green-950);
   outline-offset: 2px;
-}
-
-/* Pismo techniczne: wąskie wersaliki dla etykiet, tabliczek i numerów rysunku */
-.caps {
-  font-stretch: 72%;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.07em;
-}
-
-.condensed {
-  font-stretch: 80%;
+  box-shadow: 0 0 0 5px var(--sun);
 }
 
 .display {
-  font-weight: 750;
-  font-stretch: 92%;
-  letter-spacing: -0.025em;
-  line-height: 1.02;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.04;
   text-wrap: balance;
 }
 
-/* Kreskowanie przekroju (ISO) — miejsca na reklamę i puste pola */
-.hatch {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    var(--hair) 0 1px,
-    transparent 1px 7px
-  );
+/* Kafel: biała karta z miękkim cieniem, uniesienie przy najechaniu */
+.tile {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow-tile);
+  transition:
+    transform 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 200ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 200ms;
+}
+a.tile:hover,
+button.tile:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-tile-hover);
+  border-color: var(--green-200);
 }
 
-/* Linia wymiarowa wyniku rysuje się od środka ku strzałkom */
-@keyframes dim-draw {
+/* Wynik: liczba „wskakuje” przy każdej zmianie */
+@keyframes result-pop {
   from {
-    transform: scaleX(0);
+    transform: translateY(6px);
+    opacity: 0.35;
   }
   to {
-    transform: scaleX(1);
-  }
-}
-@keyframes dim-arrows {
-  from {
-    opacity: 0;
-  }
-  to {
+    transform: none;
     opacity: 1;
   }
 }
-.dim-line {
-  transform-origin: 50% 50%;
-  animation: dim-draw 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+.result-pop {
+  animation: result-pop 320ms cubic-bezier(0.16, 1, 0.3, 1);
 }
-.dim-arrows {
-  animation: dim-arrows 180ms ease-out 360ms both;
-}
+
 @media (prefers-reduced-motion: reduce) {
-  .dim-line,
-  .dim-arrows {
+  .result-pop {
     animation: none;
   }
-  html:focus-within {
-    scroll-behavior: auto;
+  .tile,
+  a.tile:hover,
+  button.tile:hover {
+    transform: none;
+    transition: none;
   }
 }
 
-/* Pola liczbowe: bez strzałek spinnera */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* Akordeon FAQ */
 details > summary {
   list-style: none;
 }

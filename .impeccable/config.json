@@ -5,9 +5,33 @@
     "ignoreValues": [
       {
         "rule": "design-system-font-size",
-        "value": "0.6rem",
-        "createdAt": "2026-09-25T18:22:36.650Z",
-        "reason": "Claude (build decision): aria-hidden decorative sheet zone marks 1–4/A–C in Sheet.tsx; sanctioned in DESIGN.md Lettering Rule as the only sub-0.7rem size"
+        "value": "16rem",
+        "createdAt": "2026-09-25T18:50:51.358Z",
+        "reason": "Claude (build decision): aria-hidden decorative math symbols (% + × ÷ =) in the HomeHero background at 7% white; not text, one-off hero ornament noted in DESIGN.md"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "14rem",
+        "createdAt": "2026-09-25T18:50:51.521Z",
+        "reason": "Claude (build decision): aria-hidden decorative math symbols (% + × ÷ =) in the HomeHero background at 7% white; not text, one-off hero ornament noted in DESIGN.md"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "11rem",
+        "createdAt": "2026-09-25T18:50:51.678Z",
+        "reason": "Claude (build decision): aria-hidden decorative math symbols (% + × ÷ =) in the HomeHero background at 7% white; not text, one-off hero ornament noted in DESIGN.md"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "9rem",
+        "createdAt": "2026-09-25T18:50:51.823Z",
+        "reason": "Claude (build decision): aria-hidden decorative math symbols (% + × ÷ =) in the HomeHero background at 7% white; not text, one-off hero ornament noted in DESIGN.md"
+      },
+      {
+        "rule": "design-system-font-size",
+        "value": "7rem",
+        "createdAt": "2026-09-25T18:50:51.954Z",
+        "reason": "Claude (build decision): aria-hidden decorative math symbols (% + × ÷ =) in the HomeHero background at 7% white; not text, one-off hero ornament noted in DESIGN.md"
       }
     ]
   }

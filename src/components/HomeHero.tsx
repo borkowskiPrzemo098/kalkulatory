@@ -1,71 +1,67 @@
 import Link from "next/link";
+import { Landmark, Percent, Receipt, Scale } from "lucide-react";
 import SearchBox from "./SearchBox";
 import HeroDemo from "./HeroDemo";
-import Sheet from "./Sheet";
 
 const quickLinks = [
-  { href: "/kalkulatory/vat", label: "VAT" },
-  { href: "/kalkulatory/procenty", label: "Procenty" },
-  { href: "/kalkulatory/raty-kredytu", label: "Raty kredytu" },
-  { href: "/kalkulatory/bmi", label: "BMI" },
-  { href: "/kalkulatory/brutto-netto", label: "Brutto / netto" },
+  { href: "/kalkulatory/vat", label: "VAT", icon: Receipt },
+  { href: "/kalkulatory/procenty", label: "Procenty", icon: Percent },
+  { href: "/kalkulatory/raty-kredytu", label: "Raty kredytu", icon: Landmark },
+  { href: "/kalkulatory/bmi", label: "BMI", icon: Scale },
 ];
 
-/** Konstrukcja w tle: okrąg z osiami i wymiarem średnicy — liczba kalkulatorów. */
-function ConstructionDrawing({ count }: { count: number }) {
+/** Duże znaki działań w tle — dekoracja w kolorze tła, nie treść. */
+function MathSymbols() {
+  const symbols = [
+    { s: "%", cls: "right-[4%] top-[6%] text-[16rem] rotate-12" },
+    { s: "+", cls: "left-[-2%] bottom-[-8%] text-[14rem]" },
+    { s: "×", cls: "left-[44%] top-[-10%] text-[9rem] -rotate-6" },
+    { s: "÷", cls: "right-[30%] bottom-[-12%] text-[11rem]" },
+    { s: "=", cls: "left-[30%] top-[40%] text-[7rem] hidden lg:block" },
+  ];
   return (
-    <svg
-      aria-hidden
-      viewBox="0 0 400 400"
-      className="pointer-events-none absolute -bottom-52 -right-28 hidden h-[30rem] w-[30rem] text-hair-strong lg:block"
-      fill="none"
-    >
-      <circle cx="200" cy="200" r="150" stroke="currentColor" strokeWidth="1" />
-      <circle cx="200" cy="200" r="96" stroke="currentColor" strokeWidth="1" strokeDasharray="6 5" />
-      <path d="M20 200h360M200 20v360" stroke="currentColor" strokeWidth="1" strokeDasharray="22 5 3 5" />
-      <path d="M94 94 306 306" stroke="var(--green)" strokeWidth="1" />
-      <path d="m94 94 10 3-7 7z M306 306l-10-3 7-7z" fill="var(--green)" />
-      <text x="214" y="258" fill="var(--green)" fontSize="15" fontWeight="600" letterSpacing="1.5" transform="rotate(45 214 258)">
-        Ø {count}
-      </text>
-    </svg>
+    <div aria-hidden className="pointer-events-none absolute inset-0 select-none overflow-hidden">
+      {symbols.map(({ s, cls }) => (
+        <span key={s} className={`absolute font-extrabold leading-none text-white/[0.07] ${cls}`}>
+          {s}
+        </span>
+      ))}
+    </div>
   );
 }
 
 export default function HomeHero({ calculatorCount }: { calculatorCount: number }) {
   return (
-    <div className="mx-auto max-w-6xl sm:px-6 sm:pt-8">
-      <Sheet as="section" labelledBy="hero-heading">
-        <div className="relative grid gap-10 overflow-hidden px-4 py-8 sm:px-8 sm:py-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-14 lg:py-16">
-          <ConstructionDrawing count={calculatorCount} />
-          <div className="relative">
-            <h1 id="hero-heading" className="display text-[clamp(2.6rem,10vw,5rem)] text-ink">
-              Kalkulatory <span className="text-green">online</span>
-            </h1>
-            <p className="mt-5 max-w-[34ch] text-[1.15rem] leading-relaxed text-ink-2 sm:text-[1.25rem]">
-              Darmowe kalkulatory do szybkich i prostych obliczeń. Wpisujesz liczby — wynik pojawia się od razu.
-            </p>
-            <div className="mt-8 max-w-lg">
-              <SearchBox id="calculator-search-hero" />
-            </div>
-            <nav aria-label="Popularne kalkulatory" className="mt-4 flex max-w-lg flex-wrap items-center gap-x-1 gap-y-2">
-              <span className="caps mr-2 text-[0.7rem] text-ink-3">Często liczone</span>
-              {quickLinks.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  className="focus-ring border border-hair-strong bg-paper px-2.5 py-1.5 text-[0.875rem] font-semibold text-ink transition-colors duration-150 hover:border-frame hover:bg-green-tint"
-                >
-                  {l.label}
-                </Link>
-              ))}
-            </nav>
+    <section aria-labelledby="hero-heading" className="relative overflow-hidden bg-green-800 text-white">
+      <MathSymbols />
+      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 pb-12 pt-10 sm:px-6 sm:pb-16 sm:pt-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-14 lg:pb-20 lg:pt-20">
+        <div>
+          <h1 id="hero-heading" className="display text-[clamp(2.75rem,11vw,5rem)]">
+            Kalkulatory <span className="text-sun">online</span>
+          </h1>
+          <p className="mt-4 max-w-[30ch] text-[1.25rem] leading-snug text-white/85 sm:text-[1.25rem]">
+            {calculatorCount} darmowych kalkulatorów do szybkich obliczeń. Wpisujesz liczby — wynik masz od razu.
+          </p>
+          <div className="mt-8 max-w-xl">
+            <SearchBox id="calculator-search-hero" />
           </div>
-          <div className="relative lg:pt-2">
-            <HeroDemo />
-          </div>
+          <nav aria-label="Popularne kalkulatory" className="mt-5 flex flex-wrap gap-2">
+            {quickLinks.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                className="focus-ring inline-flex h-11 items-center gap-2 rounded-full bg-white/12 px-4 text-[1rem] font-semibold text-white transition-colors duration-150 hover:bg-white hover:text-green-900"
+              >
+                <l.icon className="h-[18px] w-[18px]" strokeWidth={2.25} aria-hidden />
+                {l.label}
+              </Link>
+            ))}
+          </nav>
         </div>
-      </Sheet>
-    </div>
+        <div>
+          <HeroDemo />
+        </div>
+      </div>
+    </section>
   );
 }

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ChevronRight } from "lucide-react";
 
 export interface Crumb {
   href: string;
@@ -19,18 +20,16 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
 
   return (
     <nav aria-label="Okruszki nawigacyjne">
-      <ol className="caps flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.7rem] text-ink-3">
+      <ol className="flex flex-wrap items-center gap-x-1.5 gap-y-1 text-[0.9375rem] font-medium text-ink-3">
         {items.map((item, index) => (
-          <li key={item.href} className="flex items-center gap-2">
-            {index > 0 && (
-              <span aria-hidden className="h-px w-3 bg-hair-strong" />
-            )}
+          <li key={item.href} className="flex items-center gap-1.5">
+            {index > 0 && <ChevronRight aria-hidden className="h-4 w-4 text-line-strong" strokeWidth={2.5} />}
             {index === items.length - 1 ? (
-              <span className="text-ink" aria-current="page">
+              <span className="font-semibold text-ink" aria-current="page">
                 {item.label}
               </span>
             ) : (
-              <Link href={item.href} className="focus-ring hover:text-green">
+              <Link href={item.href} className="focus-ring rounded hover:text-green-700 hover:underline">
                 {item.label}
               </Link>
             )}

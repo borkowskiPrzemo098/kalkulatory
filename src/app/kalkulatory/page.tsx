@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { calculators } from "@/calculators/registry";
 import { categories } from "@/lib/categories";
 import { categoryIcons } from "@/lib/category-icons";
-import PartsList from "@/components/PartsList";
+import CalculatorTiles from "@/components/CalculatorTiles";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdPlaceholder from "@/components/AdPlaceholder";
 
@@ -19,51 +20,63 @@ export default function KalkulatoryPage() {
     .filter(({ items }) => items.length > 0);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 pb-16 pt-6 sm:px-6 sm:pt-10">
-      <Breadcrumbs items={[{ href: "/", label: "Start" }, { href: "/kalkulatory", label: "Kalkulatory" }]} />
-
-      <header className="mt-4 max-w-3xl">
-        <h1 className="display text-[clamp(2rem,6vw,3.25rem)] text-ink">Wszystkie kalkulatory</h1>
-        <p className="mt-3 text-[1.05rem] leading-relaxed text-ink-2">
-          {calculators.length} darmowych kalkulatorów w {groups.length} kategoriach. Każdy ma własny numer rysunku,
-          wzór i przykład.
-        </p>
+    <div>
+      <header className="bg-mist">
+        <div className="mx-auto max-w-6xl px-4 pb-8 pt-5 sm:px-6 sm:pb-10 sm:pt-8">
+          <Breadcrumbs items={[{ href: "/", label: "Start" }, { href: "/kalkulatory", label: "Kalkulatory" }]} />
+          <h1 className="display mt-5 text-[clamp(2rem,7vw,3.25rem)] text-ink">Wszystkie kalkulatory</h1>
+          <p className="mt-2 text-[1.125rem] text-ink-2">
+            {calculators.length} darmowych kalkulatorów w {groups.length} kategoriach.
+          </p>
+          <nav aria-label="Przejdź do kategorii" className="mt-6 flex flex-wrap gap-2">
+            {groups.map(({ cat, items }) => {
+              const Icon = categoryIcons[cat.slug];
+              return (
+                <a
+                  key={cat.slug}
+                  href={`#${cat.slug}`}
+                  className="focus-ring inline-flex h-11 items-center gap-2 rounded-full border-2 border-line bg-white px-4 text-[1rem] font-semibold text-ink transition-colors duration-150 hover:border-green-700 hover:text-green-800"
+                >
+                  {Icon && <Icon className="h-[18px] w-[18px] text-green-700" strokeWidth={2.25} aria-hidden />}
+                  {cat.name}
+                  <span className="rounded-full bg-green-100 px-2 text-[0.875rem] font-bold text-green-800">{items.length}</span>
+                </a>
+              );
+            })}
+          </nav>
+        </div>
       </header>
 
-      {/* Spis arkuszy: skok do kategorii */}
-      <nav aria-label="Spis kategorii" className="mt-8 flex flex-wrap gap-2">
-        {groups.map(({ cat, items }) => (
-          <a
-            key={cat.slug}
-            href={`#${cat.slug}`}
-            className="focus-ring inline-flex items-center gap-2 border border-hair-strong bg-paper px-3 py-2 text-[0.875rem] font-semibold text-ink transition-colors duration-150 hover:border-green hover:text-green"
-          >
-            {cat.name}
-            <span className="caps text-[0.7rem] text-ink-3">{items.length}</span>
-          </a>
-        ))}
-      </nav>
+      <div className="mx-auto max-w-6xl px-4 pb-16 pt-8 sm:px-6">
+        <AdPlaceholder />
 
-      <AdPlaceholder className="mt-8" />
-
-      <div className="mt-12 space-y-14">
-        {groups.map(({ cat, items }) => {
-          const Icon = categoryIcons[cat.slug];
-          return (
-            <section key={cat.slug} id={cat.slug} aria-labelledby={`cat-${cat.slug}`} className="scroll-mt-24">
-              <div className="flex items-end justify-between gap-4 pb-3">
-                <h2 id={`cat-${cat.slug}`} className="condensed flex items-center gap-3 text-[clamp(1.5rem,4.5vw,2rem)] font-bold text-ink">
-                  {Icon && <Icon className="h-6 w-6 text-green" strokeWidth={1.75} aria-hidden />}
-                  {cat.name}
-                </h2>
-                <Link href={`/kategorie/${cat.slug}`} className="focus-ring caps pb-1.5 text-[0.7rem] text-green hover:underline">
-                  Strona kategorii
-                </Link>
-              </div>
-              <PartsList items={items} showCategory={false} />
-            </section>
-          );
-        })}
+        <div className="mt-12 space-y-14">
+          {groups.map(({ cat, items }) => {
+            const Icon = categoryIcons[cat.slug];
+            return (
+              <section key={cat.slug} id={cat.slug} aria-labelledby={`cat-${cat.slug}`} className="scroll-mt-24">
+                <div className="flex items-center justify-between gap-4">
+                  <h2 id={`cat-${cat.slug}`} className="flex items-center gap-3 text-[1.5rem] font-extrabold tracking-[-0.02em] text-ink">
+                    {Icon && (
+                      <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-green-700 text-white">
+                        <Icon className="h-6 w-6" strokeWidth={2} aria-hidden />
+                      </span>
+                    )}
+                    {cat.name}
+                  </h2>
+                  <Link
+                    href={`/kategorie/${cat.slug}`}
+                    className="focus-ring group hidden items-center gap-1.5 rounded-lg text-[1rem] font-bold text-green-700 sm:flex"
+                  >
+                    Kategoria
+                    <ArrowRight aria-hidden className="h-5 w-5 transition-transform group-hover:translate-x-0.5" strokeWidth={2.25} />
+                  </Link>
+                </div>
+                <CalculatorTiles items={items} size="compact" className="mt-5" />
+              </section>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

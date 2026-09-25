@@ -1,7 +1,6 @@
 "use client";
 
 import { CalculatorField } from "@/calculators/types";
-import DimensionLine from "./DimensionLine";
 
 interface CalculatorInputProps {
   field: CalculatorField;
@@ -9,16 +8,16 @@ interface CalculatorInputProps {
   onChange: (value: string) => void;
 }
 
-/** Ramka pola: cienka linia, przy fokusie pogrubiona zielona (jak linia widoczna na rysunku). */
+/** Duże pole (56 px), gruba ramka, przy fokusie zielona ramka + miętowa poświata. */
 export const fieldFrame =
-  "flex h-12 w-full items-stretch border border-hair-strong bg-paper transition-[border-color,box-shadow] duration-150 hover:border-ink-3 focus-within:border-green focus-within:shadow-[inset_0_0_0_1px_var(--green)]";
+  "flex h-14 w-full items-center rounded-xl border-2 border-line bg-white transition-[border-color,box-shadow] duration-150 hover:border-line-strong focus-within:border-green-700 focus-within:shadow-[0_0_0_4px_var(--green-100)]";
 
 export const fieldControl =
-  "min-w-0 flex-1 bg-transparent px-3.5 text-[1.125rem] font-semibold text-ink outline-none placeholder:font-normal placeholder:text-ink-3";
+  "h-full min-w-0 flex-1 rounded-xl bg-transparent px-4 text-[1.25rem] font-bold text-ink outline-none placeholder:font-normal placeholder:text-ink-3";
 
 export function FieldLabel({ htmlFor, children }: { htmlFor: string; children: React.ReactNode }) {
   return (
-    <label htmlFor={htmlFor} className="caps mb-1.5 block text-[0.7rem] text-ink-2">
+    <label htmlFor={htmlFor} className="mb-2 block text-[1rem] font-semibold text-ink">
       {children}
     </label>
   );
@@ -59,18 +58,13 @@ export default function CalculatorInput({ field, value, onChange }: CalculatorIn
           />
         )}
         {field.unit && field.type !== "date" && (
-          <span
-            aria-hidden
-            className="caps flex shrink-0 items-center border-l border-hair px-3 text-[0.72rem] text-green"
-          >
+          <span aria-hidden className="mr-2 shrink-0 rounded-lg bg-green-50 px-2.5 py-1.5 text-[1rem] font-bold text-green-800">
             {field.unit}
           </span>
         )}
       </div>
-      {/* Pole jako wymiar: pod wartością linia wymiarowa ze strzałkami, przerysowana przy każdej zmianie. */}
-      {field.type !== "date" && <DimensionLine animKey={value} className="mt-1.5" />}
       {field.helpText && (
-        <p id={helpId} className="mt-1.5 text-[0.875rem] leading-snug text-ink-3">
+        <p id={helpId} className="mt-2 text-[0.9375rem] leading-snug text-ink-3">
           {field.helpText}
         </p>
       )}

@@ -76,11 +76,11 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
         <label htmlFor={id} className="sr-only">
           Szukaj kalkulatora
         </label>
-        <div className="relative">
+        <div className="relative flex items-center">
           <Search
             aria-hidden
-            strokeWidth={2}
-            className={`pointer-events-none absolute top-1/2 -translate-y-1/2 text-green ${compact ? "left-3 h-4 w-4" : "left-4 h-5 w-5"}`}
+            strokeWidth={2.25}
+            className={`pointer-events-none absolute top-1/2 -translate-y-1/2 text-green-700 ${compact ? "left-3.5 h-5 w-5" : "left-5 h-6 w-6"}`}
           />
           <input
             ref={inputRef}
@@ -93,10 +93,10 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
             onChange={(e) => handleChange(e.target.value)}
             onFocus={() => query.trim().length > 0 && setOpen(true)}
             onBlur={() => setTimeout(() => setOpen(false), 120)}
-            className={`w-full border bg-paper text-ink outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-ink-3 focus:border-green focus:shadow-[inset_0_0_0_1px_var(--green)] ${
+            className={`w-full bg-white text-ink outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-ink-3 ${
               compact
-                ? "h-10 border-hair-strong pl-9 pr-3 text-[1rem]"
-                : "h-14 border-[1.5px] border-frame pl-12 pr-4 text-[1.1rem] font-medium"
+                ? "h-11 rounded-xl border-2 border-line pl-11 pr-3 text-[1rem] focus:border-green-700"
+                : "h-16 rounded-2xl border-2 border-transparent pl-14 pr-28 text-[1.125rem] font-medium shadow-[var(--shadow-float)] focus:border-sun sm:text-[1.25rem]"
             }`}
             role="combobox"
             aria-expanded={open}
@@ -104,20 +104,28 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
             aria-autocomplete="list"
             autoComplete="off"
           />
+          {!compact && (
+            <button
+              type="submit"
+              className="focus-ring absolute right-2 top-2 bottom-2 rounded-xl bg-sun px-5 text-[1rem] font-bold text-green-950 transition-colors duration-150 hover:bg-sun-600"
+            >
+              Szukaj
+            </button>
+          )}
         </div>
       </form>
 
       {open && results.length > 0 && (
         <ul
           id={resultsId}
-          className={`absolute left-0 right-0 z-50 ${dropClass} max-h-80 overflow-auto border-[1.5px] border-frame bg-paper shadow-[0_12px_28px_-8px_rgba(8,59,51,0.28)]`}
+          className={`absolute left-0 right-0 z-50 ${dropClass} max-h-80 overflow-auto rounded-2xl border border-line bg-white p-1.5 shadow-[var(--shadow-float)]`}
           role="listbox"
         >
           {results.map((r) => (
-            <li key={r.slug} role="option" aria-selected="false" className="border-b border-hair last:border-b-0">
+            <li key={r.slug} role="option" aria-selected="false">
               <Link
                 href={`/kalkulatory/${r.slug}`}
-                className="focus-ring block px-4 py-3 hover:bg-green-tint"
+                className="focus-ring block rounded-xl px-4 py-3 hover:bg-green-50"
                 onMouseDown={(e) => e.preventDefault()}
               >
                 <span className="block text-[1rem] font-semibold text-ink">{r.name}</span>
@@ -129,7 +137,7 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
       )}
 
       {open && query.trim().length > 0 && results.length === 0 && (
-        <div className={`absolute left-0 right-0 z-50 ${dropClass} border-[1.5px] border-frame bg-paper px-4 py-3 text-[1rem] text-ink-2 shadow-[0_12px_28px_-8px_rgba(8,59,51,0.28)]`}>
+        <div className={`absolute left-0 right-0 z-50 ${dropClass} rounded-2xl border border-line bg-white px-4 py-3 text-[1rem] text-ink-2 shadow-[var(--shadow-float)]`}>
           Brak wyników dla „{query}”. Spróbuj krótszego słowa, np. „vat” albo „procent”.
         </div>
       )}

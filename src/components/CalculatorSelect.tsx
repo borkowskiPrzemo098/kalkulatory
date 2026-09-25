@@ -1,6 +1,6 @@
 "use client";
 
-import { ChevronDown } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 import { CalculatorField } from "@/calculators/types";
 import { FieldLabel, fieldControl, fieldFrame } from "./CalculatorInput";
 
@@ -11,32 +11,34 @@ interface CalculatorSelectProps {
 }
 
 /**
- * Krótka lista opcji = przełącznik (mniej stuknięć na telefonie),
- * średnia = lista pól wyboru, długa = natywny select.
+ * Krótkie opcje = duże przyciski obok siebie, średnie = duże przyciski jeden pod drugim,
+ * długa lista = natywny select. Wybrana opcja: pełna zieleń, dobrze widoczna.
  */
 export default function CalculatorSelect({ field, value, onChange }: CalculatorSelectProps) {
   const inputId = `field-${field.id}`;
   const options = field.options ?? [];
-  const segmented = options.length <= 4 && options.every((o) => o.label.length <= 14);
-  const radioList = !segmented && options.length <= 5;
+  const segmented = options.length <= 6 && options.every((o) => o.label.length <= 14);
+  const stacked = !segmented && options.length <= 5;
 
-  if (segmented || radioList) {
+  if (segmented || stacked) {
     return (
       <fieldset>
-        <legend className="caps mb-1.5 block text-[0.7rem] text-ink-2">{field.label}</legend>
+        <legend className="mb-2 block text-[1rem] font-semibold text-ink">{field.label}</legend>
         <div
-          className="grid border border-hair-strong"
-          style={segmented ? { gridTemplateColumns: `repeat(${options.length}, minmax(0, 1fr))` } : undefined}
+          className={segmented ? "flex flex-wrap gap-2" : "grid gap-2"}
         >
-          {options.map((opt, i) => {
+          {options.map((opt) => {
             const checked = value === opt.value;
-            const divider = i > 0 ? (segmented ? "border-l border-hair-strong" : "border-t border-hair") : "";
             return (
               <label
                 key={opt.value}
-                className={`relative flex min-h-12 cursor-pointer items-center gap-3 px-3.5 py-2 text-[1rem] transition-colors duration-150 has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:-outline-offset-2 has-[:focus-visible]:outline-green ${divider} ${
-                  segmented ? "justify-center text-center" : ""
-                } ${checked ? "z-10 bg-green-tint font-semibold text-ink shadow-[inset_0_0_0_1.5px_var(--frame)]" : "bg-paper text-ink-2 hover:bg-table hover:text-ink"}`}
+                className={`relative flex min-h-12 cursor-pointer items-center gap-3 rounded-xl border-2 px-4 py-2.5 text-[1rem] font-semibold transition-colors duration-150 has-[:focus-visible]:outline has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-sun-600 ${
+                  segmented ? "min-w-[4.5rem] flex-1 justify-center whitespace-nowrap text-center" : ""
+                } ${
+                  checked
+                    ? "border-green-700 bg-green-700 text-white"
+                    : "border-line bg-white text-ink-2 hover:border-green-200 hover:bg-green-50 hover:text-ink"
+                }`}
               >
                 <input
                   type="radio"
@@ -49,9 +51,11 @@ export default function CalculatorSelect({ field, value, onChange }: CalculatorS
                 {!segmented && (
                   <span
                     aria-hidden
-                    className={`flex h-[18px] w-[18px] shrink-0 items-center justify-center rounded-full border-[1.5px] ${checked ? "border-frame" : "border-ink-3"}`}
+                    className={`flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-2 ${
+                      checked ? "border-white bg-white text-green-700" : "border-line-strong"
+                    }`}
                   >
-                    {checked && <span className="h-2 w-2 rounded-full bg-frame" />}
+                    {checked && <Check className="h-4 w-4" strokeWidth={3} />}
                   </span>
                 )}
                 {opt.label}
@@ -59,7 +63,7 @@ export default function CalculatorSelect({ field, value, onChange }: CalculatorS
             );
           })}
         </div>
-        {field.helpText && <p className="mt-1.5 text-[0.875rem] leading-snug text-ink-3">{field.helpText}</p>}
+        {field.helpText && <p className="mt-2 text-[0.9375rem] leading-snug text-ink-3">{field.helpText}</p>}
       </fieldset>
     );
   }
@@ -72,7 +76,7 @@ export default function CalculatorSelect({ field, value, onChange }: CalculatorS
           id={inputId}
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className={`${fieldControl} cursor-pointer appearance-none pr-10`}
+          className={`${fieldControl} cursor-pointer appearance-none pr-12 text-[1.0625rem]`}
         >
           {options.map((opt) => (
             <option key={opt.value} value={opt.value}>
@@ -80,9 +84,9 @@ export default function CalculatorSelect({ field, value, onChange }: CalculatorS
             </option>
           ))}
         </select>
-        <ChevronDown aria-hidden className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-green" strokeWidth={2} />
+        <ChevronDown aria-hidden className="pointer-events-none absolute right-4 top-1/2 h-5 w-5 -translate-y-1/2 text-green-700" strokeWidth={2.5} />
       </div>
-      {field.helpText && <p className="mt-1.5 text-[0.875rem] leading-snug text-ink-3">{field.helpText}</p>}
+      {field.helpText && <p className="mt-2 text-[0.9375rem] leading-snug text-ink-3">{field.helpText}</p>}
     </div>
   );
 }

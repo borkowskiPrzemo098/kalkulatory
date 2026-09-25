@@ -1,15 +1,12 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
-import Link from "next/link";
-import { RotateCcw } from "lucide-react";
+import { RotateCcw, ShieldCheck } from "lucide-react";
 import { CalculatorConfig } from "@/calculators/types";
-import { getCalculatorBySlug, getDrawingNumber } from "@/calculators/registry";
-import { getCategoryBySlug } from "@/lib/categories";
+import { getCalculatorBySlug } from "@/calculators/registry";
 import CalculatorInput from "./CalculatorInput";
 import CalculatorSelect from "./CalculatorSelect";
 import CalculatorResult from "./CalculatorResult";
-import Sheet from "./Sheet";
 import { trackEvent } from "@/lib/analytics";
 
 function buildDefaultValues(config: CalculatorConfig): Record<string, string> {
@@ -20,14 +17,6 @@ function buildDefaultValues(config: CalculatorConfig): Record<string, string> {
   return values;
 }
 
-/** Wzór zapisany zdaniami → jedno równanie na linię. */
-function formulaLines(formula: string): string[] {
-  return formula
-    .split(/(?<!\b(?:ok|np|tj|ew|zob))\.\s+(?=[A-ZĄĆĘŁŃÓŚŹŻ0-9])/)
-    .map((s) => s.trim().replace(/\.$/, ""))
-    .filter(Boolean);
-}
-
 function isFieldVisible(field: CalculatorConfig["fields"][number], values: Record<string, string>): boolean {
   if (!field.dependsOn) return true;
   return values[field.dependsOn.field] === field.dependsOn.value;
@@ -35,7 +24,6 @@ function isFieldVisible(field: CalculatorConfig["fields"][number], values: Recor
 
 export default function CalculatorForm({ slug }: { slug: string }) {
   const config = getCalculatorBySlug(slug) as CalculatorConfig;
-  const category = getCategoryBySlug(config.category);
   const storageKey = `kalkulator:${config.slug}`;
   const [values, setValues] = useState<Record<string, string>>(() => buildDefaultValues(config));
   const [hydrated, setHydrated] = useState(false);
@@ -89,94 +77,47 @@ export default function CalculatorForm({ slug }: { slug: string }) {
   const visibleFields = config.fields.filter((f) => isFieldVisible(f, values));
 
   return (
-    <Sheet labelledBy="calc-sheet-title">
-      <h2 id="calc-sheet-title" className="sr-only">
+    <section aria-labelledby="calc-title" className="grid gap-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-start md:gap-6">
+      <h2 id="calc-title" className="sr-only">
         {config.name} — dane i wynik
       </h2>
-      <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:grid-rows-[auto_1fr]">
-        {/* Na telefonie wynik stoi nad polami: nie chowa go klawiatura. */}
-        <div className="order-2 space-y-5 px-4 py-5 sm:px-6 sm:py-6 md:col-start-1 md:row-span-2 md:row-start-1">
-          {visibleFields.map((field) =>
-            field.type === "select" ? (
-              <CalculatorSelect
-                key={field.id}
-                field={field}
-                value={values[field.id] ?? ""}
-                onChange={(v) => handleFieldChange(field.id, v)}
-              />
-            ) : (
-              <CalculatorInput
-                key={field.id}
-                field={field}
-                value={values[field.id] ?? ""}
-                onChange={(v) => handleFieldChange(field.id, v)}
-              />
-            )
-          )}
-        </div>
 
-        <div className="order-1 border-b border-frame bg-[color-mix(in_srgb,var(--green-tint)_45%,white)] px-4 py-5 sm:px-6 sm:py-6 md:col-start-2 md:row-start-1 md:border-b-0 md:border-l">
-          <p className="caps mb-2.5 text-[0.7rem] text-green">Wynik</p>
-          <CalculatorResult results={outcome.results} error={outcome.error} />
-        </div>
-
-        {/* Strefa adnotacji: wzór i pierwszy przykład w obrębie arkusza (na telefonie pod polami) */}
-        {config.formula && (
-          <div className="order-3 border-t border-hair-strong px-4 pb-6 pt-4 sm:px-6 md:col-start-2 md:row-start-2 md:border-l md:border-l-frame md:border-t-hair-strong md:bg-[color-mix(in_srgb,var(--green-tint)_45%,white)]">
-              <section aria-labelledby="formula-heading">
-                <h2 id="formula-heading" className="caps flex items-center gap-2 text-[0.72rem] text-green">
-                  <span aria-hidden className="flex h-6 w-6 items-center justify-center rounded-full border-[1.5px] border-frame text-[0.7rem]">
-                    A
-                  </span>
-                  Wzór
-                </h2>
-                <div className="mt-3 space-y-1.5">
-                  {formulaLines(config.formula).map((line) => (
-                    <p key={line} className="text-[1rem] font-medium leading-snug text-ink">
-                      {line}
-                    </p>
-                  ))}
-                </div>
-                {config.examples[0] && (
-                  <p className="mt-4 text-[1rem] leading-snug text-ink-2">
-                    <span className="caps mr-2 text-[0.7rem] text-ink-3">Przykład</span>
-                    {config.examples[0].input} → <span className="font-semibold text-ink">{config.examples[0].output}</span>
-                  </p>
-                )}
-              </section>
-          </div>
-        )}
+      {/* Na telefonie wynik stoi nad polami: klawiatura go nie zasłania. */}
+      <div className="order-1 rounded-3xl bg-green-700 p-5 text-white shadow-[var(--shadow-float)] sm:p-7 md:order-2 md:sticky md:top-24">
+        <CalculatorResult results={outcome.results} error={outcome.error} />
+        <p className="mt-5 flex items-center gap-2 border-t border-white/15 pt-4 text-[0.9375rem] text-white/80">
+          <ShieldCheck className="h-5 w-5 shrink-0 text-sun" strokeWidth={2.25} aria-hidden />
+          Liczone w Twojej przeglądarce — nic nie wysyłamy.
+        </p>
       </div>
 
-      {/* Tabliczka rysunkowa */}
-      <div className="grid grid-cols-2 border-t-[1.5px] border-frame text-[0.875rem] sm:grid-cols-[auto_1fr_1fr_auto]">
-        <div className="border-r border-hair-strong px-4 py-2.5 sm:px-5">
-          <p className="caps text-[0.7rem] text-ink-3">Nr rysunku</p>
-          <p className="caps mt-0.5 text-[0.875rem] text-ink">{getDrawingNumber(config.slug)}</p>
-        </div>
-        <div className="px-4 py-2.5 sm:border-r sm:border-hair-strong sm:px-5">
-          <p className="caps text-[0.7rem] text-ink-3">Kategoria</p>
-          {category ? (
-            <Link href={`/kategorie/${category.slug}`} className="focus-ring mt-0.5 block font-semibold text-green underline decoration-green/30 hover:decoration-green">
-              {category.name}
-            </Link>
+      <div className="tile order-2 space-y-6 p-5 sm:p-7 md:order-1">
+        {visibleFields.map((field) =>
+          field.type === "select" ? (
+            <CalculatorSelect
+              key={field.id}
+              field={field}
+              value={values[field.id] ?? ""}
+              onChange={(v) => handleFieldChange(field.id, v)}
+            />
           ) : (
-            <p className="mt-0.5 font-semibold text-ink">—</p>
-          )}
-        </div>
-        <div className="col-span-2 border-t border-hair-strong px-4 py-2.5 sm:col-span-1 sm:border-r sm:border-t-0 sm:px-5">
-          <p className="caps text-[0.7rem] text-ink-3">Obliczenia</p>
-          <p className="mt-0.5 font-semibold text-ink">W Twojej przeglądarce</p>
-        </div>
+            <CalculatorInput
+              key={field.id}
+              field={field}
+              value={values[field.id] ?? ""}
+              onChange={(v) => handleFieldChange(field.id, v)}
+            />
+          )
+        )}
         <button
           type="button"
           onClick={handleClear}
-          className="focus-ring col-span-2 flex min-h-12 items-center justify-center gap-2 border-t border-hair-strong px-5 text-green transition-colors duration-150 hover:bg-green-tint hover:text-green-deep sm:col-span-1 sm:border-t-0"
+          className="focus-ring inline-flex h-12 items-center gap-2 rounded-xl border-2 border-line px-5 text-[1rem] font-bold text-ink-2 transition-colors duration-150 hover:border-green-700 hover:text-green-800"
         >
-          <RotateCcw className="h-4 w-4" strokeWidth={2} aria-hidden />
-          <span className="caps text-[0.72rem]">Wyczyść</span>
+          <RotateCcw className="h-5 w-5" strokeWidth={2.25} aria-hidden />
+          Wyczyść
         </button>
       </div>
-    </Sheet>
+    </section>
   );
 }
