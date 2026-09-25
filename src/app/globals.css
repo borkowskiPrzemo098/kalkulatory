@@ -1,22 +1,58 @@
 @import "tailwindcss";
 
+/*
+ * Świat: arkusz rysunku technicznego.
+ * Biały arkusz na zielonkawoszarym stole kreślarskim, rama i linie w zieleni butelkowej.
+ * Prawo koloru: zieleń = tusz wyniku i linii, czerwień wyłącznie dla błędów.
+ */
 :root {
-  --background: #faf9f7;
-  --surface: #ffffff;
-  --foreground: #1c1a17;
-  --muted: #6b6459;
-  --muted-2: #918a7d;
-  --border: #e6e1d8;
-  --border-strong: #d3ccbf;
-  --accent: #0f6b5c;
-  --accent-hover: #0b5346;
-  --accent-soft: #cdeae0;
+  --table: #edf2f0; /* stół kreślarski — tło strony */
+  --paper: #ffffff; /* arkusz */
+  --ink: #0f2420; /* tekst */
+  --ink-2: #3c4f4a; /* tekst drugorzędny (≈8:1 na bieli) */
+  --ink-3: #56696a; /* etykiety (≈5.6:1 na bieli) */
+  --hair: #cfdad6; /* linie cienkie */
+  --hair-strong: #9fb2ac;
+  --frame: #0b4a40; /* rama arkusza */
+  --green: #0f6b5c; /* zieleń butelkowa — marka, wynik */
+  --green-deep: #0a4a40;
+  --green-night: #083b33; /* odwrócony arkusz (stopka, pas) */
+  --green-tint: #e2efeb;
+  --red: #b3261e;
+  --red-tint: #fbecea;
+
+  /* aliasy zachowujące zgodność z istniejącymi stronami */
+  --background: var(--table);
+  --surface: var(--paper);
+  --foreground: var(--ink);
+  --muted: var(--ink-2);
+  --muted-2: var(--ink-3);
+  --border: var(--hair);
+  --border-strong: var(--hair-strong);
+  --accent: var(--green);
+  --accent-hover: var(--green-deep);
+  --accent-soft: var(--green-tint);
   --accent-contrast: #ffffff;
-  --danger: #b3261e;
-  --danger-soft: #fbeaea;
+  --danger: var(--red);
+  --danger-soft: var(--red-tint);
 }
 
 @theme inline {
+  --color-table: var(--table);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-hair: var(--hair);
+  --color-hair-strong: var(--hair-strong);
+  --color-frame: var(--frame);
+  --color-green: var(--green);
+  --color-green-deep: var(--green-deep);
+  --color-green-night: var(--green-night);
+  --color-green-tint: var(--green-tint);
+  --color-red: var(--red);
+  --color-red-tint: var(--red-tint);
+
   --color-background: var(--background);
   --color-surface: var(--surface);
   --color-foreground: var(--foreground);
@@ -30,26 +66,131 @@
   --color-accent-contrast: var(--accent-contrast);
   --color-danger: var(--danger);
   --color-danger-soft: var(--danger-soft);
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-fraunces);
+
+  --font-sans: var(--font-archivo), system-ui, sans-serif;
+  --font-display: var(--font-archivo), system-ui, sans-serif;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scrollbar-color: var(--hair-strong) var(--table);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-sans), system-ui, sans-serif;
+  background: var(--table);
+  color: var(--ink);
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  caret-color: var(--green);
 }
 
 ::selection {
-  background: var(--accent);
-  color: var(--accent-contrast);
+  background: var(--green);
+  color: #ffffff;
+}
+
+a {
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 1px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--table);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--hair-strong);
+  border: 2px solid var(--table);
 }
 
 .focus-ring {
   outline: none;
 }
 .focus-ring:focus-visible {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--green);
   outline-offset: 2px;
-  border-radius: 4px;
+}
+
+/* Pismo techniczne: wąskie wersaliki dla etykiet, tabliczek i numerów rysunku */
+.caps {
+  font-stretch: 72%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.condensed {
+  font-stretch: 80%;
+}
+
+.display {
+  font-weight: 750;
+  font-stretch: 92%;
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
+/* Kreskowanie przekroju (ISO) — miejsca na reklamę i puste pola */
+.hatch {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--hair) 0 1px,
+    transparent 1px 7px
+  );
+}
+
+/* Linia wymiarowa wyniku rysuje się od środka ku strzałkom */
+@keyframes dim-draw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+@keyframes dim-arrows {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.dim-line {
+  transform-origin: 50% 50%;
+  animation: dim-draw 520ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.dim-arrows {
+  animation: dim-arrows 180ms ease-out 360ms both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .dim-line,
+  .dim-arrows {
+    animation: none;
+  }
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+
+/* Pola liczbowe: bez strzałek spinnera */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Akordeon FAQ */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-plus {
+  transform: rotate(45deg);
 }

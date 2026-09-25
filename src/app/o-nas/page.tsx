@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 export default function ONasPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
-      <Breadcrumbs items={[{ href: "/", label: "Strona główna" }, { href: "/o-nas", label: "O nas" }]} />
-      <h1 className="mt-4 font-display text-3xl font-semibold tracking-tight text-foreground">O nas</h1>
-      <div className="prose mt-6 max-w-none space-y-4 text-base leading-relaxed text-muted">
+      <Breadcrumbs items={[{ href: "/", label: "Start" }, { href: "/o-nas", label: "O nas" }]} />
+      <h1 className="display mt-4 text-[clamp(2rem,6vw,3rem)] text-ink">O nas</h1>
+      <div className="mt-6 max-w-[68ch] space-y-4 text-[1.02rem] leading-relaxed text-ink-2">
         <p>
           Kalkulatory Online to serwis stworzony z myślą o szybkich, prostych obliczeniach, które każdy z nas
           wykonuje na co dzień — od przeliczenia VAT, przez rabat, po sprawdzenie BMI czy raty kredytu.
@@ -22,7 +22,7 @@ export default function ONasPage() {
           Wszystkie kalkulatory działają w całości w przeglądarce użytkownika — nie wymagają zakładania konta ani
           podawania danych osobowych, a wpisywane wartości nie są wysyłane na żaden serwer.
         </p>
-        <h2 className="font-display text-xl font-semibold text-foreground">Kto to robi</h2>
+        <h2 className="condensed pt-4 text-[1.3rem] font-bold text-ink">Kto to robi</h2>
         <p>
           Kalkulatory Online to projekt jednoosobowy — prowadzę go jako student informatyki, dla którego pisanie
           narzędzi, z których realnie ktoś korzysta, jest ciekawsze niż kolejny projekt zaliczeniowy leżący na

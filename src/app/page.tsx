@@ -1,27 +1,28 @@
 import Link from "next/link";
-import { Calculator, PiggyBank, ShieldCheck, Sparkles, Zap } from "lucide-react";
+import { ArrowRight, FlaskConical, MonitorSmartphone, Sigma } from "lucide-react";
 import { calculators, getPopularCalculators } from "@/calculators/registry";
-import { categories } from "@/lib/categories";
-import { categoryIcons } from "@/lib/category-icons";
-import CalculatorCard from "@/components/CalculatorCard";
-import ThemedBanner from "@/components/ThemedBanner";
+import PartsList from "@/components/PartsList";
+import CategoryGrid from "@/components/CategoryGrid";
+import AdPlaceholder from "@/components/AdPlaceholder";
 import HomeHero from "@/components/HomeHero";
+import Sheet from "@/components/Sheet";
+import { FaqList } from "@/components/CalculatorFAQ";
 
-const features = [
+const principles = [
   {
-    icon: Zap,
-    title: "Wynik od razu",
-    text: "Obliczenia aktualizują się w trakcie wpisywania — bez klikania w dodatkowe przyciski.",
+    icon: MonitorSmartphone,
+    title: "Liczone w Twojej przeglądarce",
+    text: "Wpisane liczby nie opuszczają urządzenia. Bez konta, bez zapisywania na serwerze — wynik aktualizuje się w trakcie pisania.",
   },
   {
-    icon: ShieldCheck,
-    title: "Prywatność w pierwszej kolejności",
-    text: "Nic nie wysyłamy na serwer. Wszystkie obliczenia dzieją się lokalnie, w Twojej przeglądarce.",
+    icon: Sigma,
+    title: "Wzór i przykład przy każdym wyniku",
+    text: "Pod każdym kalkulatorem jest wzór, na którym działa, oraz policzony krok po kroku przykład — możesz sprawdzić wynik sam.",
   },
   {
-    icon: Sparkles,
-    title: "Bez zbędnych kroków",
-    text: "Żadnej rejestracji, żadnych kont — wchodzisz, liczysz, wychodzisz.",
+    icon: FlaskConical,
+    title: "Wzory sprawdzone testami",
+    text: "Logika każdego kalkulatora jest pokryta testami na ręcznie policzonych przykładach, zanim trafi na stronę.",
   },
 ];
 
@@ -62,6 +63,22 @@ const faqJsonLd = {
   })),
 };
 
+function SectionHead({ id, title, href, linkLabel }: { id: string; title: string; href?: string; linkLabel?: string }) {
+  return (
+    <div className="flex items-end justify-between gap-4">
+      <h2 id={id} className="condensed text-[clamp(1.5rem,4.5vw,2rem)] font-bold tracking-[-0.015em] text-ink">
+        {title}
+      </h2>
+      {href && (
+        <Link href={href} className="focus-ring group caps flex shrink-0 items-center gap-1.5 pb-1.5 text-[0.7rem] text-green">
+          {linkLabel}
+          <ArrowRight aria-hidden className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5" strokeWidth={2} />
+        </Link>
+      )}
+    </div>
+  );
+}
+
 export default function Home() {
   const popular = getPopularCalculators(8);
 
@@ -69,150 +86,78 @@ export default function Home() {
     <div>
       <HomeHero calculatorCount={calculators.length} />
 
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <ThemedBanner
-          className="mt-8"
-          icon={Calculator}
-          eyebrow="Nowość co tydzień"
-          title="Nie widzisz kalkulatora, którego szukasz?"
-          text="Regularnie dodajemy nowe narzędzia. Napisz, jakiego kalkulatora brakuje — dodamy go w pierwszej kolejności."
-        />
+      <section className="mx-auto max-w-6xl px-4 pt-16 sm:px-6 sm:pt-20" aria-labelledby="popular-heading">
+        <SectionHead id="popular-heading" title="Najczęściej używane" href="/kalkulatory" linkLabel={`Wszystkie (${calculators.length})`} />
+        <div className="mt-6">
+          <PartsList items={popular} />
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pt-16 sm:px-6 sm:pt-20" aria-labelledby="categories-heading">
+        <SectionHead id="categories-heading" title="Kategorie" href="/kategorie" linkLabel="Przegląd kategorii" />
+        <div className="mt-6">
+          <CategoryGrid />
+        </div>
+      </section>
+
+      <div className="mx-auto max-w-6xl px-4 pt-16 sm:px-6">
+        <AdPlaceholder />
       </div>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6" aria-labelledby="popular-heading">
-        <div className="flex items-baseline justify-between gap-4">
-          <h2 id="popular-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
-            Najpopularniejsze kalkulatory
-          </h2>
-          <Link href="/kalkulatory" className="focus-ring hidden text-sm font-medium text-accent sm:inline">
-            Zobacz wszystkie →
-          </Link>
-        </div>
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {popular.map((c) => (
-            <CalculatorCard key={c.slug} config={c} />
-          ))}
-        </div>
-        <Link href="/kalkulatory" className="focus-ring mt-6 inline-block text-sm font-medium text-accent sm:hidden">
-          Zobacz wszystkie kalkulatory →
-        </Link>
-      </section>
-
-      <section className="border-y border-border bg-accent-soft py-14" aria-labelledby="categories-heading">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 id="categories-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
-            Kategorie
-          </h2>
-          <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {categories.map((cat) => {
-              const count = calculators.filter((c) => c.category === cat.slug).length;
-              const Icon = categoryIcons[cat.slug];
-              return (
-                <Link
-                  key={cat.slug}
-                  href={`/kategorie/${cat.slug}`}
-                  className="focus-ring flex items-center justify-between rounded-xl border border-border bg-surface px-5 py-4 hover:border-accent"
-                >
-                  <div className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-accent">
-                      {Icon && <Icon className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />}
-                    </span>
-                    <div>
-                      <div className="font-medium text-foreground">{cat.name}</div>
-                      <div className="mt-0.5 text-xs text-muted">
-                        {count} {count === 1 ? "kalkulator" : "kalkulatorów"}
-                      </div>
-                    </div>
-                  </div>
-                  <span aria-hidden className="text-muted-2">
-                    →
-                  </span>
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6" aria-labelledby="all-heading">
-        <div className="flex flex-col items-start gap-5 rounded-2xl border border-border bg-surface px-6 py-8 sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <div>
-            <h2 id="all-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
-              Wszystkie kalkulatory
+      {/* Odwrócony arkusz: zasady serwisu jako uwagi rysunkowe */}
+      <div className="mx-auto mt-16 max-w-6xl sm:mt-20 sm:px-6">
+        <Sheet inverted as="section" labelledBy="trust-heading">
+          <div className="grid gap-10 px-5 py-10 sm:px-8 sm:py-12 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
+            <h2 id="trust-heading" className="display max-w-[16ch] text-[clamp(1.9rem,5.5vw,2.9rem)]">
+              Wynik, któremu możesz zaufać, bo widzisz, skąd się wziął.
             </h2>
-            <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted">
-              {calculators.length} darmowych kalkulatorów pogrupowanych w {categories.length} kategorii — finanse,
-              zdrowie, matematyka, motoryzacja i więcej.
-            </p>
+            <div>
+              <p className="caps text-[0.72rem] text-white/70">Uwagi</p>
+              <ol className="mt-3 border-t-[1.5px] border-white/70">
+                {principles.map((p, i) => (
+                  <li key={p.title} className="grid grid-cols-[2rem_minmax(0,1fr)] gap-3 border-b border-white/25 py-5">
+                    <span className="caps pt-1 text-[0.8rem] text-white/70">{i + 1}.</span>
+                    <div>
+                      <h3 className="flex items-center gap-2.5 text-[1.12rem] font-bold">
+                        <p.icon className="h-5 w-5 text-white/80" strokeWidth={1.75} aria-hidden />
+                        {p.title}
+                      </h3>
+                      <p className="mt-1.5 text-[0.98rem] leading-relaxed text-white/80">{p.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
           </div>
-          <Link
-            href="/kalkulatory"
-            className="focus-ring inline-flex shrink-0 items-center gap-2 rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast hover:bg-accent-hover"
-          >
-            Przeglądaj wszystkie →
-          </Link>
-        </div>
-      </section>
-
-      <section className="bg-accent-soft py-14" aria-labelledby="about-heading">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 id="about-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
-            O serwisie
-          </h2>
-          <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted">
-            Kalkulatory Online to zbiór darmowych narzędzi do szybkich obliczeń — finansowych, zdrowotnych,
-            matematycznych i codziennych. Każdy kalkulator działa w całości w Twojej przeglądarce: nie wymaga
-            zakładania konta, nie wysyła wpisywanych danych na żaden serwer i daje wynik natychmiast, w trakcie
-            wpisywania.
-          </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-3">
-            {features.map((f) => (
-              <div key={f.title} className="rounded-xl border border-border bg-surface p-5">
-                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-accent-soft text-accent">
-                  <f.icon className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
-                </span>
-                <div className="mt-3 font-medium text-foreground">{f.title}</div>
-                <p className="mt-1 text-sm leading-relaxed text-muted">{f.text}</p>
-              </div>
-            ))}
+          <div className="grid border-t-[1.5px] border-white/80 sm:grid-cols-[auto_auto_1fr]">
+            <div className="border-b border-white/30 px-5 py-2.5 sm:border-b-0 sm:border-r sm:px-6">
+              <p className="caps text-[0.7rem] text-white/60">Arkusz</p>
+              <p className="mt-0.5 font-semibold">Zasady serwisu</p>
+            </div>
+            <div className="border-b border-white/30 px-5 py-2.5 sm:border-b-0 sm:border-r sm:px-6">
+              <p className="caps text-[0.7rem] text-white/60">W wykazie</p>
+              <p className="mt-0.5 font-semibold">{calculators.length} kalkulatorów</p>
+            </div>
+            <Link
+              href="/kalkulatory"
+              className="focus-ring group flex min-h-14 items-center justify-between gap-3 bg-white px-5 font-semibold text-green-night transition-colors duration-150 hover:bg-green-tint sm:px-6"
+            >
+              Przeglądaj wszystkie kalkulatory
+              <ArrowRight aria-hidden className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" strokeWidth={2} />
+            </Link>
           </div>
-        </div>
-      </section>
-
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <ThemedBanner
-          className="my-10"
-          icon={PiggyBank}
-          eyebrow="Prywatność"
-          title="Twoje dane nigdy nie opuszczają przeglądarki"
-          text="Każde obliczenie dzieje się lokalnie na Twoim urządzeniu — nic nie jest wysyłane ani zapisywane na naszych serwerach."
-        />
+        </Sheet>
       </div>
 
-      <section className="mx-auto max-w-3xl px-4 py-4 sm:px-6" aria-labelledby="faq-home-heading">
-        <h2 id="faq-home-heading" className="font-display text-2xl font-semibold tracking-tight text-foreground">
-          Najczęstsze pytania
-        </h2>
-        <dl className="mt-6 divide-y divide-border rounded-xl border border-border bg-surface">
-          {faqItems.map((item) => (
-            <div key={item.q} className="px-5 py-4">
-              <dt className="font-medium text-foreground">{item.q}</dt>
-              <dd className="mt-1.5 text-sm leading-relaxed text-muted">{item.a}</dd>
-            </div>
-          ))}
-        </dl>
+      <section className="mx-auto max-w-3xl px-4 pb-8 pt-16 sm:px-6 sm:pt-20" aria-labelledby="faq-home-heading">
+        <SectionHead id="faq-home-heading" title="Najczęstsze pytania" />
+        <div className="mt-6">
+          <FaqList items={faqItems} />
+        </div>
       </section>
 
-      <div className="h-14" />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
     </div>
   );
 }

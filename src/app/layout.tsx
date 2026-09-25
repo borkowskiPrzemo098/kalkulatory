@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Fraunces } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,18 +8,21 @@ import ScrollToTop from "@/components/ScrollToTop";
 import CookieConsent from "@/components/CookieConsent";
 import GoogleScripts from "@/components/GoogleScripts";
 
-const inter = Inter({
-  variable: "--font-inter",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin", "latin-ext"],
   display: "swap",
+  axes: ["wdth"],
 });
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin", "latin-ext"],
-  display: "swap",
-  axes: ["opsz"],
-});
+const DIRECTION_CONTRACT = `<!--
+THESIS: Każdy kalkulator to arkusz rysunku technicznego: dane są wymiarami, wynik wpisany w tabliczkę rysunkową. Odrzuca siatkę białych kart z ikonkami i hero z wyszukiwarką na gradiencie.
+OWN-WORLD: białe arkusze z podwójną ramą w zieleni butelkowej i strefami 1–4 / A–C na zielonkawoszarym stole; Archivo (wąskie wersaliki w etykietach), ostre narożniki, wykazy części zamiast kart, kreskowanie 45° dla reklam, odwrócony zielony arkusz w stopce i pasie zaufania; zieleń = tusz wyniku, czerwień tylko błędy.
+STORY: przychodzisz z Google, wpisujesz liczby, odczytujesz wynik w tabliczce z linią wymiarową, ufasz dzięki wzorowi, przykładom i uwagom, idziesz dalej przez wykaz powiązanych.
+FIRST VIEWPORT: mobile — okruszki, H1, arkusz z polami; tabliczka z wynikiem widoczna bez przewijania. Home — H1 i wyszukiwarka po lewej, działający arkusz „15% z 250” po prawej.
+FORM: arkusz rysunku technicznego, pozycja 5 z 7, seed 027d4d54.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
+-->`;
 
 const SITE_URL = "https://borkowskiprzemo098.github.io/kalkulatory";
 
@@ -58,15 +61,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <body className={`${inter.variable} ${fraunces.variable} antialiased`}>
+      <body className={`${archivo.variable} antialiased`}>
+        <div hidden dangerouslySetInnerHTML={{ __html: DIRECTION_CONTRACT }} />
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-contrast"
+          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:bg-green focus:px-4 focus:py-2 focus:text-white"
         >
           Przejdź do treści
         </a>
         <Header />
-        <main id="main-content" className="pb-16 md:pb-0">
+        <main id="main-content" className="pb-20 md:pb-0">
           {children}
         </main>
         <Footer />

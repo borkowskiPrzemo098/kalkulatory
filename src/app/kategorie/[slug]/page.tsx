@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { categories, getCategoryBySlug } from "@/lib/categories";
+import { categoryIcons } from "@/lib/category-icons";
 import { getCalculatorsByCategory } from "@/calculators/registry";
-import CalculatorCard from "@/components/CalculatorCard";
+import PartsList from "@/components/PartsList";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdPlaceholder from "@/components/AdPlaceholder";
 
@@ -31,35 +32,43 @@ export default async function CategoryPage({ params }: { params: Promise<{ slug:
   if (!category) notFound();
 
   const items = getCalculatorsByCategory(category.slug);
+  const Icon = categoryIcons[category.slug];
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
+    <div className="mx-auto max-w-6xl px-4 pb-16 pt-6 sm:px-6 sm:pt-10">
       <Breadcrumbs
         items={[
-          { href: "/", label: "Strona główna" },
-          { href: "/kalkulatory", label: "Kalkulatory" },
+          { href: "/", label: "Start" },
+          { href: "/kategorie", label: "Kategorie" },
           { href: `/kategorie/${category.slug}`, label: category.name },
         ]}
       />
 
-      <h1 className="mt-4 font-display text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
-        {category.name}
-      </h1>
-      <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted">{category.description}</p>
-
-      <AdPlaceholder className="mt-6" />
-
-      {items.length > 0 ? (
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {items.map((c) => (
-            <CalculatorCard key={c.slug} config={c} />
-          ))}
+      <header className="mt-4 flex max-w-3xl items-start gap-4">
+        {Icon && (
+          <span aria-hidden className="mt-1 hidden h-14 w-14 shrink-0 items-center justify-center border-[1.5px] border-frame bg-paper text-green sm:flex">
+            <Icon className="h-7 w-7" strokeWidth={1.5} />
+          </span>
+        )}
+        <div>
+          <h1 className="display text-[clamp(2rem,6vw,3.25rem)] text-ink">{category.name}</h1>
+          <p className="mt-3 text-[1.05rem] leading-relaxed text-ink-2">{category.description}</p>
         </div>
-      ) : (
-        <p className="mt-8 rounded-lg border border-dashed border-border-strong px-4 py-6 text-sm text-muted">
-          W tej kategorii nie ma jeszcze żadnych kalkulatorów — wkrótce się to zmieni.
-        </p>
-      )}
+      </header>
+
+      <div className="mt-10">
+        {items.length > 0 ? (
+          <PartsList items={items} showCategory={false} />
+        ) : (
+          <p className="hatch border border-hair-strong px-4 py-8 text-center">
+            <span className="bg-table px-2 text-[0.95rem] text-ink-2">
+              W tej kategorii nie ma jeszcze kalkulatorów — wkrótce się to zmieni.
+            </span>
+          </p>
+        )}
+      </div>
+
+      <AdPlaceholder className="mt-12" />
     </div>
   );
 }

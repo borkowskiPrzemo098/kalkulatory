@@ -153,6 +153,12 @@ export const calculators: CalculatorConfig[] = [
   splitBillConfig,
 ];
 
+/** Numer rysunku: stały indeks kalkulatora w rejestrze, np. „KO-007”. */
+export function getDrawingNumber(slug: string): string {
+  const index = calculators.findIndex((c) => c.slug === slug);
+  return `KO-${String(index + 1).padStart(3, "0")}`;
+}
+
 export function getCalculatorBySlug(slug: string): CalculatorConfig | undefined {
   return calculators.find((c) => c.slug === slug);
 }

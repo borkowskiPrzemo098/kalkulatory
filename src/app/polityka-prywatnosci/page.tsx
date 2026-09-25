@@ -12,23 +12,23 @@ export default function PolitykaPrywatnosciPage() {
   return (
     <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6">
       <Breadcrumbs
-        items={[{ href: "/", label: "Strona główna" }, { href: "/polityka-prywatnosci", label: "Polityka prywatności" }]}
+        items={[{ href: "/", label: "Start" }, { href: "/polityka-prywatnosci", label: "Polityka prywatności" }]}
       />
-      <h1 className="mt-4 font-display text-3xl font-semibold tracking-tight text-foreground">
+      <h1 className="display mt-4 text-[clamp(2rem,6vw,3rem)] text-ink">
         Polityka prywatności
       </h1>
-      <div className="prose mt-6 max-w-none space-y-4 text-base leading-relaxed text-muted">
+      <div className="mt-6 max-w-[68ch] space-y-4 text-[1.02rem] leading-relaxed text-ink-2">
         <p>
           Kalkulatory dostępne w serwisie wykonują obliczenia w całości lokalnie, w przeglądarce użytkownika.
           Wartości wpisywane do formularzy kalkulatorów nie są przesyłane ani zapisywane na serwerach serwisu.
         </p>
-        <h2 className="font-display text-xl font-semibold text-foreground">Dane zapisywane lokalnie</h2>
+        <h2 className="condensed pt-4 text-[1.3rem] font-bold text-ink">Dane zapisywane lokalnie</h2>
         <p>
           Wybrane kalkulatory mogą zapamiętywać ostatnio wpisane wartości w pamięci lokalnej przeglądarki
           (localStorage), wyłącznie na urządzeniu użytkownika. Dane te nie są wysyłane do serwisu ani do stron
           trzecich i można je usunąć, czyszcząc dane przeglądania.
         </p>
-        <h2 className="font-display text-xl font-semibold text-foreground">Analityka i reklamy</h2>
+        <h2 className="condensed pt-4 text-[1.3rem] font-bold text-ink">Analityka i reklamy</h2>
         <p>
           Serwis może korzystać z Google Analytics (statystyki odwiedzin) oraz Google AdSense (reklamy). Oba
           narzędzia ładują się wyłącznie po wyrażeniu zgody w bannerze cookies — patrz{" "}
@@ -37,7 +37,7 @@ export default function PolitykaPrywatnosciPage() {
           </Link>
           . Odrzucenie zgody nie ogranicza żadnej funkcji kalkulatorów.
         </p>
-        <h2 className="font-display text-xl font-semibold text-foreground">Administrator danych</h2>
+        <h2 className="condensed pt-4 text-[1.3rem] font-bold text-ink">Administrator danych</h2>
         <p>
           Administratorem serwisu jest osoba prywatna, prowadząca Kalkulatory Online poza działalnością
           gospodarczą. Kontakt w sprawach związanych z prywatnością:{" "}

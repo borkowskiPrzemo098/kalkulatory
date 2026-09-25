@@ -3,14 +3,18 @@ interface AdPlaceholderProps {
   className?: string;
 }
 
+/**
+ * Miejsce na reklamę jako pole kreskowane (przekrój) — czytelnie „puste”, nie udaje treści.
+ * Po podłączeniu AdSense wystarczy podmienić zawartość tego komponentu.
+ */
 export default function AdPlaceholder({ label = "Miejsce na reklamę", className = "" }: AdPlaceholderProps) {
   return (
     <div
-      className={`flex min-h-[90px] items-center justify-center rounded-lg border border-dashed border-border-strong bg-[repeating-linear-gradient(135deg,transparent,transparent_10px,var(--accent-soft)_10px,var(--accent-soft)_11px)] px-4 py-6 text-xs uppercase tracking-wide text-muted-2 ${className}`}
+      className={`hatch flex min-h-[96px] items-center justify-center border border-hair-strong ${className}`}
       aria-hidden="true"
       role="presentation"
     >
-      {label}
+      <span className="caps bg-table px-2 text-[0.7rem] text-ink-3">{label}</span>
     </div>
   );
 }

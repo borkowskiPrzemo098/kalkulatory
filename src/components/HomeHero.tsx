@@ -1,93 +1,71 @@
-"use client";
-
-import { useEffect, useState } from "react";
+import Link from "next/link";
 import SearchBox from "./SearchBox";
+import HeroDemo from "./HeroDemo";
+import Sheet from "./Sheet";
 
-function useCountUp(target: number, durationMs = 900) {
-  const [value, setValue] = useState(0);
+const quickLinks = [
+  { href: "/kalkulatory/vat", label: "VAT" },
+  { href: "/kalkulatory/procenty", label: "Procenty" },
+  { href: "/kalkulatory/raty-kredytu", label: "Raty kredytu" },
+  { href: "/kalkulatory/bmi", label: "BMI" },
+  { href: "/kalkulatory/brutto-netto", label: "Brutto / netto" },
+];
 
-  useEffect(() => {
-    let raf: number;
-    const start = performance.now();
-    function tick(now: number) {
-      const progress = Math.min(1, (now - start) / durationMs);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(eased * target));
-      if (progress < 1) raf = requestAnimationFrame(tick);
-    }
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [target, durationMs]);
-
-  return value;
+/** Konstrukcja w tle: okrąg z osiami i wymiarem średnicy — liczba kalkulatorów. */
+function ConstructionDrawing({ count }: { count: number }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 400 400"
+      className="pointer-events-none absolute -bottom-52 -right-28 hidden h-[30rem] w-[30rem] text-hair-strong lg:block"
+      fill="none"
+    >
+      <circle cx="200" cy="200" r="150" stroke="currentColor" strokeWidth="1" />
+      <circle cx="200" cy="200" r="96" stroke="currentColor" strokeWidth="1" strokeDasharray="6 5" />
+      <path d="M20 200h360M200 20v360" stroke="currentColor" strokeWidth="1" strokeDasharray="22 5 3 5" />
+      <path d="M94 94 306 306" stroke="var(--green)" strokeWidth="1" />
+      <path d="m94 94 10 3-7 7z M306 306l-10-3 7-7z" fill="var(--green)" />
+      <text x="214" y="258" fill="var(--green)" fontSize="15" fontWeight="600" letterSpacing="1.5" transform="rotate(45 214 258)">
+        Ø {count}
+      </text>
+    </svg>
+  );
 }
 
 export default function HomeHero({ calculatorCount }: { calculatorCount: number }) {
-  const count = useCountUp(calculatorCount);
-
   return (
-    <section className="relative overflow-hidden border-b border-border bg-surface">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          backgroundImage:
-            "radial-gradient(color-mix(in srgb, var(--accent) 22%, transparent) 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
-          maskImage: "radial-gradient(ellipse 80% 60% at 70% 20%, black 30%, transparent 75%)",
-          WebkitMaskImage: "radial-gradient(ellipse 80% 60% at 70% 20%, black 30%, transparent 75%)",
-        }}
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full opacity-60 blur-3xl"
-        style={{ background: "color-mix(in srgb, var(--accent) 14%, transparent)" }}
-      />
-
-      <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-24 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-        <div className="max-w-2xl">
-          <p className="inline-flex items-center rounded-full border border-border-strong bg-background/60 px-3 py-1 text-xs font-medium uppercase tracking-wide text-muted">
-            {calculatorCount} darmowych kalkulatorów
-          </p>
-          <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
-            Kalkulatory online
-          </h1>
-          <p className="mt-4 text-lg leading-relaxed text-muted">
-            Darmowe kalkulatory do szybkich i prostych obliczeń. Bez rejestracji, bez zbędnych kroków —
-            wpisujesz liczby, dostajesz wynik.
-          </p>
-          <div className="mt-8 max-w-md">
-            <SearchBox autoFocus id="calculator-search-hero" />
+    <div className="mx-auto max-w-6xl sm:px-6 sm:pt-8">
+      <Sheet as="section" labelledBy="hero-heading">
+        <div className="relative grid gap-10 overflow-hidden px-4 py-8 sm:px-8 sm:py-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,1fr)] lg:gap-14 lg:py-16">
+          <ConstructionDrawing count={calculatorCount} />
+          <div className="relative">
+            <h1 id="hero-heading" className="display text-[clamp(2.6rem,10vw,5rem)] text-ink">
+              Kalkulatory <span className="text-green">online</span>
+            </h1>
+            <p className="mt-5 max-w-[34ch] text-[1.15rem] leading-relaxed text-ink-2 sm:text-[1.25rem]">
+              Darmowe kalkulatory do szybkich i prostych obliczeń. Wpisujesz liczby — wynik pojawia się od razu.
+            </p>
+            <div className="mt-8 max-w-lg">
+              <SearchBox id="calculator-search-hero" />
+            </div>
+            <nav aria-label="Popularne kalkulatory" className="mt-4 flex max-w-lg flex-wrap items-center gap-x-1 gap-y-2">
+              <span className="caps mr-2 text-[0.7rem] text-ink-3">Często liczone</span>
+              {quickLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="focus-ring border border-hair-strong bg-paper px-2.5 py-1.5 text-[0.88rem] font-semibold text-ink transition-colors duration-150 hover:border-frame hover:bg-green-tint"
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+          <div className="relative lg:pt-2">
+            <HeroDemo />
           </div>
         </div>
-
-        <div className="relative hidden lg:block" aria-hidden>
-          <div className="rounded-2xl border border-border bg-background/70 p-6 shadow-sm backdrop-blur-sm">
-            <div className="flex items-center justify-between text-xs font-medium uppercase tracking-wide text-muted-2">
-              <span>Kalkulator VAT</span>
-              <span className="rounded-full bg-accent-soft px-2 py-0.5 text-accent">na żywo</span>
-            </div>
-            <div className="mt-5 space-y-3">
-              <div className="flex items-center justify-between rounded-lg border border-border bg-surface px-4 py-3 text-sm">
-                <span className="text-muted">Kwota netto</span>
-                <span className="font-medium text-foreground">1 000,00 zł</span>
-              </div>
-              <div className="flex items-center justify-between rounded-lg border border-border bg-surface px-4 py-3 text-sm">
-                <span className="text-muted">Stawka VAT</span>
-                <span className="font-medium text-foreground">23%</span>
-              </div>
-              <div className="flex items-center justify-between rounded-lg border border-accent/30 bg-accent-soft px-4 py-3 text-sm">
-                <span className="font-medium text-accent">Kwota brutto</span>
-                <span className="font-display text-lg font-semibold text-accent">1 230,00 zł</span>
-              </div>
-            </div>
-            <div className="mt-6 flex items-baseline gap-2 border-t border-border pt-5">
-              <span className="font-display text-3xl font-semibold text-foreground">{count}</span>
-              <span className="text-sm text-muted">gotowych kalkulatorów w serwisie</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+      </Sheet>
+    </div>
   );
 }

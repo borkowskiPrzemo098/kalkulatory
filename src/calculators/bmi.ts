@@ -31,7 +31,22 @@ function calculate(values: Record<string, string>) {
   const bmi = obliczBMI(masa, wzrost);
   return {
     results: [
-      { label: "Twoje BMI", value: formatNumber(bmi, 1), highlight: true },
+      {
+        label: "Twoje BMI",
+        value: formatNumber(bmi, 1),
+        highlight: true,
+        scale: {
+          min: 15,
+          max: 40,
+          value: bmi,
+          bands: [
+            { from: 15, to: 18.5, label: "niedowaga" },
+            { from: 18.5, to: 25, label: "prawidłowa" },
+            { from: 25, to: 30, label: "nadwaga" },
+            { from: 30, to: 40, label: "otyłość" },
+          ],
+        },
+      },
       { label: "Interpretacja", value: interpretacjaBMI(bmi) },
     ],
   };

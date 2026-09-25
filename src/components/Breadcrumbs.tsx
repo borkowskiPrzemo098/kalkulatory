@@ -18,31 +18,26 @@ export default function Breadcrumbs({ items }: { items: Crumb[] }) {
   };
 
   return (
-    <nav aria-label="Okruszki nawigacyjne" className="text-sm">
-      <ol className="flex flex-wrap items-center gap-1 text-muted">
+    <nav aria-label="Okruszki nawigacyjne">
+      <ol className="caps flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.7rem] text-ink-3">
         {items.map((item, index) => (
-          <li key={item.href} className="flex items-center gap-1">
+          <li key={item.href} className="flex items-center gap-2">
             {index > 0 && (
-              <span aria-hidden className="text-muted-2">
-                /
-              </span>
+              <span aria-hidden className="h-px w-3 bg-hair-strong" />
             )}
             {index === items.length - 1 ? (
-              <span className="text-foreground" aria-current="page">
+              <span className="text-ink" aria-current="page">
                 {item.label}
               </span>
             ) : (
-              <Link href={item.href} className="focus-ring hover:text-accent">
+              <Link href={item.href} className="focus-ring hover:text-green">
                 {item.label}
               </Link>
             )}
           </li>
         ))}
       </ol>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
     </nav>
   );
 }

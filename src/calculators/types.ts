@@ -20,10 +20,25 @@ export interface CalculatorField {
   dependsOn?: { field: string; value: string };
 }
 
+export interface ResultScaleBand {
+  from: number;
+  to: number;
+  label: string;
+}
+
+/** Opcjonalna podziałka: wynik rysowany na swojej skali (np. BMI). */
+export interface ResultScale {
+  min: number;
+  max: number;
+  value: number;
+  bands: ResultScaleBand[];
+}
+
 export interface ResultLine {
   label: string;
   value: string;
   highlight?: boolean;
+  scale?: ResultScale;
 }
 
 export interface CalculationOutcome {

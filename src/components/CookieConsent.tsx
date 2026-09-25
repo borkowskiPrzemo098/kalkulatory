@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Cookie } from "lucide-react";
 import { getStoredConsent, setStoredConsent } from "@/lib/consent";
 
 export default function CookieConsent() {
@@ -26,13 +25,10 @@ export default function CookieConsent() {
     <div
       role="dialog"
       aria-label="Zgoda na pliki cookies"
-      className="fixed inset-x-0 bottom-16 z-50 px-4 pb-4 sm:bottom-4 sm:px-6"
+      className="fixed inset-x-0 bottom-16 z-50 px-3 pb-3 md:bottom-4 md:px-6"
     >
-      <div className="mx-auto flex max-w-2xl flex-col gap-4 rounded-2xl border border-border bg-surface p-5 shadow-lg sm:flex-row sm:items-center">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-accent">
-          <Cookie className="h-4.5 w-4.5" strokeWidth={1.75} aria-hidden />
-        </span>
-        <p className="flex-1 text-sm leading-relaxed text-muted">
+      <div className="mx-auto flex max-w-2xl flex-col gap-4 border-[1.5px] border-frame bg-paper p-4 shadow-[0_16px_40px_-12px_rgba(8,59,51,0.35)] sm:flex-row sm:items-center sm:p-5">
+        <p className="flex-1 text-[0.88rem] leading-relaxed text-ink-2">
           Używamy plików cookies do statystyk odwiedzin i wyświetlania reklam wspierających działanie serwisu.
           Możesz zaakceptować lub odrzucić — kalkulatory działają tak samo w obu przypadkach. Więcej w{" "}
           <Link href="/polityka-cookies" className="text-accent hover:underline">
@@ -40,18 +36,18 @@ export default function CookieConsent() {
           </Link>
           .
         </p>
-        <div className="flex shrink-0 gap-2">
+        <div className="grid shrink-0 grid-cols-2 gap-2">
           <button
             type="button"
             onClick={() => respond(false)}
-            className="focus-ring rounded-lg border border-border-strong px-4 py-2 text-sm font-medium text-foreground hover:bg-background"
+            className="focus-ring h-11 border border-hair-strong px-4 text-[0.9rem] font-semibold text-ink hover:border-ink-3 hover:bg-table"
           >
             Odrzuć
           </button>
           <button
             type="button"
             onClick={() => respond(true)}
-            className="focus-ring rounded-lg bg-accent px-4 py-2 text-sm font-medium text-accent-contrast hover:bg-accent-hover"
+            className="focus-ring h-11 bg-green px-4 text-[0.9rem] font-semibold text-white hover:bg-green-deep"
           >
             Akceptuję
           </button>

@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { calculators } from "@/calculators/registry";
 import { trackEvent } from "@/lib/analytics";
@@ -31,9 +32,12 @@ interface SearchBoxProps {
   compact?: boolean;
   autoFocus?: boolean;
   id?: string;
+  /** Lista wyników nad polem (panel przy dolnej krawędzi ekranu). */
+  dropUp?: boolean;
 }
 
-export default function SearchBox({ compact = false, autoFocus = false, id = "calculator-search" }: SearchBoxProps) {
+export default function SearchBox({ compact = false, autoFocus = false, id = "calculator-search", dropUp = false }: SearchBoxProps) {
+  const dropClass = dropUp ? "bottom-full mb-1" : "top-full mt-1";
   const resultsId = `${id}-results`;
   const [query, setQuery] = useState("");
   const [open, setOpen] = useState(false);
@@ -73,15 +77,11 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
           Szukaj kalkulatora
         </label>
         <div className="relative">
-          <svg
-            className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-2"
-            viewBox="0 0 20 20"
-            fill="none"
+          <Search
             aria-hidden
-          >
-            <circle cx="9" cy="9" r="6" stroke="currentColor" strokeWidth="1.6" />
-            <path d="M14 14L18 18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-          </svg>
+            strokeWidth={2}
+            className={`pointer-events-none absolute top-1/2 -translate-y-1/2 text-green ${compact ? "left-3 h-4 w-4" : "left-4 h-5 w-5"}`}
+          />
           <input
             ref={inputRef}
             id={id}
@@ -93,7 +93,11 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
             onChange={(e) => handleChange(e.target.value)}
             onFocus={() => query.trim().length > 0 && setOpen(true)}
             onBlur={() => setTimeout(() => setOpen(false), 120)}
-            className="focus-ring w-full rounded-lg border border-border-strong bg-surface py-2.5 pl-9 pr-3 text-sm text-foreground placeholder:text-muted-2"
+            className={`w-full border bg-paper text-ink outline-none transition-[border-color,box-shadow] duration-150 placeholder:text-ink-3 focus:border-green focus:shadow-[inset_0_0_0_1px_var(--green)] ${
+              compact
+                ? "h-10 border-hair-strong pl-9 pr-3 text-[0.95rem]"
+                : "h-14 border-[1.5px] border-frame pl-12 pr-4 text-[1.1rem] font-medium"
+            }`}
             role="combobox"
             aria-expanded={open}
             aria-controls={resultsId}
@@ -106,18 +110,18 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
       {open && results.length > 0 && (
         <ul
           id={resultsId}
-          className="absolute left-0 right-0 top-full z-50 mt-2 max-h-80 overflow-auto rounded-lg border border-border bg-surface shadow-lg"
+          className={`absolute left-0 right-0 z-50 ${dropClass} max-h-80 overflow-auto border-[1.5px] border-frame bg-paper shadow-[0_12px_28px_-8px_rgba(8,59,51,0.28)]`}
           role="listbox"
         >
           {results.map((r) => (
-            <li key={r.slug} role="option" aria-selected="false">
+            <li key={r.slug} role="option" aria-selected="false" className="border-b border-hair last:border-b-0">
               <Link
                 href={`/kalkulatory/${r.slug}`}
-                className="focus-ring block px-4 py-2.5 text-sm hover:bg-accent-soft"
+                className="focus-ring block px-4 py-3 hover:bg-green-tint"
                 onMouseDown={(e) => e.preventDefault()}
               >
-                <span className="font-medium text-foreground">{r.name}</span>
-                <span className="ml-2 text-xs text-muted">{r.shortDescription.slice(0, 50)}…</span>
+                <span className="block text-[0.98rem] font-semibold text-ink">{r.name}</span>
+                <span className="mt-0.5 block truncate text-[0.82rem] text-ink-3">{r.shortDescription}</span>
               </Link>
             </li>
           ))}
@@ -125,8 +129,8 @@ export default function SearchBox({ compact = false, autoFocus = false, id = "ca
       )}
 
       {open && query.trim().length > 0 && results.length === 0 && (
-        <div className="absolute left-0 right-0 top-full z-50 mt-2 rounded-lg border border-border bg-surface px-4 py-3 text-sm text-muted shadow-lg">
-          Brak wyników dla „{query}”.
+        <div className={`absolute left-0 right-0 z-50 ${dropClass} border-[1.5px] border-frame bg-paper px-4 py-3 text-[0.95rem] text-ink-2 shadow-[0_12px_28px_-8px_rgba(8,59,51,0.28)]`}>
+          Brak wyników dla „{query}”. Spróbuj krótszego słowa, np. „vat” albo „procent”.
         </div>
       )}
     </div>

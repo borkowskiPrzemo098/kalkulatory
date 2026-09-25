@@ -1,0 +1,227 @@
+{
+  "title": "Nowy wygląd Kalkulatorów Online",
+  "question": "Losowanie wskazało kierunek „Arkusz rysunku technicznego”. Zostajesz przy nim, wybierasz alternatywę czy losujemy ponownie?",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Arkusz rysunku technicznego",
+      "kicker": "THE ROLL",
+      "lineage": "Polskie arkusze rysunkowe PN/ISO: tabliczka rysunkowa, linie wymiarowe, pismo techniczne",
+      "thesis": "Każdy kalkulator to precyzyjny arkusz z wymiarami: dane wejściowe są wymiarami, wynik wpisany jest w tabliczkę rysunkową.",
+      "palette": [
+        "#ffffff",
+        "#0f6b5c",
+        "#0a3d35",
+        "#e7efec",
+        "#b3261e"
+      ],
+      "materials": [
+        "biały arkusz z ramką i strefami A–D / 1–6",
+        "cienkie linie wymiarowe w zieleni butelkowej",
+        "tabliczka rysunkowa jako blok wyniku",
+        "pismo techniczne ISO 3098 dla etykiet"
+      ],
+      "viewport": "Na telefonie: nagłówek arkusza z numerem rysunku, pola wejściowe jako wymiary z opisem, pod nimi tabliczka z wynikiem dużą cyfrą; wzór jako adnotacja z odnośnikiem.",
+      "risk": "Może wyglądać chłodno przy kalkulatorach zdrowotnych; pismo techniczne musi zostać tylko w etykietach, żeby nie męczyło w treści.",
+      "raised": [
+        {
+          "from": "challenger-pc98",
+          "raise": "Stałe strefy arkusza: wejście, wynik i adnotacje stoją w tym samym miejscu na wszystkich 60 kalkulatorach."
+        },
+        {
+          "from": "challenger-sixpack",
+          "raise": "Każdy wynik rysowany na swojej skali (np. BMI na podziałce), nie tylko jako goła liczba."
+        },
+        {
+          "from": "challenger-arcade",
+          "raise": "Prawo koloru: zieleń butelkowa = tusz prawdy (wyniki, linie), czerwień wyłącznie dla błędów, nic więcej nie ma koloru."
+        },
+        {
+          "from": "challenger-sneaker",
+          "raise": "Jedna ścisła siatka etykiety dla każdej karty kalkulatora w katalogu (nr, nazwa, kategoria, dane)."
+        },
+        {
+          "from": "challenger-zoo",
+          "raise": "Jedna geometria rządzi dekoracją i stanem: linia wymiarowa wyniku rośnie do wartości przy obliczeniu."
+        }
+      ]
+    },
+    {
+      "id": "model-pick",
+      "label": "Zeszyt w kratkę",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "Polski zeszyt szkolny 5 mm, obliczenia pisane pod kreską",
+      "thesis": "Obliczenie pokazane tak, jak liczył każdy w szkole: działanie pisemne w kratce, wynik podkreślony dwiema kreskami.",
+      "palette": [
+        "#fbfcfb",
+        "#0f6b5c",
+        "#c9dcd6",
+        "#1d2623",
+        "#c0392b"
+      ],
+      "materials": [
+        "kratka 5 mm",
+        "margines w zieleni",
+        "podwójne podkreślenie wyniku"
+      ],
+      "viewport": "Na telefonie: arkusz w kratkę, dane wpisane w kratki, pod kreską wynik podwójnie podkreślony i wzór pisany krok po kroku obok.",
+      "risk": "Kratka to częsty motyw „matematycznych” stron; łatwo zsunie się w szkolną infantylność zamiast wiarygodności."
+    },
+    {
+      "id": "challenger-sixpack",
+      "label": "Zegary pokładowe",
+      "verdict": "declined",
+      "lineage": "Nocny zestaw sześciu przyrządów w samolocie",
+      "thesis": "Wyniki jako świecące tarcze z trendem i wartością.",
+      "palette": [
+        "#0b0d0c",
+        "#f2f2ee",
+        "#3ddc97",
+        "#f2a33a"
+      ],
+      "materials": [
+        "matowy czarny panel",
+        "świecące podziałki"
+      ],
+      "viewport": "Ciemny panel z tarczą wyniku.",
+      "case": "Ciemny kokpit nie buduje zaufania zwykłych użytkowników z Google w dziennym świetle.",
+      "kept": "Wynik zawsze pokazany na swojej skali, nie tylko jako liczba.",
+      "risk": "Nieczytelny w słońcu na telefonie."
+    },
+    {
+      "id": "challenger-pc98",
+      "label": "Ekran PC‑98",
+      "verdict": "declined",
+      "lineage": "Japońska grafika 16‑kolorowa",
+      "thesis": "Stałe regiony ekranu, nawigacja podmienia treść, nie układ.",
+      "palette": [
+        "#000000",
+        "#ffffff",
+        "#00aa55",
+        "#5555ff"
+      ],
+      "materials": [
+        "dithering",
+        "font bitmapowy"
+      ],
+      "viewport": "Okno tekstowe przy dolnej krawędzi.",
+      "case": "Retro‑estetyka zabija wiarygodność finansowych obliczeń.",
+      "kept": "Stałe strefy strony identyczne na każdym kalkulatorze.",
+      "risk": "Nowinka zamiast narzędzia."
+    },
+    {
+      "id": "challenger-arcade",
+      "label": "Automat arcade",
+      "verdict": "declined",
+      "lineage": "Ekran CRT z pikselami",
+      "thesis": "Prawa palety: kolor ma znaczenie, nie dekorację.",
+      "palette": [
+        "#000000",
+        "#ffd84d",
+        "#ff3d5a",
+        "#3de0ff"
+      ],
+      "materials": [
+        "linie skanowania",
+        "poświata"
+      ],
+      "viewport": "Pikselowa scena z wynikiem.",
+      "case": "Gra nie pasuje do liczenia VAT i rat.",
+      "kept": "Ścisłe prawo koloru: zieleń tylko dla wyniku, czerwień tylko dla błędu.",
+      "risk": "Infantylne."
+    },
+    {
+      "id": "challenger-sneaker",
+      "label": "Ściana pudełek",
+      "verdict": "declined",
+      "lineage": "Archiwum pudełek sneakersów",
+      "thesis": "Katalog jako ściana etykiet.",
+      "palette": [
+        "#e0662a",
+        "#111111",
+        "#f7f3ea"
+      ],
+      "materials": [
+        "tektura",
+        "bibuła"
+      ],
+      "viewport": "Ściana etykiet kalkulatorów.",
+      "case": "Obcy świat dla użytkowników; nic nie mówi o dokładności.",
+      "kept": "Jedna ścisła siatka etykiety dla wszystkich kart.",
+      "risk": "Moda zamiast narzędzia."
+    },
+    {
+      "id": "challenger-zoo",
+      "label": "Mapa ogrodu",
+      "verdict": "declined",
+      "lineage": "Plan zoo z płaskimi płatami koloru",
+      "thesis": "Jedna geometria steruje układem, grafiką i stanem.",
+      "palette": [
+        "#8ed462",
+        "#f5f1e4",
+        "#2c2e2a",
+        "#ff705d"
+      ],
+      "materials": [
+        "płaski kolor",
+        "kapsuły"
+      ],
+      "viewport": "Kategorie jako płaty mapy.",
+      "case": "Wesoła mapa kłóci się z wiarygodnością liczb.",
+      "kept": "Linia wymiarowa jako jedna geometria dekoracji i stanu.",
+      "risk": "Zbyt zabawowe."
+    },
+    {
+      "id": "challenger-rain",
+      "label": "Ogród deszczu",
+      "verdict": "declined",
+      "lineage": "Surrealistyczna symulacja grawitacji",
+      "thesis": "Kolor chmury ustala prawo.",
+      "palette": [
+        "#5b6b64",
+        "#3a7bd5",
+        "#d64545",
+        "#111111"
+      ],
+      "materials": [
+        "symulacja fizyki"
+      ],
+      "viewport": "Ogród z deszczem.",
+      "case": "Nie wspiera zadania liczenia w żaden sposób.",
+      "kept": "Legenda trzymana poziomo: jednostki i zaokrąglenia opisane w stałej legendzie arkusza.",
+      "risk": "Całkowicie nieczytelne jako narzędzie."
+    }
+  ],
+  "reroll": {
+    "registers": [
+      "safer",
+      "bolder"
+    ]
+  },
+  "buildPath": {
+    "value": "code",
+    "toggle": false
+  },
+  "canon": true,
+  "canonCard": {
+    "label": "Standard kategorii",
+    "thesis": "Białe karty z ikonami, wyszukiwarka w hero, zielony akcent — jak dobre portale kalkulatorów, tylko dopracowane.",
+    "palette": [
+      "#ffffff",
+      "#111827",
+      "#0f6b5c"
+    ],
+    "materials": [
+      "czysta siatka kart",
+      "ikony liniowe"
+    ],
+    "viewport": "Wyszukiwarka i siatka popularnych kalkulatorów.",
+    "risk": "Nie do odróżnienia od konkurencji — z założenia."
+  },
+  "steer": true,
+  "seed": "027d4d54",
+  "answer": {
+    "optionId": "assigned",
+    "buildPath": "code"
+  }
+}

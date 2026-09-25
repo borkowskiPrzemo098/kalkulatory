@@ -1,19 +1,26 @@
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Sheet from "@/components/Sheet";
 
 export default function NotFound() {
   return (
-    <div className="mx-auto flex max-w-2xl flex-col items-center px-4 py-24 text-center sm:px-6">
-      <p className="font-display text-6xl font-semibold text-accent">404</p>
-      <h1 className="mt-4 font-display text-2xl font-semibold text-foreground">Nie znaleziono strony</h1>
-      <p className="mt-3 text-base leading-relaxed text-muted">
-        Kalkulator lub strona, której szukasz, nie istnieje albo została przeniesiona.
-      </p>
-      <Link
-        href="/kalkulatory"
-        className="focus-ring mt-6 inline-flex items-center rounded-lg bg-accent px-5 py-2.5 text-sm font-medium text-accent-contrast hover:bg-accent-hover"
-      >
-        Zobacz wszystkie kalkulatory
-      </Link>
+    <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-24">
+      <Sheet>
+        <div className="px-5 py-10 sm:px-10 sm:py-14">
+          <h1 className="display text-[clamp(2rem,6vw,3rem)] text-ink">Nie znaleziono strony</h1>
+          <p className="mt-4 max-w-[48ch] text-[1.05rem] leading-relaxed text-ink-2">
+            Błąd 404: kalkulator lub strona, której szukasz, nie istnieje albo została przeniesiona. Sprawdź adres albo przejdź
+            do pełnego wykazu kalkulatorów.
+          </p>
+          <Link
+            href="/kalkulatory"
+            className="focus-ring mt-8 inline-flex h-12 items-center gap-2 bg-green px-5 text-[0.98rem] font-semibold text-white transition-colors duration-150 hover:bg-green-deep"
+          >
+            Wszystkie kalkulatory
+            <ArrowRight aria-hidden className="h-4 w-4" strokeWidth={2} />
+          </Link>
+        </div>
+      </Sheet>
     </div>
   );
 }
